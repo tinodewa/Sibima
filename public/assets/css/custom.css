@@ -203,7 +203,7 @@
   content: "";
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: -5px;
   height: 1px;
   width: 25%;
   border-bottom: 2px solid #364878;
@@ -371,6 +371,61 @@
 
 .bilik-laporan-form-box {
   padding: 20px 0;
+}
+
+.bilik-laporan-label {
+  font-weight: 700;
+}
+
+.bilik-laporan-input {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.bilik-laporan-file-box {
+  width: 75px;
+  position: relative;
+  background: #ececec;
+  height: 75px;
+  text-align: center;
+  border: 2px solid #ccc;
+  border-style: dashed;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.bilik-laporan-input-file {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.bilik-laporan .content-description-poin-box {
+  padding-bottom: 0;
+}
+
+.bilik-laporan-map-box {
+  width: 600px;
+  height: 300px;
+  background: #ffd65b;
+  margin-bottom: 20px;
+}
+
+.bilik-laporan-btn {
+  background: #28a745;
+  margin: 40px 0 0;
+  padding: 5px 15px;
+}
+
+.bilik-laporan-btn p {
+  margin: 0;
+  color: #fff;
 }
 
 /* profil */
