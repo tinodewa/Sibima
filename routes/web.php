@@ -12,41 +12,41 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home/welcome');
 });
 
 Route::get('/sibima/sikombatan', function () {
-    return view('sikombatan');
+    return view('home/sikombatan');
 });
 
 Route::get('/sibima/sikombatan-detail', function () {
-    return view('sikombatan-detail');
+    return view('home/sikombatan-detail');
 });
 
 Route::get('/sibima/sikalan', function () {
-    return view('sikalan');
+    return view('home/sikalan');
 });
 
 Route::get('/sibima/sikalan-detail', function () {
-    return view('sikalan-detail');
+    return view('home/sikalan-detail');
 });
 
 Route::get('/sibima/artikel', function () {
-    return view('artikel');
+    return view('home/artikel');
 });
 
 Route::get('/sibima/artikel-detail', function () {
-    return view('artikel-detail');
+    return view('home/artikel-detail');
 });
 
 Route::get('/sibima/galery', function () {
-    return view('galery');
+    return view('home/galery');
 });
 
 Route::get('/sibima/bilik-laporan', function () {
-    return view('bilik_laporan');
+    return view('home/bilik_laporan');
 });
 
 Route::get('/sibima/profil', function () {
-    return view('profil');
+    return view('home/profil');
 });

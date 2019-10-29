@@ -8,9 +8,9 @@
     <!-- title -->
     <title>SIBIMA | Profil</title>
     <!-- link -->
-    <link rel="stylesheet" href="{{asset('assets/vendor/flowuplabel/jquery.FlowupLabels.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap-4.3.1/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/home/vendor/flowuplabel/jquery.FlowupLabels.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/home/vendor/bootstrap-4.3.1/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/home/css/custom.css')}}">
 </head>
 
 <body>
@@ -32,8 +32,11 @@
 
     {{-- navbar --}}
     <div class="nav-box">
-        <nav class="navbar navbar-expand-lg nav-custom">
+        <nav class="navbar navbar-expand-lg navbar-light nav-custom">
             <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
@@ -185,10 +188,10 @@
     </footer>
 </body>
 
-<script src="{{asset('assets/vendor/flowuplabel/jquery.min.js')}}"></script>
-<script src="{{asset('assets/vendor/flowuplabel/jquery.FlowupLabels.min.js')}}"></script>
-<script src="{{asset('assets/vendor/flowuplabel/main.js')}}"></script>
-<script src="{{asset('assets/vendor/bootstrap-4.3.1/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('assets/home/vendor/flowuplabel/jquery.min.js')}}"></script>
+<script src="{{asset('assets/home/vendor/flowuplabel/jquery.FlowupLabels.min.js')}}"></script>
+<script src="{{asset('assets/home/vendor/flowuplabel/main.js')}}"></script>
+<script src="{{asset('assets/home/vendor/bootstrap-4.3.1/js/bootstrap.min.js')}}"></script>
 <script>
 function myFunction() {
   // Declare variables

@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- title -->
-    <title>SIBIMA | Sikalan Detail</title>
+    <title>SIBIMA | Sikombatan Detail</title>
     <!-- link -->
-    <link rel="stylesheet" href="{{asset('assets/vendor/flowuplabel/jquery.FlowupLabels.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap-4.3.1/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/home/vendor/flowuplabel/jquery.FlowupLabels.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/home/vendor/bootstrap-4.3.1/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/home/css/custom.css')}}">
 </head>
 
 <body>
@@ -32,17 +32,20 @@
 
     {{-- navbar --}}
     <div class="nav-box">
-        <nav class="navbar navbar-expand-lg nav-custom">
+        <nav class="navbar navbar-expand-lg navbar-light nav-custom">
             <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="#">Beranda<span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a class="nav-link" href="{{ url('/sibima/sikombatan') }}">Sikombatan</a>
                         </li>
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ url('/sibima/sikalan') }}">Sikalan</a>
                         </li>
                         <li class="nav-item">
@@ -451,10 +454,10 @@
     </footer>
 </body>
 
-<script src="{{asset('assets/vendor/flowuplabel/jquery.min.js')}}"></script>
-<script src="{{asset('assets/vendor/flowuplabel/jquery.FlowupLabels.min.js')}}"></script>
-<script src="{{asset('assets/vendor/flowuplabel/main.js')}}"></script>
-<script src="{{asset('assets/vendor/bootstrap-4.3.1/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('assets/home/vendor/flowuplabel/jquery.min.js')}}"></script>
+<script src="{{asset('assets/home/vendor/flowuplabel/jquery.FlowupLabels.min.js')}}"></script>
+<script src="{{asset('assets/home/vendor/flowuplabel/main.js')}}"></script>
+<script src="{{asset('assets/home/vendor/bootstrap-4.3.1/js/bootstrap.min.js')}}"></script>
 <script>
 function myFunction() {
   // Declare variables
