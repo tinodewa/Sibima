@@ -11,6 +11,7 @@
 |
 */
 
+// -- Home --
 Route::get('/', function () {
     return view('home/welcome');
 });
@@ -49,4 +50,45 @@ Route::get('/sibima/bilik-laporan', function () {
 
 Route::get('/sibima/profil', function () {
     return view('home/profil');
+});
+
+// -- Super Admin --
+Route::get('/super-admin', function () {
+    return view('superadmin/dashboard');
+});
+
+Route::get('/super-admin/dashboard', function () {
+    return view('superadmin/dashboard');
+});
+
+Route::get('/super-admin/data-kecamatan', function () {
+    return view('superadmin/data_kecamatan');
+});
+
+Route::get('/super-admin/data-ruas-jalan', function () {
+    return view('superadmin/data_ruas_jalan');
+});
+
+Route::get('/super-admin/data-kondisi-jalan', function () {
+    return view('superadmin/data_kondisi_jalan');
+});
+
+Route::get('/super-admin/data-kondisi-jembatan', function () {
+    return view('superadmin/data_kondisi_jembatan');
+});
+
+Route::get('/super-admin/artikel', function () {
+    return view('superadmin/artikel');
+});
+
+Route::get('/super-admin/galeri', function () {
+    return view('superadmin/galeri');
+});
+
+Route::get('/super-admin/profil', function () {
+    return view('superadmin/profil');
+});
+
+Route::get('/super-admin/user', function () {
+    return view('superadmin/user');
 });

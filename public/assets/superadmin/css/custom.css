@@ -1,0 +1,123 @@
+
+/* custom */
+
+/* variables */
+.w-250{
+    width: 250px !important;
+}
+
+/* modal */
+.modal.modal-mini .modal-dialog.custom-modal{
+    width: 1200px;
+    max-width: none;
+}
+
+/* galery */
+.img-box {
+    width: 100px;
+    height: 100px;
+}
+
+.galeri-img{
+    width: 200px;
+    height: 200px;
+}
+
+.add-button {
+    width: 200px;
+    height: 200px;
+    background: #d3cfcf;
+    cursor: pointer;
+}
+
+.add-button__small {
+    width: 100px;
+    height: 100px;
+    background: #d3cfcf;
+    cursor: pointer;
+}
+
+.add-icon {
+    font-size: 100px;
+    transform: translate( 45%, 50%);
+}
+
+.add-icon__small {
+    font-size: 50px;
+    transform: translate( 45%, 50%);
+    color: #918f8f;
+}
+
+/* kontrol */
+.control-icon {
+    padding: 5px 8px;
+    border-radius: 3px;
+    color: #fff;
+    margin: 5px 0px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    max-width: 100px;
+}
+
+.nc-icon{
+    vertical-align: text-top;
+    font-weight: bold;
+    padding-right: 5px;
+}
+
+.control-icon.alert-info:hover {
+    background-color: #23bbdd;
+    transition: .5s ease;
+    color: #fff;
+}
+
+.control-icon.alert-success:hover {
+    background-color: #89c527;
+    transition: .5s ease;
+    color: #fff;
+}
+
+.control-icon.alert-danger:hover {
+    background-color: #f1424b;
+    transition: .5s ease;
+    color: #fff;
+}
+
+.control-icon.alert-info:focus {
+    color: #fff;
+}
+
+.control-icon.alert-success:focus {
+    color: #fff;
+}
+
+.control-icon.alert-danger:focus {
+    color: #fff;
+}
+
+.btn-box{
+    padding: 15px 15px 0 15px;
+}
+
+.btn-tambah{
+    cursor: pointer;
+    -webkit-appearance: inherit;
+}
+
+/* datatable */
+.content .dataTables_wrapper .dataTables_filter input{
+    border: 2px solid #42d0ed;
+    border-radius: 5px;
+}
+
+.content .dataTables_wrapper .dataTables_paginate .paginate_button.current{
+    
+}
+/* , .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover */
+
+@media only screen and (max-width: 640px) {
+  .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter{
+      text-align: left;
+  }
+}
