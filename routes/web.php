@@ -61,12 +61,12 @@ Route::get('/super-admin/dashboard', function () {
     return view('superadmin/dashboard');
 });
 
-Route::get('/super-admin/data-kecamatan', function () {
-    return view('superadmin/data_kecamatan');
+Route::get('/super-admin/data-provinsi', function () {
+    return view('superadmin/data_provinsi');
 });
 
-Route::get('/super-admin/data-ruas-jalan', function () {
-    return view('superadmin/data_ruas_jalan');
+Route::get('/super-admin/data-kabupaten-kota', function () {
+    return view('superadmin/data_kabupaten_kota');
 });
 
 Route::get('/super-admin/data-kondisi-jalan', function () {
@@ -91,4 +91,74 @@ Route::get('/super-admin/profil', function () {
 
 Route::get('/super-admin/user', function () {
     return view('superadmin/user');
+});
+
+// -- Tambah Data Super Admin --
+Route::get('/super-admin/data-provinsi/tambah', function () {
+    return view('superadmin/tambah/tambah_data_provinsi');
+});
+
+Route::get('/super-admin/data-kabupaten-kota/tambah', function () {
+    return view('superadmin//tambah/tambah_data_kabupaten_kota');
+});
+
+Route::get('/super-admin/data-kondisi-jalan/tambah', function () {
+    return view('superadmin/tambah/tambah_data_kondisi_jalan');
+});
+
+Route::get('/super-admin/data-kondisi-jembatan/tambah', function () {
+    return view('superadmin/tambah/tambah_data_kondisi_jembatan');
+});
+
+Route::get('/super-admin/artikel/tambah', function () {
+    return view('superadmin/tambah/tambah_artikel');
+});
+
+Route::get('/super-admin/galeri/tambah', function () {
+    return view('superadmin/tambah/tambah_galeri');
+});
+
+Route::get('/super-admin/profil/tambah', function () {
+    return view('superadmin/tambah/tambah_profil');
+});
+
+Route::get('/super-admin/user/tambah', function () {
+    return view('superadmin/tambah/tambah_user');
+});
+
+// -- Detail Data --
+Route::get('/super-admin/dashboard/detail', function () {
+    return view('superadmin/detail/dashboard');
+});
+
+Route::get('/super-admin/data-provinsi/detail', function () {
+    return view('superadmin/detail/detail_data_provinsi');
+});
+
+Route::get('/super-admin/data-kabupaten-kota/detail', function () {
+    return view('superadmin//detail/detail_data_kabupaten_kota');
+});
+
+Route::get('/super-admin/data-kondisi-jalan/detail', function () {
+    return view('superadmin/detail/detail_data_kondisi_jalan');
+});
+
+Route::get('/super-admin/data-kondisi-jembatan/detail', function () {
+    return view('superadmin/detail/detail_data_kondisi_jembatan');
+});
+
+Route::get('/super-admin/artikel/detail', function () {
+    return view('superadmin/detail/detail_artikel');
+});
+
+Route::get('/super-admin/galeri/detail', function () {
+    return view('superadmin/detail/detail_galeri');
+});
+
+Route::get('/super-admin/profil/detail', function () {
+    return view('superadmin/detail/detail_profil');
+});
+
+Route::get('/super-admin/user/detail', function () {
+    return view('superadmin/detail/detail_user');
 });

@@ -55,50 +55,50 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/super-admin/data-kecamatan') }}">
+                        <a class="nav-link" href="{{ url('/super-admin/data-provinsi') }}">
                             <i class="nc-icon nc-square-pin"></i>
-                            <p>Data Kecamatan</p>
+                            <p>Data Provinsi</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/super-admin/data-ruas-jalan') }}">
-                            <i class="nc-icon nc-preferences-circle-rotate"></i>
-                            <p>Data Ruas Jalan</p>
+                        <a class="nav-link" href="{{ url('/super-admin/data-kabupaten-kota') }}">
+                            <i class="nc-icon nc-pin-3"></i>
+                            <p>Kabupaten/Kota</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/super-admin/data-kondisi-jalan') }}">
-                            <i class="nc-icon nc-notes"></i>
+                            <i class="nc-icon nc-simple-delete"></i>
                             <p>Sikalan</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/super-admin/data-kondisi-jembatan') }}">
-                            <i class="nc-icon nc-tap-01"></i>
+                            <i class="nc-icon nc-vector"></i>
                             <p>Sikombatan</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/super-admin/artikel') }}">
-                            <i class="nc-icon nc-album-2"></i>
+                            <i class="nc-icon nc-paper-2"></i>
                             <p>Artikel</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/super-admin/galeri') }}">
-                            <i class="nc-icon nc-bell-55"></i>
+                            <i class="nc-icon nc-album-2"></i>
                             <p>Galeri</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/super-admin/profil') }}">
-                            <i class="nc-icon nc-bell-55"></i>
+                            <i class="nc-icon nc-badge"></i>
                             <p>Profil</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/super-admin/user') }}">
-                            <i class="nc-icon nc-bell-55"></i>
+                            <i class="nc-icon nc-circle-09"></i>
                             <p>User</p>
                         </a>
                     </li>
@@ -161,7 +161,7 @@
                                                     <td>kamis, 20 Oktober 2019</td>
                                                     <td>08.23 WIB</td>
                                                     <td style="display:table-cell;">
-                                                        <a class="control-icon alert-info"  data-toggle="modal" data-target="#myModal1" href="#pablo">
+                                                        <a class="control-icon alert-info" href="{{ url('/super-admin/data-kondisi-jalan/detail') }}">
                                                             <i class="nc-icon nc-paper-2"></i>
                                                             More
                                                         </a>
@@ -197,7 +197,7 @@
                                                     <td>kamis, 21 Oktober 2019</td>
                                                     <td>01.23 WIB</td>
                                                     <td style="display:table-cell;">
-                                                        <a class="control-icon alert-info"  data-toggle="modal" data-target="#myModal1" href="#pablo">
+                                                        <a class="control-icon alert-info" href="{{ url('/super-admin/data-kondisi-jembatan/detail') }}">
                                                             <i class="nc-icon nc-paper-2"></i>
                                                             More
                                                         </a>
@@ -210,75 +210,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Mini Detail -->
-                <div class="modal fade modal-mini modal-primary" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog custom-modal">
-                        <div class="modal-content">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="card strpied-tabled-with-hover">
-                                        <div class="card-header ">
-                                            <h4 class="card-title">Paket Bromo</h4>
-                                        </div>
-                                        <div class="card-body table-responsive">
-                                            <table class="table table-hover table-striped">
-                                                <thead>
-                                                    <th>Paket</th>
-                                                    <th>Tipe</th>
-                                                    <th>Foto</th>
-                                                    <th>Harga</th>
-                                                    <th class="w-250">Overview</th>
-                                                    <th>Jumlah Grup</th>
-                                                    <th>Lokasi</th>
-                                                    <th>Jam</th>
-                                                    <th>Hari</th>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Bromo</td>
-                                                        <td>Family Trip</td>
-                                                        <td>
-                                                            <div class="img-box">
-                                                                <img src="assets/img/bromo1.jpg" alt="bromo" class="img-fluid">
-                                                            </div>
-                                                        </td>
-                                                        <td>Dewasa : <br> Rp 550.000 <br> Anak : <br> Rp 350.000</td>
-                                                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos odio reprehenderit earum quam aliquid soluta facilis beatae enim similique impedit. Soluta, iusto deleniti nostrum porro debitis temporibus molestiae voluptatem dolores.</td>
-                                                        <td>5 orang</td>
-                                                        <td>Bromo Tengger <br> Semeru National Park</td>
-                                                        <td>2</td>
-                                                        <td>3 Hari <br> 2 Malam</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--  End Detail -->
-
-                <!-- Mini Confirmation -->
-                <div class="modal fade modal-mini modal-primary" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header justify-content-center">
-                            </div>
-                            <div class="modal-body text-center">
-                                <p>Yakin hapus paket ini?</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-link btn-simple">Hapus</button>
-                                <button type="button" class="btn btn-link btn-simple" data-dismiss="modal">Batal</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--  End Confirmation -->
             </div>
             <!-- End Content -->
 

@@ -139,45 +139,100 @@
                                 <div class="card-header ">
                                     <h4 class="card-title">User</h4>
                                 </div>
-                                <div class="btn-box">
-                                    <a href="{{ url('/super-admin/user/tambah') }}" type="submit" class="btn btn-info btn-fill btn-tambah">Tambah Data</a>
-                                </div>
-                                <div class="card-body table-responsive">
-                                    <table class="table table-hover table-striped">
-                                        <thead>
-                                            <th>Nama Lengkap</th>
-                                            <th class="w-25">Foto</th>
-                                            <th>Username</th>
-                                            <th>Terakhir Login</th>
-                                            <th>Kontrol</th>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                    <td>Roronoa Luffy</td>
-                                                    <td>
-                                                        <div class="img-box">
-                                                            <img src="" alt="bromo" class="img-fluid">
+                                <div class="card-body">
+                                    <div class="paket">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-4 pr-1">
+                                                    <div class="form-group">
+                                                        <label>nama Lengkap</label>
+                                                        <input type="text" class="form-control" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 pr-1">
+                                                    <div class="form-group">
+                                                        <label>Foto Thumbnail</label>
+                                                        <input type="file" data-upload="" accept="image/*" class="" name="image">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 pr-1">
+                                                    <div class="form-group">
+                                                        <label>Username</label>
+                                                        <input type="text" class="form-control" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-4 pr-1">
+                                                    <div class="form-group">
+                                                        <label>Password</label>
+                                                        <input type="text" class="form-control" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 pr-1">
+                                                    <div class="form-group">
+                                                        <div class="form-check">
+                                                            <label>Level</label>
                                                         </div>
-                                                    </td>
-                                                    <td>Monkey</td>
-                                                    <td>9 Agustus 17.43</td>
-                                                    <td style="display:table-cell;">
-                                                        <a class="control-icon alert-info" href="{{ url('/super-admin/user/detail') }}">
-                                                            <i class="nc-icon nc-paper-2"></i>
-                                                            More
-                                                        </a>
-                                                        <a class="control-icon alert-success" href="{{ url('/super-admin/user/tambah') }}">
-                                                            <i class="nc-icon nc-settings-tool-66"></i>
-                                                            Edit
-                                                        </a>
-                                                        <a class="control-icon alert-danger" data-toggle="modal" data-target="#myModal2" href="#pablo">
-                                                            <i class="nc-icon nc-simple-remove"></i>
-                                                            Delete
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
+                                                        <div class="form-check form-check-radio">
+                                                            <label class="form-check-label">
+                                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios1" value="option1">
+                                                                <span class="form-check-sign"></span>
+                                                                Admin 1
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check form-check-radio">
+                                                            <label class="form-check-label">
+                                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios2" value="option2">
+                                                                <span class="form-check-sign"></span>
+                                                                Admin 2
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 pr-1">
+                                                    <div class="form-group">
+                                                        <label>Terakhir Login</label>
+                                                        <input type="datetime-local" class="form-control" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 pr-1">
+                                                    <div class="form-group">
+                                                        <div class="form-check">
+                                                            <label>Status</label>
+                                                        </div>
+                                                        <div class="form-check form-check-radio">
+                                                            <label class="form-check-label">
+                                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios1" value="option1">
+                                                                <span class="form-check-sign"></span>
+                                                                Active
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check form-check-radio">
+                                                            <label class="form-check-label">
+                                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios2" value="option2">
+                                                                <span class="form-check-sign"></span>
+                                                                non-active
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-info btn-fill ml-3 btn-tambah">Simpan</button>
+                                        <div class="clearfix"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -250,7 +305,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!--  End Confirmation -->
             </div>
             <!-- End Content -->
@@ -304,8 +358,7 @@
     $(document).ready(function() {
         $('table').DataTable({
             "autoWidth": false,
-            "info": false,
-            "lengthMenu": [5]
+            "info": false
         });
     });
 </script>

@@ -22,7 +22,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
 
-    <title>Super Admin | Data Kecamatan</title>
+    <title>Super Admin | Data Kabupaten/Kota</title>
     
     <!--     Fonts and icons     -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200"/>
@@ -54,51 +54,51 @@
                             <p>Dashboard</p>
                         </a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{ url('/super-admin/data-kecamatan') }}">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/super-admin/data-provinsi') }}">
                             <i class="nc-icon nc-square-pin"></i>
-                            <p>Data Kecamatan</p>
+                            <p>Data Provinsi</p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/super-admin/data-ruas-jalan') }}">
-                            <i class="nc-icon nc-preferences-circle-rotate"></i>
-                            <p>Data Ruas Jalan</p>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ url('/super-admin/data-kabupaten-kota') }}">
+                            <i class="nc-icon nc-pin-3"></i>
+                            <p>Kabupaten/Kota</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/super-admin/data-kondisi-jalan') }}">
-                            <i class="nc-icon nc-notes"></i>
+                            <i class="nc-icon nc-simple-delete"></i>
                             <p>Sikalan</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/super-admin/data-kondisi-jembatan') }}">
-                            <i class="nc-icon nc-tap-01"></i>
+                            <i class="nc-icon nc-vector"></i>
                             <p>Sikombatan</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/super-admin/artikel') }}">
-                            <i class="nc-icon nc-album-2"></i>
+                            <i class="nc-icon nc-paper-2"></i>
                             <p>Artikel</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/super-admin/galeri') }}">
-                            <i class="nc-icon nc-bell-55"></i>
+                            <i class="nc-icon nc-album-2"></i>
                             <p>Galeri</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/super-admin/profil') }}">
-                            <i class="nc-icon nc-bell-55"></i>
+                            <i class="nc-icon nc-badge"></i>
                             <p>Profil</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/super-admin/user') }}">
-                            <i class="nc-icon nc-bell-55"></i>
+                            <i class="nc-icon nc-circle-09"></i>
                             <p>User</p>
                         </a>
                     </li>
@@ -110,7 +110,7 @@
             <!-- Navbar -->
             <nav class="navbar navbar-expand-lg navbar-sticky" color-on-scroll="500">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="paket.php"> Data Kecamatan </a>
+                    <a class="navbar-brand" href="paket.php"> Data Kabupaten / Kota </a>
                     <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar burger-lines"></span>
                         <span class="navbar-toggler-bar burger-lines"></span>
@@ -136,23 +136,26 @@
                         <div class="col-md-12">
                             <div class="card striped-tabled-with-hover">
                                 <div class="card-header ">
-                                    <h4 class="card-title">Kecamatan</h4>
+                                    <h4 class="card-title">Kabupaten / Kota</h4>
+                                </div>
+                                <div class="btn-box">
+                                    <a href="{{ url('/super-admin/data-kabupaten-kota/tambah') }}" type="submit" class="btn btn-info btn-fill btn-tambah">Tambah Data</a>
                                 </div>
                                 <div class="card-body table-responsive">
                                     <table class="table table-hover table-striped">
                                         <thead>
-                                            <th>Nama Kecamatan</th>
-                                            <th class="w-25">Kontrol</th>
+                                            <th class="w-50">Nama Kabupaten / Kota</th>
+                                            <th>Kontrol</th>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>Mantan</td>
+                                                <td>Mataram</td>
                                                 <td style="display:table-cell;">
-                                                    <a class="control-icon alert-info"  data-toggle="modal" data-target="#myModal1" href="#pablo">
+                                                    <a class="control-icon alert-info" href="{{ url('/super-admin/data-kabupaten-kota/detail') }}">
                                                         <i class="nc-icon nc-paper-2"></i>
                                                         More
                                                     </a>
-                                                    <a href="#" class="control-icon alert-success">
+                                                    <a class="control-icon alert-success" href="{{ url('/super-admin/data-kabupaten-kota/tambah') }}">
                                                         <i class="nc-icon nc-settings-tool-66"></i>
                                                         Edit
                                                     </a>
@@ -218,6 +221,7 @@
                     </div>
                 </div>
                 <!--  End Detail -->
+                
                 <!-- Mini Confirmation -->
                 <div class="modal fade modal-mini modal-primary" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog">

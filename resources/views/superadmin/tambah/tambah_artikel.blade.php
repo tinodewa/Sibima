@@ -139,48 +139,147 @@
                                 <div class="card-header ">
                                     <h4 class="card-title">Artikel</h4>
                                 </div>
-                                <div class="btn-box">
-                                    <a href="{{ url('/super-admin/artikel/tambah') }}" type="submit" class="btn btn-info btn-fill btn-tambah">Tambah Data</a>
-                                </div>
-                                <div class="card-body table-responsive">
-                                    <table class="table table-hover table-striped">
-                                        <thead>
-                                            <th class="w-25">Foto Thumbnail</th>
-                                            <th>Kategori</th>
-                                            <th>Judul</th>
-                                            <th>Kontrol</th>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div class="img-box">
-                                                            <img src="" alt="bromo" class="img-fluid">
+                                <div class="card-body">
+                                    <div class="paket">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-4 pr-1">
+                                                    <div class="form-group">
+                                                        <label>Foto Thumbnail</label>
+                                                        <input type="file" data-upload="" accept="image/*" class="" name="image">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 pr-1">
+                                                    <div class="form-group">
+                                                        <div class="form-check">
+                                                            <label>Kategori</label>
                                                         </div>
-                                                    </td>
-                                                    <td>Umum</td>
-                                                    <td>Kenangan yang pernah ada</td>
-                                                    <td style="display:table-cell;">
-                                                        <a class="control-icon alert-info" href="{{ url('/super-admin/artikel/detail') }}">
-                                                            <i class="nc-icon nc-paper-2"></i>
-                                                            More
-                                                        </a>
-                                                        <a class="control-icon alert-success" href="{{ url('/super-admin/artikel/tambah') }}">
-                                                            <i class="nc-icon nc-settings-tool-66"></i>
-                                                            Edit
-                                                        </a>
-                                                        <a class="control-icon alert-danger" data-toggle="modal" data-target="#myModal2" href="#pablo">
-                                                            <i class="nc-icon nc-simple-remove"></i>
-                                                            Delete
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
+                                                        <div class="form-check form-check-radio">
+                                                            <label class="form-check-label">
+                                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios1" value="option1">
+                                                                <span class="form-check-sign"></span>
+                                                                Umum
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check form-check-radio">
+                                                            <label class="form-check-label">
+                                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios2" value="option2">
+                                                                <span class="form-check-sign"></span>
+                                                                Pembangunan
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 pr-1">
+                                                    <div class="form-group">
+                                                        <label>Judul</label>
+                                                        <input type="text" class="form-control" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row d-none">
+                                                <div class="col-md-4 pr-1">
+                                                    <div class="form-group">
+                                                        <label>User Post</label>
+                                                        <input type="text" class="form-control" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row d-none">
+                                                <div class="col-md-4 pr-1">
+                                                    <div class="form-group">
+                                                        <label>Tanggal Post</label>
+                                                        <input type="text" class="form-control" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 pr-1">
+                                                    <div class="form-group">
+                                                        <label>Konten</label>
+                                                        <input type="text" class="form-control" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 pr-1">
+                                                    <div class="form-group">
+                                                        <label>Nama Reporter</label>
+                                                        <input type="text" class="form-control" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 pr-1">
+                                                    <div class="form-group">
+                                                        <label>Nama Editor</label>
+                                                        <input type="text" class="form-control" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-info btn-fill ml-3 btn-tambah">Simpan</button>
+                                        <div class="clearfix"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Mini Detail -->
+                <div class="modal fade modal-mini modal-primary" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog custom-modal">
+                        <div class="modal-content">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card strpied-tabled-with-hover">
+                                        <div class="card-header ">
+                                            <h4 class="card-title">Paket Bromo</h4>
+                                        </div>
+                                        <div class="card-body table-responsive">
+                                            <table class="table table-hover table-striped">
+                                                <thead>
+                                                    <th>Paket</th>
+                                                    <th>Tipe</th>
+                                                    <th>Foto</th>
+                                                    <th>Harga</th>
+                                                    <th class="w-250">Overview</th>
+                                                    <th>Jumlah Grup</th>
+                                                    <th>Lokasi</th>
+                                                    <th>Jam</th>
+                                                    <th>Hari</th>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Bromo</td>
+                                                        <td>Family Trip</td>
+                                                        <td>
+                                                            <div class="img-box">
+                                                                <img src="assets/img/bromo1.jpg" alt="bromo" class="img-fluid">
+                                                            </div>
+                                                        </td>
+                                                        <td>Dewasa : <br> Rp 550.000 <br> Anak : <br> Rp 350.000</td>
+                                                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos odio reprehenderit earum quam aliquid soluta facilis beatae enim similique impedit. Soluta, iusto deleniti nostrum porro debitis temporibus molestiae voluptatem dolores.</td>
+                                                        <td>5 orang</td>
+                                                        <td>Bromo Tengger <br> Semeru National Park</td>
+                                                        <td>2</td>
+                                                        <td>3 Hari <br> 2 Malam</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  End Detail -->
 
                 <!-- Mini Confirmation -->
                 <div class="modal fade modal-mini modal-primary" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -198,7 +297,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!--  End Confirmation -->
             </div>
             <!-- End Content -->
@@ -252,8 +350,7 @@
     $(document).ready(function() {
         $('table').DataTable({
             "autoWidth": false,
-            "info": false,
-            "lengthMenu": [5]
+            "info": false
         });
     });
 </script>

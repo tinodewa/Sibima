@@ -22,7 +22,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
 
-    <title>Super Admin | Data Ruas Jalan</title>
+    <title>Super Admin | Artikel</title>
     
     <!--     Fonts and icons     -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200"/>
@@ -55,50 +55,50 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/super-admin/data-kecamatan') }}">
+                        <a class="nav-link" href="{{ url('/super-admin/data-provinsi') }}">
                             <i class="nc-icon nc-square-pin"></i>
-                            <p>Data Kecamatan</p>
+                            <p>Data Provinsi</p>
                         </a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{ url('/super-admin/data-ruas-jalan') }}">
-                            <i class="nc-icon nc-preferences-circle-rotate"></i>
-                            <p>Data Ruas Jalan</p>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/super-admin/data-kabupaten-kota') }}">
+                            <i class="nc-icon nc-pin-3"></i>
+                            <p>Kabupaten/Kota</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/super-admin/data-kondisi-jalan') }}">
-                            <i class="nc-icon nc-notes"></i>
+                            <i class="nc-icon nc-simple-delete"></i>
                             <p>Sikalan</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/super-admin/data-kondisi-jembatan') }}">
-                            <i class="nc-icon nc-tap-01"></i>
+                            <i class="nc-icon nc-vector"></i>
                             <p>Sikombatan</p>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="{{ url('/super-admin/artikel') }}">
-                            <i class="nc-icon nc-album-2"></i>
+                            <i class="nc-icon nc-paper-2"></i>
                             <p>Artikel</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/super-admin/galeri') }}">
-                            <i class="nc-icon nc-bell-55"></i>
+                            <i class="nc-icon nc-album-2"></i>
                             <p>Galeri</p>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item ">
                         <a class="nav-link" href="{{ url('/super-admin/profil') }}">
-                            <i class="nc-icon nc-bell-55"></i>
+                            <i class="nc-icon nc-badge"></i>
                             <p>Profil</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/super-admin/user') }}">
-                            <i class="nc-icon nc-bell-55"></i>
+                            <i class="nc-icon nc-circle-09"></i>
                             <p>User</p>
                         </a>
                     </li>
@@ -107,10 +107,11 @@
         </div>
 
         <div class="main-panel">
+
             <!-- Navbar -->
             <nav class="navbar navbar-expand-lg navbar-sticky" color-on-scroll="500">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="paket.php"> Data Ruas Jalan </a>
+                    <a class="navbar-brand" href="paket.php">Detail Artikel </a>
                     <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar burger-lines"></span>
                         <span class="navbar-toggler-bar burger-lines"></span>
@@ -136,93 +137,87 @@
                         <div class="col-md-12">
                             <div class="card striped-tabled-with-hover">
                                 <div class="card-header ">
-                                    <h4 class="card-title">Ruas Jalan</h4>
+                                    <h4 class="card-title">Artikel</h4>
                                 </div>
-                                <div class="card-body table-responsive">
-                                    <table class="table table-hover table-striped">
-                                        <thead>
-                                            <th>Nomor Jalan</th>
-                                            <th>Nama Jalan</th>
-                                            <th>Kecamatan</th>
-                                            <th class="w-25">Kontrol</th>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Jl. Kenangan</td>
-                                                    <td>Mantan</td>
-                                                    <td style="display:table-cell;">
-                                                        <a class="control-icon alert-info"  data-toggle="modal" data-target="#myModal1" href="#pablo">
-                                                            <i class="nc-icon nc-paper-2"></i>
-                                                            More
-                                                        </a>
-                                                        <a href="#" class="control-icon alert-success">
-                                                            <i class="nc-icon nc-settings-tool-66"></i>
-                                                            Edit
-                                                        </a>
-                                                        <a class="control-icon alert-danger" data-toggle="modal" data-target="#myModal2" href="#pablo">
-                                                            <i class="nc-icon nc-simple-remove"></i>
-                                                            Delete
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mini Detail -->
-                <div class="modal fade modal-mini modal-primary" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog custom-modal">
-                        <div class="modal-content">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="card strpied-tabled-with-hover">
-                                        <div class="card-header ">
-                                            <h4 class="card-title">Paket Bromo</h4>
+                                <div class="card-body">
+                                    <div class="paket">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-4 pr-1">
+                                                    <div class="form-group">
+                                                        <label>Foto Thumbnail</label>
+                                                        <span class="colon">:</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                <img src="#" alt="img">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 pr-1">
+                                                    <div class="form-group">
+                                                        <label>Kategori</label>
+                                                        <span class="colon">:</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <p>Umum</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 pr-1">
+                                                    <div class="form-group">
+                                                        <label>Judul</label>
+                                                        <span class="colon">:</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <p>Pengen Siaran</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 pr-1">
+                                                    <div class="form-group">
+                                                        <label>Konten</label>
+                                                        <span class="colon">:</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <p>Pengen pengen, pengen pengen</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 pr-1">
+                                                    <div class="form-group">
+                                                        <label>Nama Reporter</label>
+                                                        <span class="colon">:</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <p>El Admin</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 pr-1">
+                                                    <div class="form-group">
+                                                        <label>Nama Editor</label>
+                                                        <span class="colon">:</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <p>El Editor</p>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="card-body table-responsive">
-                                            <table class="table table-hover table-striped">
-                                                <thead>
-                                                    <th>Paket</th>
-                                                    <th>Tipe</th>
-                                                    <th>Foto</th>
-                                                    <th>Harga</th>
-                                                    <th class="w-250">Overview</th>
-                                                    <th>Jumlah Grup</th>
-                                                    <th>Lokasi</th>
-                                                    <th>Jam</th>
-                                                    <th>Hari</th>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Bromo</td>
-                                                        <td>Family Trip</td>
-                                                        <td>
-                                                            <div class="img-box">
-                                                                <img src="assets/img/bromo1.jpg" alt="bromo" class="img-fluid">
-                                                            </div>
-                                                        </td>
-                                                        <td>Dewasa : <br> Rp 550.000 <br> Anak : <br> Rp 350.000</td>
-                                                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos odio reprehenderit earum quam aliquid soluta facilis beatae enim similique impedit. Soluta, iusto deleniti nostrum porro debitis temporibus molestiae voluptatem dolores.</td>
-                                                        <td>5 orang</td>
-                                                        <td>Bromo Tengger <br> Semeru National Park</td>
-                                                        <td>2</td>
-                                                        <td>3 Hari <br> 2 Malam</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
+                                        <button type="submit" class="btn btn-info btn-fill ml-3 btn-tambah">Simpan</button>
+                                        <div class="clearfix"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--  End Detail -->
+
                 <!-- Mini Confirmation -->
                 <div class="modal fade modal-mini modal-primary" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog">

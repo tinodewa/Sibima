@@ -22,7 +22,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
 
-    <title>Super Admin | Profil</title>
+    <title>Super Admin | Galeri</title>
     
     <!--     Fonts and icons     -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200"/>
@@ -84,13 +84,13 @@
                             <p>Artikel</p>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="{{ url('/super-admin/galeri') }}">
                             <i class="nc-icon nc-album-2"></i>
                             <p>Galeri</p>
                         </a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ url('/super-admin/profil') }}">
                             <i class="nc-icon nc-badge"></i>
                             <p>Profil</p>
@@ -111,7 +111,7 @@
             <!-- Navbar -->
             <nav class="navbar navbar-expand-lg navbar-sticky" color-on-scroll="500">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="paket.php"> Profil </a>
+                    <a class="navbar-brand" href="paket.php">Detail Galeri </a>
                     <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar burger-lines"></span>
                         <span class="navbar-toggler-bar burger-lines"></span>
@@ -137,43 +137,37 @@
                         <div class="col-md-12">
                             <div class="card striped-tabled-with-hover">
                                 <div class="card-header ">
-                                    <h4 class="card-title">Profil</h4>
+                                    <h4 class="card-title">Galeri</h4>
                                 </div>
-                                <div class="btn-box">
-                                    <a href="{{ url('/super-admin/profil/tambah') }}" type="submit" class="btn btn-info btn-fill btn-tambah">Tambah Data</a>
-                                </div>
-                                <div class="card-body table-responsive">
-                                    <table class="table table-hover table-striped">
-                                        <thead>
-                                            <th class="w-25">Foto</th>
-                                            <th>Konten</th>
-                                            <th>Kontrol</th>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div class="img-box">
-                                                            <img src="" alt="bromo" class="img-fluid">
-                                                        </div>
-                                                    </td>
-                                                    <td>Kenangan yang pernah ada</td>
-                                                    <td style="display:table-cell;">
-                                                        <a class="control-icon alert-info"  href="{{ url('/super-admin/profil/detail') }}">
-                                                            <i class="nc-icon nc-paper-2"></i>
-                                                            More
-                                                        </a>
-                                                        <a class="control-icon alert-success" href="{{ url('/super-admin/profil/tambah') }}">
-                                                            <i class="nc-icon nc-settings-tool-66"></i>
-                                                            Edit
-                                                        </a>
-                                                        <a class="control-icon alert-danger" data-toggle="modal" data-target="#myModal2" href="#pablo">
-                                                            <i class="nc-icon nc-simple-remove"></i>
-                                                            Delete
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
+                                <div class="card-body">
+                                    <div class="paket">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-4 pr-1">
+                                                    <div class="form-group">
+                                                        <label>Foto</label>
+                                                        <span class="colon">:</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                <img src="#" alt="img">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 pr-1">
+                                                    <div class="form-group">
+                                                        <label>Caption</label>
+                                                        <span class="colon">:</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <p>Pengen pengen, pengen pengen</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-info btn-fill ml-3 btn-tambah">Simpan</button>
+                                        <div class="clearfix"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -196,7 +190,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!--  End Confirmation -->
             </div>
             <!-- End Content -->
@@ -250,8 +243,7 @@
     $(document).ready(function() {
         $('table').DataTable({
             "autoWidth": false,
-            "info": false,
-            "lengthMenu": [5]
+            "info": false
         });
     });
 </script>

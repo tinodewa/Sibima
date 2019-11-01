@@ -22,7 +22,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
 
-    <title>Super Admin | Profil</title>
+    <title>Super Admin | Data Provinsi</title>
     
     <!--     Fonts and icons     -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200"/>
@@ -54,7 +54,7 @@
                             <p>Dashboard</p>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="{{ url('/super-admin/data-provinsi') }}">
                             <i class="nc-icon nc-square-pin"></i>
                             <p>Data Provinsi</p>
@@ -90,7 +90,7 @@
                             <p>Galeri</p>
                         </a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ url('/super-admin/profil') }}">
                             <i class="nc-icon nc-badge"></i>
                             <p>Profil</p>
@@ -107,11 +107,10 @@
         </div>
 
         <div class="main-panel">
-
             <!-- Navbar -->
             <nav class="navbar navbar-expand-lg navbar-sticky" color-on-scroll="500">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="paket.php"> Profil </a>
+                    <a class="navbar-brand" href="paket.php"> Data Provinsi </a>
                     <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar burger-lines"></span>
                         <span class="navbar-toggler-bar burger-lines"></span>
@@ -137,41 +136,34 @@
                         <div class="col-md-12">
                             <div class="card striped-tabled-with-hover">
                                 <div class="card-header ">
-                                    <h4 class="card-title">Profil</h4>
+                                    <h4 class="card-title">Provinsi</h4>
                                 </div>
                                 <div class="btn-box">
-                                    <a href="{{ url('/super-admin/profil/tambah') }}" type="submit" class="btn btn-info btn-fill btn-tambah">Tambah Data</a>
+                                    <a href="{{ url('/super-admin/data-provinsi/tambah') }}" type="submit" class="btn btn-info btn-fill btn-tambah">Tambah Data</a>
                                 </div>
                                 <div class="card-body table-responsive">
                                     <table class="table table-hover table-striped">
                                         <thead>
-                                            <th class="w-25">Foto</th>
-                                            <th>Konten</th>
+                                            <th class="w-50">Nama Provinsi</th>
                                             <th>Kontrol</th>
                                         </thead>
                                         <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div class="img-box">
-                                                            <img src="" alt="bromo" class="img-fluid">
-                                                        </div>
-                                                    </td>
-                                                    <td>Kenangan yang pernah ada</td>
-                                                    <td style="display:table-cell;">
-                                                        <a class="control-icon alert-info"  href="{{ url('/super-admin/profil/detail') }}">
-                                                            <i class="nc-icon nc-paper-2"></i>
-                                                            More
-                                                        </a>
-                                                        <a class="control-icon alert-success" href="{{ url('/super-admin/profil/tambah') }}">
-                                                            <i class="nc-icon nc-settings-tool-66"></i>
-                                                            Edit
-                                                        </a>
-                                                        <a class="control-icon alert-danger" data-toggle="modal" data-target="#myModal2" href="#pablo">
-                                                            <i class="nc-icon nc-simple-remove"></i>
-                                                            Delete
-                                                        </a>
-                                                    </td>
-                                                </tr>
+                                            <tr>
+                                                <td>Kalimantan Timur</td>
+                                                <td style="display:table-cell;">
+                                                    <a class="control-icon alert-info" href="{{ url('/super-admin/data-provinsi/detail') }}">
+                                                        <i class="nc-icon nc-paper-2"></i>
+                                                        More
+                                                    </a>
+                                                    <a class="control-icon alert-success" href="{{ url('/super-admin/data-provinsi/tambah') }}">
+                                                        <i class="nc-icon nc-settings-tool-66"></i>
+                                                        Edit
+                                                    </a>
+                                                    <a class="control-icon alert-danger" data-toggle="modal" data-target="#myModal2" href="#pablo">                                                            <i class="nc-icon nc-simple-remove"></i>
+                                                        Delete
+                                                    </a>
+                                                </td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -179,7 +171,7 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <!-- Mini Confirmation -->
                 <div class="modal fade modal-mini modal-primary" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -196,7 +188,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!--  End Confirmation -->
             </div>
             <!-- End Content -->
@@ -250,8 +241,7 @@
     $(document).ready(function() {
         $('table').DataTable({
             "autoWidth": false,
-            "info": false,
-            "lengthMenu": [5]
+            "info": false
         });
     });
 </script>
