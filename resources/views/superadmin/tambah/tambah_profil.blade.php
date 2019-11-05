@@ -35,6 +35,10 @@
     <link rel="stylesheet" href="{{asset('assets/superadmin/css/light-bootstrap-dashboard.css?v=2.0.0')}}"/>
     <link rel="stylesheet" href="{{asset('assets/superadmin/datatables/css/jquery.dataTables.min.css')}}">    
     <link rel="stylesheet" href="{{asset('assets/superadmin/css/custom.css')}}">
+
+    <!--    script  -->
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>tinymce.init({selector:'textarea'});</script>
 </head>
 
 <body>
@@ -151,15 +155,18 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-md-4 pr-1">
+                                                <div class="col-md-12 pr-1">
                                                     <div class="form-group">
                                                         <label>Konten</label>
-                                                        <input type="text" class="form-control" placeholder="">
+                                                        <textarea class="form-control" rows="4" cols="50">
+                                                        </textarea>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-info btn-fill ml-3 btn-tambah">Simpan</button>
+                                        <a class="ml-3 control-icon btn-fill btn-info" data-toggle="modal" data-target="#myModal2" href="#">
+                                            Simpan
+                                        </a>
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
@@ -168,56 +175,6 @@
                     </div>
                 </div>
 
-                <!-- Mini Detail -->
-                <div class="modal fade modal-mini modal-primary" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog custom-modal">
-                        <div class="modal-content">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="card strpied-tabled-with-hover">
-                                        <div class="card-header ">
-                                            <h4 class="card-title">Paket Bromo</h4>
-                                        </div>
-                                        <div class="card-body table-responsive">
-                                            <table class="table table-hover table-striped">
-                                                <thead>
-                                                    <th>Paket</th>
-                                                    <th>Tipe</th>
-                                                    <th>Foto</th>
-                                                    <th>Harga</th>
-                                                    <th class="w-250">Overview</th>
-                                                    <th>Jumlah Grup</th>
-                                                    <th>Lokasi</th>
-                                                    <th>Jam</th>
-                                                    <th>Hari</th>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Bromo</td>
-                                                        <td>Family Trip</td>
-                                                        <td>
-                                                            <div class="img-box">
-                                                                <img src="assets/img/bromo1.jpg" alt="bromo" class="img-fluid">
-                                                            </div>
-                                                        </td>
-                                                        <td>Dewasa : <br> Rp 550.000 <br> Anak : <br> Rp 350.000</td>
-                                                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos odio reprehenderit earum quam aliquid soluta facilis beatae enim similique impedit. Soluta, iusto deleniti nostrum porro debitis temporibus molestiae voluptatem dolores.</td>
-                                                        <td>5 orang</td>
-                                                        <td>Bromo Tengger <br> Semeru National Park</td>
-                                                        <td>2</td>
-                                                        <td>3 Hari <br> 2 Malam</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--  End Detail -->
-
                 <!-- Mini Confirmation -->
                 <div class="modal fade modal-mini modal-primary" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -225,16 +182,17 @@
                             <div class="modal-header justify-content-center">
                             </div>
                             <div class="modal-body text-center">
-                                <p>Yakin hapus paket ini?</p>
+                                <p>Apakah anda sudah yakin?</p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-link btn-simple">Hapus</button>
+                                <a class="btn control-icon btn-fill btn-info" href="{{ url('/super-admin/profil') }}">Ya</a>
                                 <button type="button" class="btn btn-link btn-simple" data-dismiss="modal">Batal</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!--  End Confirmation -->
+
             </div>
             <!-- End Content -->
 

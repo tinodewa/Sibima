@@ -99,7 +99,7 @@ Route::get('/super-admin/data-provinsi/tambah', function () {
 });
 
 Route::get('/super-admin/data-kabupaten-kota/tambah', function () {
-    return view('superadmin//tambah/tambah_data_kabupaten_kota');
+    return view('superadmin/tambah/tambah_data_kabupaten_kota');
 });
 
 Route::get('/super-admin/data-kondisi-jalan/tambah', function () {
@@ -127,18 +127,6 @@ Route::get('/super-admin/user/tambah', function () {
 });
 
 // -- Detail Data --
-Route::get('/super-admin/dashboard/detail', function () {
-    return view('superadmin/detail/dashboard');
-});
-
-Route::get('/super-admin/data-provinsi/detail', function () {
-    return view('superadmin/detail/detail_data_provinsi');
-});
-
-Route::get('/super-admin/data-kabupaten-kota/detail', function () {
-    return view('superadmin//detail/detail_data_kabupaten_kota');
-});
-
 Route::get('/super-admin/data-kondisi-jalan/detail', function () {
     return view('superadmin/detail/detail_data_kondisi_jalan');
 });
@@ -149,14 +137,6 @@ Route::get('/super-admin/data-kondisi-jembatan/detail', function () {
 
 Route::get('/super-admin/artikel/detail', function () {
     return view('superadmin/detail/detail_artikel');
-});
-
-Route::get('/super-admin/galeri/detail', function () {
-    return view('superadmin/detail/detail_galeri');
-});
-
-Route::get('/super-admin/profil/detail', function () {
-    return view('superadmin/detail/detail_profil');
 });
 
 Route::get('/super-admin/user/detail', function () {

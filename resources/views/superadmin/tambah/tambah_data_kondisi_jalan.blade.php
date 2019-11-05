@@ -161,7 +161,7 @@
                                             <div class="row">
                                                 <div class="col-md-4 pr-1">
                                                     <div class="form-group">
-                                                        <label>Nama Jalan</label>
+                                                        <label>Nama Ruas Jalan</label>
                                                         <input type="text" class="form-control" placeholder="">
                                                     </div>
                                                 </div>
@@ -188,10 +188,9 @@
                                                         <label>Fungsi</label>
                                                          <select class="form-control" id="fungsi">
                                                             <option disabled selected hidden>Choose</option>
-                                                            <option value="1">Arteri</option>
-                                                            <option value="2">Kolektor 1</option>
-                                                            <option value="3">Kolektor 2</option>
-                                                            <option value="4">Kolektor 3</option>
+                                                            <option value="1">JLP</option>
+                                                            <option value="2">JKP-4</option>
+                                                            <option value="3">Jling-P</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -211,7 +210,7 @@
                                                         </div>
                                                         <div class="form-check form-check-radio">
                                                             <label class="form-check-label">
-                                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios2" value="option2" checked>
+                                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios2" value="option2">
                                                                 <span class="form-check-sign"></span>
                                                                 Non Strategis
                                                             </label>
@@ -289,10 +288,10 @@
                                                                         <label>Kabupaten / Kota</label>
                                                                         <select class="form-control" id="fungsi">
                                                                             <option disabled selected hidden>Choose</option>
-                                                                            <option value="1">Malang</option>
-                                                                            <option value="2">Surabaya</option>
-                                                                            <option value="3">Yogyakarta</option>
-                                                                            <option value="4">Jakarta</option>
+                                                                            <option value="1">Kutai Timur</option>
+                                                                            <option value="2">Kutai Utara</option>
+                                                                            <option value="3">Kutai Barat</option>
+                                                                            <option value="4">Kutai Selatan</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -424,7 +423,15 @@
                                                                 <div class="col-md-4 pr-1">
                                                                     <div class="form-group">
                                                                         <label>Mantap (Baik + Sedang)</label>
-                                                                        <input type="text" class="form-control" placeholder="">
+                                                                        <input type="text" class="form-control" placeholder="" disabled>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-4 pr-1">
+                                                                    <div class="form-group">
+                                                                        <label>Tidak Mantap (Rusak Baik + Rusak Sedang)</label>
+                                                                        <input type="text" class="form-control" placeholder="" disabled>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -504,7 +511,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-4 pl-5">
                                                                     <div class="form-group">
-                                                                        <label>Tanah / Krikil (%)</label>
+                                                                        <label>Tanah / Krikil (m)</label>
                                                                         <input type="text" class="form-control" placeholder="">
                                                                     </div>
                                                                 </div>
@@ -512,7 +519,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-4 pl-5">
                                                                     <div class="form-group">
-                                                                        <label>Penetrasi Macadam (%)</label>
+                                                                        <label>Penetrasi Macadam / Telford (m)</label>
                                                                         <input type="text" class="form-control" placeholder="">
                                                                     </div>
                                                                 </div>
@@ -520,7 +527,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-4 pl-5">
                                                                     <div class="form-group">
-                                                                        <label>Ashpalt (%)</label>
+                                                                        <label>Ashpalt (m)</label>
                                                                         <input type="text" class="form-control" placeholder="">
                                                                     </div>
                                                                 </div>
@@ -528,7 +535,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-4 pl-5">
                                                                     <div class="form-group">
-                                                                        <label>Rigid / Beton (%)</label>
+                                                                        <label>Rigid / Beton (m)</label>
                                                                         <input type="text" class="form-control" placeholder="">
                                                                     </div>
                                                                 </div>
@@ -612,7 +619,21 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-info btn-fill ml-3 btn-tambah">Simpan</button>
+                                        <div class="row">
+                                            <div class="col-md-12 ml-3">
+                                                <div class="form-group">
+                                                    <label>Ditolak</label>
+                                                    <label class="switch">
+                                                        <input type="checkbox">
+                                                        <span class="slider round"></span>
+                                                    </label>
+                                                    <label>Diterima</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="ml-3 control-icon btn-fill btn-info" data-toggle="modal" data-target="#myModal2" href="#">
+                                            Simpan
+                                        </a>
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
@@ -621,56 +642,6 @@
                     </div>
                 </div>
 
-                <!-- Mini Detail -->
-                <div class="modal fade modal-mini modal-primary" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog custom-modal">
-                        <div class="modal-content">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="card strpied-tabled-with-hover">
-                                        <div class="card-header ">
-                                            <h4 class="card-title">Paket Bromo</h4>
-                                        </div>
-                                        <div class="card-body table-responsive">
-                                            <table class="table table-hover table-striped">
-                                                <thead>
-                                                    <th>Paket</th>
-                                                    <th>Tipe</th>
-                                                    <th>Foto</th>
-                                                    <th>Harga</th>
-                                                    <th class="w-250">Overview</th>
-                                                    <th>Jumlah Grup</th>
-                                                    <th>Lokasi</th>
-                                                    <th>Jam</th>
-                                                    <th>Hari</th>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Bromo</td>
-                                                        <td>Family Trip</td>
-                                                        <td>
-                                                            <div class="img-box">
-                                                                <img src="assets/img/bromo1.jpg" alt="bromo" class="img-fluid">
-                                                            </div>
-                                                        </td>
-                                                        <td>Dewasa : <br> Rp 550.000 <br> Anak : <br> Rp 350.000</td>
-                                                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos odio reprehenderit earum quam aliquid soluta facilis beatae enim similique impedit. Soluta, iusto deleniti nostrum porro debitis temporibus molestiae voluptatem dolores.</td>
-                                                        <td>5 orang</td>
-                                                        <td>Bromo Tengger <br> Semeru National Park</td>
-                                                        <td>2</td>
-                                                        <td>3 Hari <br> 2 Malam</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--  End Detail -->
-
                 <!-- Mini Confirmation -->
                 <div class="modal fade modal-mini modal-primary" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -678,16 +649,17 @@
                             <div class="modal-header justify-content-center">
                             </div>
                             <div class="modal-body text-center">
-                                <p>Yakin hapus paket ini?</p>
+                                <p>Apakah anda sudah yakin?</p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-link btn-simple">Hapus</button>
+                                <a class="btn control-icon btn-fill btn-info" href="{{ url('/super-admin/data-kondisi-jalan') }}">Ya</a>
                                 <button type="button" class="btn btn-link btn-simple" data-dismiss="modal">Batal</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!--  End Confirmation -->
+
             </div>
             <!-- End Content -->
 

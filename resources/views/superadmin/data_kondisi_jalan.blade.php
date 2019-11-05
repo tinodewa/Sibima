@@ -148,15 +148,13 @@
                                             <th>Kelompok Data Dasar</th>
                                             <th>Nama Ruas Jalan</th>
                                             <th>Tahun Data</th>
-                                            <th>Status</th>
                                             <th>Kontrol</th>
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                    <td>Jalan Non Tol</td>
-                                                    <td>Jl. Kenangan</td>
+                                                    <td>Non Tol</td>
+                                                    <td>Jl. Jbt Benu Muda Kiri - Jbt. Himba Lestari</td>
                                                     <td>2018</td>
-                                                    <td>Jalan Kabupaten</td>
                                                     <td style="display:table-cell;">
                                                         <a class="control-icon alert-info" href="{{ url('/super-admin/data-kondisi-jalan/detail') }}">
                                                             <i class="nc-icon nc-paper-2"></i>

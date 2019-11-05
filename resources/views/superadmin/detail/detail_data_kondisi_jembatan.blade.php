@@ -150,7 +150,18 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>0812</p>
+                                                    <p>15.01.01</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 pr-1">
+                                                    <div class="form-group">
+                                                        <label>Nomor Ruas</label>
+                                                        <span class="colon">:</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <p>Jl. Jbt Benu Muda Kiri - Jbt. Himba Lestari</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -160,10 +171,10 @@
                                                         <span class="colon">:</span>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-8">
+                                                <div class="col-md-12">
                                                     <div class="row">
-                                                        <div class="img-box col-md-12">
-                                                            <img src="" alt="img" class="form-img">
+                                                        <div class="map-box col-md-12">
+                                                            <iframe class="map-screen" src="https://www.youtube.com/watch?v=q7jG-m0MEyM"></iframe>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -175,29 +186,18 @@
                                                         <span class="colon">:</span>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-8">
+                                                <div class="col-md-12">
                                                     <div class="row">
-                                                        <div class="img-box col-md-6">
+                                                        <div class="img-box col-md-4">
                                                             <img src="" alt="img" class="form-img">
                                                         </div>
-                                                        <div class="img-box col-md-6">
+                                                        <div class="img-box col-md-4">
                                                             <img src="" alt="img" class="form-img">
                                                         </div>
-                                                        <div class="img-box col-md-6">
+                                                        <div class="img-box col-md-4">
                                                             <img src="" alt="img" class="form-img">
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-4 pr-1">
-                                                    <div class="form-group">
-                                                        <label>Kelompok Data Dasar</label>
-                                                        <span class="colon">:</span>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-8">
-                                                    <p>Non Tol</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -208,34 +208,45 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>Jl.Pahlawan Tanpa Tanda Jasa</p>
+                                                    <p>Jembatan Sei Benu Muda Kiri</p>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-4 pr-1">
                                                     <div class="form-group">
-                                                        <label>Tahun Data</label>
+                                                        <label>No Jembatan</label>
                                                         <span class="colon">:</span>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>2018</p>
+                                                    <p>1</p>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-4 pr-1">
                                                     <div class="form-group">
-                                                        <label>Status</label>
+                                                        <label>Jenis Konstruksi</label>
                                                         <span class="colon">:</span>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>Jalan Kabupaten</p>
+                                                    <p>Jembatan Rangka</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 pr-1">
+                                                    <div class="form-group">
+                                                        <label>Km-Post (m)</label>
+                                                        <span class="colon">:</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <p>0</p>
                                                 </div>
                                             </div>
                                             <div class="card striped-tabled-with-hover">
-                                                <div class="card-header bg-yellow">
-                                                    <h4 class="card-title">Kodefikasi Kelompok Data</h4>
+                                                <div class="card-header bg-yellow ">
+                                                    <h4 class="card-title">Dimensi</h4>
                                                 </div>
                                                 <div class="card-body">
                                                     <div class="paket">
@@ -243,34 +254,34 @@
                                                             <div class="row">
                                                                 <div class="col-md-4 pr-1">
                                                                     <div class="form-group">
-                                                                        <label>Kode Bidang Pekerjaan Umum</label>
+                                                                        <label>Panjang (m)(Sesuai SK)</label>
                                                                         <span class="colon">:</span>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>0987654</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-5 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Kode Data Dasar Jenis Infrastruktur</label>
-                                                                        <span class="colon">:</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-7">
-                                                                    <p>0987654</p>
+                                                                    <p>30</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col-md-4 pr-1">
                                                                     <div class="form-group">
-                                                                        <label>Kode Infrastruktur</label>
+                                                                        <label>Lebar (m)</label>
                                                                         <span class="colon">:</span>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>0987654</p>
+                                                                    <p>6</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-4 pr-1">
+                                                                    <div class="form-group">
+                                                                        <label>Jumlah Bentang</label>
+                                                                        <span class="colon">:</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    <p>1</p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -279,161 +290,7 @@
                                             </div>
                                             <div class="card striped-tabled-with-hover">
                                                 <div class="card-header bg-yellow ">
-                                                    <h4 class="card-title">Lokasi</h4>
-                                                </div>
-                                                <div class="card-body">
-                                                    <div class="paket">
-                                                    <div class="col-md-12">
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Provinsi</label>
-                                                                        <span class="colon">:</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-8">
-                                                                    <p>Kalimantan Timur</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Kabupaten / Kota</label>
-                                                                        <span class="colon">:</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-8">
-                                                                    <p>Kota Mataram</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Kecamatan</label>
-                                                                        <span class="colon">:</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-8">
-                                                                    <p>Bululawang</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Kelurahan / Desa</label>
-                                                                        <span class="colon">:</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-8">
-                                                                    <p>Plangkir</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Titik Pengenal Jembatan</label>
-                                                                        <span class="colon">:</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-8">
-                                                                    <p>Pohon Beringin</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Kode Patok</label>
-                                                                        <span class="colon">:</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-8">
-                                                                    <p>Sungai</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Nama Lintas</label>
-                                                                        <span class="colon">:</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-8">
-                                                                    <p>Lintas Timur</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card striped-tabled-with-hover">
-                                                <div class="card-header bg-yellow ">
-                                                    <h4 class="card-title">Kondisi (Dalam Km)</h4>
-                                                </div>
-                                                <div class="card-body">
-                                                <div class="paket">
-                                                        <div class="col-md-12">
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Bangunan Atas</label>
-                                                                        <span class="colon">:</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-8">
-                                                                    <p>X</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Kepala Jembatan</label>
-                                                                        <span class="colon">:</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-8">
-                                                                    <p>X</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Pilar</label>
-                                                                        <span class="colon">:</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-8">
-                                                                    <p>X</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Lantai</label>
-                                                                        <span class="colon">:</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-8">
-                                                                    <p>Y</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Pondasi</label>
-                                                                        <span class="colon">:</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-8">
-                                                                    <p>X</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card striped-tabled-with-hover">
-                                                <div class="card-header bg-yellow ">
-                                                    <h4 class="card-title">Data Teknis</h4>
+                                                    <h4 class="card-title">Tipe / Kondisi</h4>
                                                 </div>
                                                 <div class="card-body">
                                                     <div class="paket">
@@ -441,118 +298,117 @@
                                                             <div class="row">
                                                                 <div class="col-md-4 pr-1">
                                                                     <div class="form-group">
-                                                                        <label>Panjang (Km)(Sesuai SK)</label>
-                                                                        <span class="colon">:</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-8">
-                                                                    <p>21</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Lebar Perkerasan Jalan (m)</label>
-                                                                        <span class="colon">:</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-8">
-                                                                    <p>5</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Tipe Jalan</label>
-                                                                        <span class="colon">:</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-8">
-                                                                    <p>Off Road</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Tipe Lintasan</label>
-                                                                        <span class="colon">:</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-8">
-                                                                    <p>Aspal</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Tipe Bagian Jembatan :</label>
+                                                                        <label>Bangunan Atas :</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col-md-4 pl-5">
                                                                     <div class="form-group">
-                                                                        <label>Bangunan Atas</label>
+                                                                        <label>Tipe</label>
                                                                         <span class="colon">:</span>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>20%</p>
+                                                                    <p>Rangka</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col-md-4 pl-5">
                                                                     <div class="form-group">
-                                                                        <label>Kepala Jembatan</label>
+                                                                        <label>Kondisi</label>
                                                                         <span class="colon">:</span>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>Aspal</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pl-5">
-                                                                    <div class="form-group">
-                                                                        <label>Pilar</label>
-                                                                        <span class="colon">:</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-8">
-                                                                    <p>Aspal</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pl-5">
-                                                                    <div class="form-group">
-                                                                        <label>Lantai</label>
-                                                                        <span class="colon">:</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-8">
-                                                                    <p>Aspal</p>
+                                                                    <p>Baik</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col-md-4 pr-1">
                                                                     <div class="form-group">
-                                                                        <label>Pondasi</label>
+                                                                        <label>Bangunan Bawah :</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-4 pl-5">
+                                                                    <div class="form-group">
+                                                                        <label>Tipe</label>
                                                                         <span class="colon">:</span>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>Aspal</p>
+                                                                    <p>Abutmen Beton</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-4 pl-5">
+                                                                    <div class="form-group">
+                                                                        <label>Kondisi</label>
+                                                                        <span class="colon">:</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    <p>Baik</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col-md-4 pr-1">
                                                                     <div class="form-group">
-                                                                        <label>Jenis Penanganan</label>
+                                                                        <label>Fondasi :</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-4 pl-5">
+                                                                    <div class="form-group">
+                                                                        <label>Tipe</label>
                                                                         <span class="colon">:</span>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>Clear</p>
+                                                                    <p></p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-4 pl-5">
+                                                                    <div class="form-group">
+                                                                        <label>Kondisi</label>
+                                                                        <span class="colon">:</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    <p></p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-4 pr-1">
+                                                                    <div class="form-group">
+                                                                        <label>Lantai :</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-4 pl-5">
+                                                                    <div class="form-group">
+                                                                        <label>Tipe</label>
+                                                                        <span class="colon">:</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    <p>Beton</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-4 pl-5">
+                                                                    <div class="form-group">
+                                                                        <label>Kondisi</label>
+                                                                        <span class="colon">:</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    <p>Baik</p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -561,7 +417,7 @@
                                             </div>
                                             <div class="card striped-tabled-with-hover">
                                                     <div class="card-header bg-yellow ">
-                                                        <h4 class="card-title">Koordinat (Decimal Degree)</h4>
+                                                        <h4 class="card-title">Koordinat (Desimal)</h4>
                                                     </div>
                                                     <div class="card-body">
                                                         <div class="paket">
@@ -574,7 +430,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-8">
-                                                                        <p>19</p>
+                                                                        <p>117,133574223873</p>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">
@@ -585,7 +441,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-8">
-                                                                        <p>24</p>
+                                                                        <p>0,704882406477569</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -593,7 +449,28 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        <button type="submit" class="btn btn-info btn-fill ml-3 btn-tambah">Simpan</button>
+                                            <div class="row">
+                                                <div class="col-md-12 ml-3">
+                                                    <div class="form-group">
+                                                        <label>Ditolak</label>
+                                                        <label class="switch">
+                                                            <input type="checkbox">
+                                                            <span class="slider round"></span>
+                                                        </label>
+                                                        <label>Diterima</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12 ml-3">
+                                                    <div class="form-group">
+                                                        <a class="control-icon alert-success" href="{{ url('/super-admin/data-kondisi-jembatan/tambah') }}">
+                                                            <i class="nc-icon nc-settings-tool-66"></i>
+                                                            Edit
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
@@ -601,24 +478,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Mini Confirmation -->
-                <div class="modal fade modal-mini modal-primary" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header justify-content-center">
-                            </div>
-                            <div class="modal-body text-center">
-                                <p>Yakin hapus paket ini?</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-link btn-simple">Hapus</button>
-                                <button type="button" class="btn btn-link btn-simple" data-dismiss="modal">Batal</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--  End Confirmation -->
             </div>
             <!-- End Content -->
 

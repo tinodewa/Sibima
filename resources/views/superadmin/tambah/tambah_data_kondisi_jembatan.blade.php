@@ -160,8 +160,8 @@
                                             <div class="row">
                                                 <div class="col-md-4 pr-1">
                                                     <div class="form-group">
-                                                        <label>Foto Jembatan</label>
-                                                        <input type="file" class="form-control" multiple>
+                                                        <label>Nama Ruas</label>
+                                                        <input type="text" class="form-control" disabled>
                                                     </div>
                                                 </div>
                                             </div>
@@ -176,8 +176,8 @@
                                             <div class="row">
                                                 <div class="col-md-4 pr-1">
                                                     <div class="form-group">
-                                                        <label>Kelompok Data Dasar</label>
-                                                        <input type="text" class="form-control" placeholder="">
+                                                        <label>Foto Jalan</label>
+                                                        <input type="file" class="form-control" multiple>
                                                     </div>
                                                 </div>
                                             </div>
@@ -192,22 +192,30 @@
                                             <div class="row">
                                                 <div class="col-md-4 pr-1">
                                                     <div class="form-group">
-                                                        <label>Tahun Data</label>
-                                                        <input type="number" class="form-control" placeholder="">
+                                                        <label>No Jembatan</label>
+                                                        <input type="text" class="form-control" placeholder="">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-4 pr-1">
                                                     <div class="form-group">
-                                                        <label>Status</label>
+                                                        <label>Jenis Konstruksi</label>
+                                                        <input type="text" class="form-control" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 pr-1">
+                                                    <div class="form-group">
+                                                        <label>Km-Post (m)</label>
                                                         <input type="text" class="form-control" placeholder="">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="card striped-tabled-with-hover">
                                                 <div class="card-header bg-yellow">
-                                                    <h4 class="card-title">Kodefikasi Kelompok Data</h4>
+                                                    <h4 class="card-title">Dimensi</h4>
                                                 </div>
                                                 <div class="card-body">
                                                     <div class="paket">
@@ -215,7 +223,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-4 pr-1">
                                                                     <div class="form-group">
-                                                                        <label>Kode Bidang Pekerjaan Umum</label>
+                                                                        <label>Panjang (m)</label>
                                                                         <input type="text" class="form-control" placeholder="">
                                                                     </div>
                                                                 </div>
@@ -223,7 +231,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-4 pr-1">
                                                                 <div class="form-group">
-                                                                        <label>Kode Data Dasar Jenis Infrastruktur</label>
+                                                                        <label>Lebar (m)</label>
                                                                         <input type="text" class="form-control" placeholder="">
                                                                     </div>
                                                                 </div>
@@ -231,86 +239,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-4 pr-1">
                                                                     <div class="form-group">
-                                                                        <label>Kode Infrastruktur</label>
-                                                                        <input type="text" class="form-control" placeholder="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card striped-tabled-with-hover">
-                                                <div class="card-header bg-yellow ">
-                                                    <h4 class="card-title">Lokasi</h4>
-                                                </div>
-                                                <div class="card-body">
-                                                    <div class="paket">
-                                                    <div class="col-md-12">
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Provinsi</label>
-                                                                        <select class="form-control" id="fungsi">
-                                                                            <option disabled selected hidden>Choose</option>
-                                                                            <option value="1">Kalimantan Timur</option>
-                                                                            <option value="2">Kalimantan Barat</option>
-                                                                            <option value="3">Kalimantan Utara</option>
-                                                                            <option value="4">Kalimantan Selatan</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Kabupaten / Kota</label>
-                                                                        <select class="form-control" id="fungsi">
-                                                                            <option disabled selected hidden>Choose</option>
-                                                                            <option value="1">Malang</option>
-                                                                            <option value="2">Surabaya</option>
-                                                                            <option value="3">Yogyakarta</option>
-                                                                            <option value="4">Jakarta</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Kecamatan</label>
-                                                                        <input type="text" class="form-control" placeholder="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Kelurahan / Desa</label>
-                                                                        <input type="text" class="form-control" placeholder="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Titik Pengenal Jembatan</label>
-                                                                        <input type="text" class="form-control" placeholder="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Kode Patok</label>
-                                                                        <input type="text" class="form-control" placeholder="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Nama Lintas</label>
+                                                                        <label>Jumlah Bentang</label>
                                                                         <input type="text" class="form-control" placeholder="">
                                                                     </div>
                                                                 </div>
@@ -321,58 +250,7 @@
                                             </div>
                                             <div class="card striped-tabled-with-hover">
                                                 <div class="card-header bg-yellow ">
-                                                    <h4 class="card-title">Kondisi (Dalam Km)</h4>
-                                                </div>
-                                                <div class="card-body">
-                                                <div class="paket">
-                                                        <div class="col-md-12">
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Bangunan Atas</label>
-                                                                        <input type="text" class="form-control" placeholder="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Kepala Jembatan</label>
-                                                                        <input type="text" class="form-control" placeholder="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Pilar</label>
-                                                                        <input type="text" class="form-control" placeholder="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Lantai</label>
-                                                                        <input type="text" class="form-control" placeholder="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Pondasi</label>
-                                                                        <input type="text" class="form-control" placeholder="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card striped-tabled-with-hover">
-                                                <div class="card-header bg-yellow ">
-                                                    <h4 class="card-title">Data Teknis</h4>
+                                                    <h4 class="card-title">Tipe / Kondisi</h4>
                                                 </div>
                                                 <div class="card-body">
                                                     <div class="paket">
@@ -380,53 +258,14 @@
                                                             <div class="row">
                                                                 <div class="col-md-4 pr-1">
                                                                     <div class="form-group">
-                                                                        <label>Panjang (Km)(Sesuai SK)</label>
-                                                                        <input type="text" class="form-control" placeholder="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Lebar Perkerasan Jalan (m)</label>
-                                                                        <input type="text" class="form-control" placeholder="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Tipe Jalan</label>
-                                                                        <select class="form-control" id="tipe">
-                                                                            <option disabled selected hidden>Choose</option>
-                                                                            <option value="1">1</option>
-                                                                            <option value="2">2</option>
-                                                                            <option value="3">3</option>
-                                                                            <option value="4">4</option>
-                                                                            <option value="5">5</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Tipe Lintasan</label>
-                                                                        <input type="text" class="form-control" placeholder="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pr-1">
-                                                                    <div class="form-group">
-                                                                        <label>Tipe Bagian Jembatan :</label>
+                                                                        <label>Bangunan Atas :</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col-md-4 pl-5">
                                                                     <div class="form-group">
-                                                                        <label>Bangunan Atas</label>
+                                                                        <label>Tipe</label>
                                                                         <input type="text" class="form-control" placeholder="">
                                                                     </div>
                                                                 </div>
@@ -434,31 +273,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-4 pl-5">
                                                                     <div class="form-group">
-                                                                        <label>Kepala Jembatan</label>
-                                                                        <input type="text" class="form-control" placeholder="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pl-5">
-                                                                    <div class="form-group">
-                                                                        <label>Pilar</label>
-                                                                        <input type="text" class="form-control" placeholder="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pl-5">
-                                                                    <div class="form-group">
-                                                                        <label>Lantai</label>
-                                                                        <input type="text" class="form-control" placeholder="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pl-5">
-                                                                    <div class="form-group">
-                                                                        <label>Pondasi</label>
+                                                                        <label>Kondisi</label>
                                                                         <input type="text" class="form-control" placeholder="">
                                                                     </div>
                                                                 </div>
@@ -466,7 +281,22 @@
                                                             <div class="row">
                                                                 <div class="col-md-4 pr-1">
                                                                     <div class="form-group">
-                                                                        <label>tahun Penanganan Terakhir</label>
+                                                                        <label>Bangunan Bawah :</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-4 pl-5">
+                                                                    <div class="form-group">
+                                                                        <label>Tipe</label>
+                                                                        <input type="text" class="form-control" placeholder="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-4 pl-5">
+                                                                    <div class="form-group">
+                                                                        <label>Kondisi</label>
                                                                         <input type="text" class="form-control" placeholder="">
                                                                     </div>
                                                                 </div>
@@ -474,23 +304,46 @@
                                                             <div class="row">
                                                                 <div class="col-md-4 pr-1">
                                                                     <div class="form-group">
-                                                                        <div class="form-check">
-                                                                            <label>Jenis Penanganan</label>
-                                                                        </div>
-                                                                        <div class="form-check form-check-radio">
-                                                                            <label class="form-check-label">
-                                                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios1" value="option1">
-                                                                                <span class="form-check-sign"></span>
-                                                                                Peningkatan
-                                                                            </label>
-                                                                        </div>
-                                                                        <div class="form-check form-check-radio">
-                                                                            <label class="form-check-label">
-                                                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios2" value="option2">
-                                                                                <span class="form-check-sign"></span>
-                                                                                Pemeliharaan Berkala
-                                                                            </label>
-                                                                        </div>
+                                                                        <label>Fondasi :</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-4 pl-5">
+                                                                    <div class="form-group">
+                                                                        <label>Tipe</label>
+                                                                        <input type="text" class="form-control" placeholder="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-4 pl-5">
+                                                                    <div class="form-group">
+                                                                        <label>Kondisi</label>
+                                                                        <input type="text" class="form-control" placeholder="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-4 pr-1">
+                                                                    <div class="form-group">
+                                                                        <label>Lantai :</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-4 pl-5">
+                                                                    <div class="form-group">
+                                                                        <label>Tipe</label>
+                                                                        <input type="text" class="form-control" placeholder="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-4 pl-5">
+                                                                    <div class="form-group">
+                                                                        <label>Kondisi</label>
+                                                                        <input type="text" class="form-control" placeholder="">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -500,7 +353,7 @@
                                             </div>
                                             <div class="card striped-tabled-with-hover">
                                                 <div class="card-header bg-yellow ">
-                                                    <h4 class="card-title">Koordinat (Decimal Degree)</h4>
+                                                    <h4 class="card-title">Koordinat (Desimal)</h4>
                                                 </div>
                                                 <div class="card-body">
                                                     <div class="paket">
@@ -526,7 +379,21 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-info btn-fill ml-3 btn-tambah">Simpan</button>
+                                        <div class="row">
+                                            <div class="col-md-12 ml-3">
+                                                <div class="form-group">
+                                                    <label>Ditolak</label>
+                                                    <label class="switch">
+                                                        <input type="checkbox">
+                                                        <span class="slider round"></span>
+                                                    </label>
+                                                    <label>Diterima</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="ml-3 control-icon btn-fill btn-info" data-toggle="modal" data-target="#myModal2" href="#">
+                                            Simpan
+                                        </a>
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
@@ -535,56 +402,6 @@
                     </div>
                 </div>
 
-                <!-- Mini Detail -->
-                <div class="modal fade modal-mini modal-primary" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog custom-modal">
-                        <div class="modal-content">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="card strpied-tabled-with-hover">
-                                        <div class="card-header ">
-                                            <h4 class="card-title">Paket Bromo</h4>
-                                        </div>
-                                        <div class="card-body table-responsive">
-                                            <table class="table table-hover table-striped">
-                                                <thead>
-                                                    <th>Paket</th>
-                                                    <th>Tipe</th>
-                                                    <th>Foto</th>
-                                                    <th>Harga</th>
-                                                    <th class="w-250">Overview</th>
-                                                    <th>Jumlah Grup</th>
-                                                    <th>Lokasi</th>
-                                                    <th>Jam</th>
-                                                    <th>Hari</th>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Bromo</td>
-                                                        <td>Family Trip</td>
-                                                        <td>
-                                                            <div class="img-box">
-                                                                <img src="assets/img/bromo1.jpg" alt="bromo" class="img-fluid">
-                                                            </div>
-                                                        </td>
-                                                        <td>Dewasa : <br> Rp 550.000 <br> Anak : <br> Rp 350.000</td>
-                                                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos odio reprehenderit earum quam aliquid soluta facilis beatae enim similique impedit. Soluta, iusto deleniti nostrum porro debitis temporibus molestiae voluptatem dolores.</td>
-                                                        <td>5 orang</td>
-                                                        <td>Bromo Tengger <br> Semeru National Park</td>
-                                                        <td>2</td>
-                                                        <td>3 Hari <br> 2 Malam</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--  End Detail -->
-
                 <!-- Mini Confirmation -->
                 <div class="modal fade modal-mini modal-primary" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -592,16 +409,17 @@
                             <div class="modal-header justify-content-center">
                             </div>
                             <div class="modal-body text-center">
-                                <p>Yakin hapus paket ini?</p>
+                                <p>Apakah anda sudah yakin?</p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-link btn-simple">Hapus</button>
+                                <a class="btn control-icon btn-fill btn-info" href="{{ url('/super-admin/data-kondisi-jembatan') }}">Ya</a>
                                 <button type="button" class="btn btn-link btn-simple" data-dismiss="modal">Batal</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!--  End Confirmation -->
+
             </div>
             <!-- End Content -->
 

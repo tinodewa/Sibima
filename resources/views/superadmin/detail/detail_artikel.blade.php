@@ -150,7 +150,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                <img src="#" alt="img">
+                                                    <div class="img-box">
+                                                        <img src="#" alt="img">
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -209,7 +211,16 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-info btn-fill ml-3 btn-tambah">Simpan</button>
+                                        <div class="row">
+                                            <div class="col-md-12 ml-3">
+                                                <div class="form-group">
+                                                    <a class="control-icon alert-success" href="{{ url('/super-admin/artikel/tambah') }}">
+                                                        <i class="nc-icon nc-settings-tool-66"></i>
+                                                        Edit
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
@@ -217,24 +228,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Mini Confirmation -->
-                <div class="modal fade modal-mini modal-primary" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header justify-content-center">
-                            </div>
-                            <div class="modal-body text-center">
-                                <p>Yakin hapus paket ini?</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-link btn-simple">Hapus</button>
-                                <button type="button" class="btn btn-link btn-simple" data-dismiss="modal">Batal</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--  End Confirmation -->
             </div>
             <!-- End Content -->
 

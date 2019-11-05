@@ -184,56 +184,6 @@
                     </div>
                 </div>
 
-                <!-- Mini Detail -->
-                <div class="modal fade modal-mini modal-primary" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog custom-modal">
-                        <div class="modal-content">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="card strpied-tabled-with-hover">
-                                        <div class="card-header ">
-                                            <h4 class="card-title">Paket Bromo</h4>
-                                        </div>
-                                        <div class="card-body table-responsive">
-                                            <table class="table table-hover table-striped">
-                                                <thead>
-                                                    <th>Paket</th>
-                                                    <th>Tipe</th>
-                                                    <th>Foto</th>
-                                                    <th>Harga</th>
-                                                    <th class="w-250">Overview</th>
-                                                    <th>Jumlah Grup</th>
-                                                    <th>Lokasi</th>
-                                                    <th>Jam</th>
-                                                    <th>Hari</th>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Bromo</td>
-                                                        <td>Family Trip</td>
-                                                        <td>
-                                                            <div class="img-box">
-                                                                <img src="assets/img/bromo1.jpg" alt="bromo" class="img-fluid">
-                                                            </div>
-                                                        </td>
-                                                        <td>Dewasa : <br> Rp 550.000 <br> Anak : <br> Rp 350.000</td>
-                                                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos odio reprehenderit earum quam aliquid soluta facilis beatae enim similique impedit. Soluta, iusto deleniti nostrum porro debitis temporibus molestiae voluptatem dolores.</td>
-                                                        <td>5 orang</td>
-                                                        <td>Bromo Tengger <br> Semeru National Park</td>
-                                                        <td>2</td>
-                                                        <td>3 Hari <br> 2 Malam</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--  End Detail -->
-
                 <!-- Mini Confirmation -->
                 <div class="modal fade modal-mini modal-primary" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog">

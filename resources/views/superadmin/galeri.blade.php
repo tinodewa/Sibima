@@ -158,10 +158,6 @@
                                                     </td>
                                                     <td>Kenangan yang pernah ada</td>
                                                     <td style="display:table-cell;">
-                                                        <a class="control-icon alert-info" href="{{ url('/super-admin/galeri/detail') }}">
-                                                            <i class="nc-icon nc-paper-2"></i>
-                                                            More
-                                                        </a>
                                                         <a class="control-icon alert-success" href="{{ url('/super-admin/galeri/tambah') }}">
                                                             <i class="nc-icon nc-settings-tool-66"></i>
                                                             Edit

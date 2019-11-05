@@ -150,7 +150,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>0812</p>
+                                                    <p>15.01.01</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -167,12 +167,12 @@
                                             <div class="row">
                                                 <div class="col-md-4 pr-1">
                                                     <div class="form-group">
-                                                        <label>Nama Jalan</label>
+                                                        <label>Nama Ruas Jalan</label>
                                                         <span class="colon">:</span>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>Jl.Pahlawan Tanpa Tanda Jasa</p>
+                                                    <p>Jl. Jbt Benu Muda Kiri - Jbt. Himba Lestari</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -205,7 +205,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>Arteri</p>
+                                                    <p>JKP-4</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -245,7 +245,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>0987654</p>
+                                                                    <p>15</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -256,7 +256,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-7">
-                                                                    <p>0987654</p>
+                                                                    <p>1</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -267,7 +267,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>0987654</p>
+                                                                    <p>1    </p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -300,7 +300,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>Kota Mataram</p>
+                                                                    <p>Kutai Timur</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -311,7 +311,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>Bululawang</p>
+                                                                    <p>Batu Ampar</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -322,7 +322,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>Plangkir</p>
+                                                                    <p>Desa Himba Lestari</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -333,7 +333,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>Pohon Beringin</p>
+                                                                    <p>Jbt. Benu Muda Kiri</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -344,7 +344,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>Sungai</p>
+                                                                    <p>Jbt. Himba Lestari</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -355,7 +355,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>31</p>
+                                                                    <p>21</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -366,7 +366,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>21</p>
+                                                                    <p>0</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -377,7 +377,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>43</p>
+                                                                    <p>26,48</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -398,10 +398,10 @@
                                                                         <span class="colon">:</span>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-md-8">
+                                                                <div class="col-md-12">
                                                                     <div class="row">
-                                                                        <div class="img-box col-md-12">
-                                                                            <img src="" alt="img" class="form-img">
+                                                                        <div class="map-box col-md-12">
+                                                                            <iframe class="map-screen" src="https://www.youtube.com/watch?v=q7jG-m0MEyM"></iframe>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -413,15 +413,15 @@
                                                                         <span class="colon">:</span>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-md-8">
+                                                                <div class="col-md-12">
                                                                     <div class="row">
-                                                                        <div class="img-box col-md-6">
+                                                                        <div class="img-box col-md-4">
                                                                             <img src="" alt="img" class="form-img">
                                                                         </div>
-                                                                        <div class="img-box col-md-6">
+                                                                        <div class="img-box col-md-4">
                                                                             <img src="" alt="img" class="form-img">
                                                                         </div>
-                                                                        <div class="img-box col-md-6">
+                                                                        <div class="img-box col-md-4">
                                                                             <img src="" alt="img" class="form-img">
                                                                         </div>
                                                                     </div>
@@ -446,7 +446,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>X</p>
+                                                                    <p>10326</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -457,7 +457,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>X</p>
+                                                                    <p>959</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -468,7 +468,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>X</p>
+                                                                    <p>15192</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -479,7 +479,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>Y</p>
+                                                                    <p>0</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -490,7 +490,18 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>X</p>
+                                                                    <p>11285</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-5 pr-1">
+                                                                    <div class="form-group">
+                                                                        <label>Tidak Mantap (Rusak Ringan + Rusak Berat)</label>
+                                                                        <span class="colon">:</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-7">
+                                                                    <p>15192</p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -512,7 +523,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>21</p>
+                                                                    <p>26478</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -523,18 +534,18 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>5</p>
+                                                                    <p>6</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
-                                                                <div class="col-md-5 pr-1">
+                                                                <div class="col-md-6 pr-1">
                                                                     <div class="form-group">
                                                                         <label>Lalulintas Harian Rata-Rata Tahunan (LHRT)</label>
                                                                         <span class="colon">:</span>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-md-7">
-                                                                    <p>2000</p>
+                                                                <div class="col-md-6">
+                                                                    <p>0</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -545,7 +556,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>2</p>
+                                                                    <p>0</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -556,7 +567,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>Off Road</p>
+                                                                    <p>2</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -567,7 +578,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>3</p>
+                                                                    <p>0</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -580,45 +591,45 @@
                                                             <div class="row">
                                                                 <div class="col-md-4 pl-5">
                                                                     <div class="form-group">
-                                                                        <label>Tanah / Krikil (%)</label>
+                                                                        <label>Tanah / Krikil (m)</label>
                                                                         <span class="colon">:</span>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>20%</p>
+                                                                    <p>0</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-5 pl-5">
+                                                                    <div class="form-group">
+                                                                        <label>Penetrasi Macadam / Telford (m)</label>
+                                                                        <span class="colon">:</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-7">
+                                                                    <p>1677</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col-md-4 pl-5">
                                                                     <div class="form-group">
-                                                                        <label>Penetrasi Macadam (%)</label>
+                                                                        <label>Ashpalt (m)</label>
                                                                         <span class="colon">:</span>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>40%</p>
+                                                                    <p>24801</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col-md-4 pl-5">
                                                                     <div class="form-group">
-                                                                        <label>Ashpalt (%)</label>
+                                                                        <label>Rigid / Beton (m)</label>
                                                                         <span class="colon">:</span>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>20%</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 pl-5">
-                                                                    <div class="form-group">
-                                                                        <label>Rigid / Beton (%)</label>
-                                                                        <span class="colon">:</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-8">
-                                                                    <p>30%</p>
+                                                                    <p>0</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -629,7 +640,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>2017</p>
+                                                                    <p>0</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -640,7 +651,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
-                                                                    <p>Clear</p>
+                                                                    <p>0</p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -662,7 +673,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-8">
-                                                                        <p>19</p>
+                                                                        <p>117,1335752991</p>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">
@@ -673,7 +684,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-8">
-                                                                        <p>24</p>
+                                                                        <p>0,7048846718</p>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">
@@ -684,7 +695,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-8">
-                                                                        <p>22</p>
+                                                                        <p>117,0116778839</p>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">
@@ -695,7 +706,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-8">
-                                                                        <p>25</p>
+                                                                        <p>0,6483465026</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -703,7 +714,28 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        <button type="submit" class="btn btn-info btn-fill ml-3 btn-tambah">Simpan</button>
+                                            <div class="row">
+                                                <div class="col-md-12 ml-3">
+                                                    <div class="form-group">
+                                                        <label>Ditolak</label>
+                                                        <label class="switch">
+                                                            <input type="checkbox">
+                                                            <span class="slider round"></span>
+                                                        </label>
+                                                        <label>Diterima</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12 ml-3">
+                                                    <div class="form-group">
+                                                        <a class="control-icon alert-success" href="{{ url('/super-admin/data-kondisi-jalan/tambah') }}">
+                                                            <i class="nc-icon nc-settings-tool-66"></i>
+                                                            Edit
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
@@ -711,24 +743,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Mini Confirmation -->
-                <div class="modal fade modal-mini modal-primary" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header justify-content-center">
-                            </div>
-                            <div class="modal-body text-center">
-                                <p>Yakin hapus paket ini?</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-link btn-simple">Hapus</button>
-                                <button type="button" class="btn btn-link btn-simple" data-dismiss="modal">Batal</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--  End Confirmation -->
             </div>
             <!-- End Content -->
 

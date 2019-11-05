@@ -151,10 +151,6 @@
                                             <tr>
                                                 <td>Kalimantan Timur</td>
                                                 <td style="display:table-cell;">
-                                                    <a class="control-icon alert-info" href="{{ url('/super-admin/data-provinsi/detail') }}">
-                                                        <i class="nc-icon nc-paper-2"></i>
-                                                        More
-                                                    </a>
                                                     <a class="control-icon alert-success" href="{{ url('/super-admin/data-provinsi/tambah') }}">
                                                         <i class="nc-icon nc-settings-tool-66"></i>
                                                         Edit
