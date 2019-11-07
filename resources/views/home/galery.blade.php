@@ -40,7 +40,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Beranda<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{{ url('/sibima') }}">Beranda<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/sibima/sikombatan') }}">Sikombatan</a>
@@ -73,85 +73,72 @@
             <div class="content-inner">
                 <div class="row">
                     <div class="content-item col-md-4">
-                        <a data-lightbox="image-1">
-                            <img class="content-item-inner" src="https://sibima-kutim.com/assets/images/gallery/IMG_3294.JPG" alt="">
-                            {{-- <div class="content-item-inner">
-                                <div class="content-item-address">
-                                    <p class="content-item-province">
-                                        Sangatta Selatan
-                                    </p>
-                                    <p class="content-item-road">
-                                        Jalan Poros ke Desa Sangkima Lama
-                                    </p>
-                                </div>
-                            </div> --}}
-                        </a>
-                    </div>
-                    <div class="content-item col-md-4">
-                        <a>
+                        <a class="example-image-link" href="https://sibima-kutim.com/assets/images/gallery/IMG_3294.JPG" data-lightbox="example-1">
                             <div class="content-item-inner">
-                                <div class="content-item-address">
-                                    <p class="content-item-province">
-                                        Sangatta Selatan
-                                    </p>
-                                    <p class="content-item-road">
-                                        Jalan Poros ke Desa Sangkima Lama
-                                    </p>
-                                </div>
-                            </div>
-                        </a> 
-                    </div>
-                    <div class="content-item col-md-4">
-                        <a data-lightbox="image-1">
-                            <div class="content-item-inner">
-                                <div class="content-item-address">
-                                    <p class="content-item-province">
-                                        Sangatta Selatan
-                                    </p>
-                                    <p class="content-item-road">
-                                        Jalan Poros ke Desa Sangkima Lama
+                                <img class="example-image" src="https://sibima-kutim.com/assets/images/gallery/IMG_3294.JPG" alt="Girl looking out people on beach">
+                                <div class="content-item-address galery-text-box">
+                                    <p class="content-item-road galery-text">
+                                        Alhamdulillah... SIKOMBATAN Juara 3
                                     </p>
                                 </div>
                             </div>
                         </a>
                     </div>
                     <div class="content-item col-md-4">
-                        <a>
+                        <a class="example-image-link" href="https://sibima-kutim.com/assets/images/gallery/bupati_dukung_sikombatan.jpg" data-lightbox="example-1">
                             <div class="content-item-inner">
-                                <div class="content-item-address">
-                                    <p class="content-item-province">
-                                        Sangatta Selatan
-                                    </p>
-                                    <p class="content-item-road">
-                                        Jalan Poros ke Desa Sangkima Lama
+                                <img class="example-image" src="https://sibima-kutim.com/assets/images/gallery/bupati_dukung_sikombatan.jpg" alt="Girl looking out people on beach">
+                                <div class="content-item-address galery-text-box">
+                                    <p class="content-item-road galery-text">
+                                        Bupati Kutim Dukung Proyek SIKOMBATAN
                                     </p>
                                 </div>
                             </div>
                         </a>
                     </div>
                     <div class="content-item col-md-4">
-                        <a>
+                        <a class="example-image-link" href="https://sibima-kutim.com/assets/images/gallery/proses_proper.jpg" data-lightbox="example-1">
                             <div class="content-item-inner">
-                                <div class="content-item-address">
-                                    <p class="content-item-province">
-                                        Sangatta Selatan
-                                    </p>
-                                    <p class="content-item-road">
-                                        Jalan Poros ke Desa Sangkima Lama
+                                <img class="example-image" src="https://sibima-kutim.com/assets/images/gallery/proses_proper.jpg" alt="Girl looking out people on beach">
+                                <div class="content-item-address galery-text-box">
+                                    <p class="content-item-road galery-text">
+                                        Proses ProPer SIKOMBATAN
                                     </p>
                                 </div>
                             </div>
                         </a>
                     </div>
                     <div class="content-item col-md-4">
-                        <a>
+                        <a class="example-image-link" href="https://sibima-kutim.com/assets/images/gallery/tinjau_jln_sgt_bgln.jpg" data-lightbox="example-1">
                             <div class="content-item-inner">
-                                <div class="content-item-address">
-                                    <p class="content-item-province">
-                                        Sangatta Selatan
+                                <img class="example-image" src="https://sibima-kutim.com/assets/images/gallery/tinjau_jln_sgt_bgln.jpg" alt="Girl looking out people on beach">
+                                <div class="content-item-address galery-text-box">
+                                    <p class="content-item-road galery-text">
+                                        Tinjau Lokasi Jalan Amblas, Bupati: Perbaikan Lanjutan Ditangani Dinas PU
                                     </p>
-                                    <p class="content-item-road">
-                                        Jalan Poros ke Desa Sangkima Lama
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="content-item col-md-4">
+                        <a class="example-image-link" href="https://sibima-kutim.com/assets/images/gallery/lab_PU.jpg" data-lightbox="example-1">
+                            <div class="content-item-inner">
+                                <img class="example-image" src="https://sibima-kutim.com/assets/images/gallery/lab_PU.jpg" alt="Girl looking out people on beach">
+                                <div class="content-item-address galery-text-box">
+                                    <p class="content-item-road galery-text">
+                                        Sejak 2015, Labotarium PU Terakreditasi KAN
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="content-item col-md-4">
+                        <a class="example-image-link" href="https://sibima-kutim.com/assets/images/gallery/peresmjian_jbt_rimba_hijau.jpg" data-lightbox="example-1">
+                            <div class="content-item-inner">
+                                <img class="example-image" src="https://sibima-kutim.com/assets/images/gallery/peresmjian_jbt_rimba_hijau.jpg" alt="Girl looking out people on beach">
+                                <div class="content-item-address galery-text-box">
+                                    <p class="content-item-road galery-text">
+                                        30 Nopember 2015, Bupati Ardiansyah Resmikan Jembatan Rimba Hijau, Manubar Tidak Terisiolasi Lagi
                                     </p>
                                 </div>
                             </div>
@@ -175,29 +162,7 @@
 </body>
 
 <script src="{{asset('assets/home/vendor/flowuplabel/jquery.min.js')}}"></script>
-<script src="{{asset('assets/home/vendor/flowuplabel/jquery.FlowupLabels.min.js')}}"></script>
 <script src="{{asset('assets/home/vendor/flowuplabel/main.js')}}"></script>
 <script src="{{asset('assets/home/vendor/lightbox2-2.11.1/js/lightbox.min.js')}}"></script>
 <script src="{{asset('assets/home/vendor/bootstrap-4.3.1/js/bootstrap.min.js')}}"></script>
-<script>
-function myFunction() {
-  // Declare variables
-  var input, filter, parent, item, a, i, txtValue;
-  input = document.getElementById('search');
-  filter = input.value.toUpperCase();
-  parent = document.getElementById("content-item");
-  item = parent.getElementsByTagName('p');
-
-  // Loop through all list items, and hide those who don't match the search query
-    for (i = 0; i < item.length; i++) {
-        a = item[i].getElementsByTagName("a")[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        item[i].style.display = "";
-        } else {
-        item[i].style.display = "none";
-        }
-    }
-    }
-</script>
 </html>

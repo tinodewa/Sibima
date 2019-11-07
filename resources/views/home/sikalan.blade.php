@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <!-- title -->
     <title>SIBIMA | Sikalan</title>
+    
     <!-- link -->
     <link rel="stylesheet" href="{{asset('assets/home/vendor/flowuplabel/jquery.FlowupLabels.css')}}">
     <link rel="stylesheet" href="{{asset('assets/home/vendor/bootstrap-4.3.1/css/bootstrap.min.css')}}">
@@ -40,7 +42,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Beranda<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{{ url('/sibima') }}">Beranda<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/sibima/sikombatan') }}">Sikombatan</a>
@@ -90,7 +92,7 @@
             <div class="content-inner">
                 <div class="row">
                     <div class="content-item col-md-4">
-                        <a href="{{ url('/sikalan/sikalan-detail') }}">
+                        <a href="{{ url('/sibima/sikalan-detail') }}">
                             <div class="content-item-inner">
                                 <div class="content-item-address">
                                     <p class="content-item-province">
@@ -104,7 +106,7 @@
                         </a>
                     </div>
                     <div class="content-item col-md-4">
-                        <a href="{{ url('/sikalan/sikalan-detail') }}">
+                        <a href="{{ url('/sibima/sikalan-detail') }}">
                             <div class="content-item-inner">
                                 <div class="content-item-address">
                                     <p class="content-item-province">
@@ -118,7 +120,7 @@
                         </a> 
                     </div>
                     <div class="content-item col-md-4">
-                        <a href="{{ url('/sikalan/sikalan-detail') }}">
+                        <a href="{{ url('/sibima/sikalan-detail') }}">
                             <div class="content-item-inner">
                                 <div class="content-item-address">
                                     <p class="content-item-province">
@@ -132,7 +134,7 @@
                         </a>
                     </div>
                     <div class="content-item col-md-4">
-                        <a href="{{ url('/sikalan/sikalan-detail') }}">
+                        <a href="{{ url('/sibima/sikalan-detail') }}">
                             <div class="content-item-inner">
                                 <div class="content-item-address">
                                     <p class="content-item-province">
@@ -146,7 +148,7 @@
                         </a>
                     </div>
                     <div class="content-item col-md-4">
-                        <a href="{{ url('/sikalan/sikalan-detail') }}">
+                        <a href="{{ url('/sibima/sikalan-detail') }}">
                             <div class="content-item-inner">
                                 <div class="content-item-address">
                                     <p class="content-item-province">
@@ -160,7 +162,7 @@
                         </a>
                     </div>
                     <div class="content-item col-md-4">
-                        <a href="{{ url('/sikalan/sikalan-detail') }}">
+                        <a href="{{ url('/sibima/sikalan-detail') }}">
                             <div class="content-item-inner">
                                 <div class="content-item-address">
                                     <p class="content-item-province">

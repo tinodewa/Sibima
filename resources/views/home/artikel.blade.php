@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <!-- title -->
     <title>SIBIMA | Artikel</title>
+
     <!-- link -->
-    <link rel="stylesheet" href="{{asset('assets/home/vendor/flowuplabel/jquery.FlowupLabels.css')}}">
     <link rel="stylesheet" href="{{asset('assets/home/vendor/bootstrap-4.3.1/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/home/css/custom.css')}}">
 </head>
@@ -40,7 +41,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Beranda<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{{ url('/sibima') }}">Beranda<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/sibima/sikombatan') }}">Sikombatan</a>
@@ -69,7 +70,7 @@
     {{-- content --}}
     <div class="content article">
         <div class="container">
-            <div class="row">
+            <div class="row article-row">
                 <div class="col-md-4">
                     <div class="article-news">
                         <div class="article-news-title-box">
@@ -175,7 +176,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="article-card">
-                                <a href="{{ url('/artikel-detail')}}">
+                                <a href="{{ url('sibima/artikel-detail')}}">
                                     <div class="article-img-box">
                                         <div class="article-category">
                                             Umum
@@ -192,7 +193,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="article-card">
-                                <a href="{{ url('/artikel-detail')}}">
+                                <a href="{{ url('sibima/artikel-detail')}}">
                                     <div class="article-img-box">
                                         <div class="article-category">
                                             Umum
@@ -209,7 +210,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="article-card">
-                                <a href="{{ url('/artikel-detail')}}">
+                                <a href="{{ url('sibima/artikel-detail')}}">
                                     <div class="article-img-box">
                                     <div class="article-category">
                                         Umum
@@ -226,7 +227,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="article-card">
-                                <a href="{{ url('/artikel-detail')}}">
+                                <a href="{{ url('sibima/artikel-detail')}}">
                                     <div class="article-img-box">
                                     <div class="article-category">
                                         Umum
@@ -243,7 +244,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="article-card">
-                                <a href="{{ url('/artikel-detail')}}">
+                                <a href="{{ url('sibima/artikel-detail')}}">
                                     <div class="article-img-box">
                                     <div class="article-category">
                                         Umum
@@ -260,7 +261,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="article-card">
-                                <a href="{{ url('/artikel-detail')}}">
+                                <a href="{{ url('sibima/artikel-detail')}}">
                                     <div class="article-img-box">
                                     <div class="article-category">
                                         Umum
@@ -294,28 +295,6 @@
 </body>
 
 <script src="{{asset('assets/home/vendor/flowuplabel/jquery.min.js')}}"></script>
-<script src="{{asset('assets/home/vendor/flowuplabel/jquery.FlowupLabels.min.js')}}"></script>
 <script src="{{asset('assets/home/vendor/flowuplabel/main.js')}}"></script>
 <script src="{{asset('assets/home/vendor/bootstrap-4.3.1/js/bootstrap.min.js')}}"></script>
-<script>
-function myFunction() {
-  // Declare variables
-  var input, filter, parent, item, a, i, txtValue;
-  input = document.getElementById('search');
-  filter = input.value.toUpperCase();
-  parent = document.getElementById("content-item");
-  item = parent.getElementsByTagName('p');
-
-  // Loop through all list items, and hide those who don't match the search query
-  for (i = 0; i < item.length; i++) {
-    a = item[i].getElementsByTagName("a")[0];
-    txtValue = a.textContent || a.innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      item[i].style.display = "";
-    } else {
-      item[i].style.display = "none";
-    }
-  }
-}
-</script>
 </html>
