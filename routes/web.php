@@ -13,7 +13,11 @@
 
 // -- Home --
 Route::get('/', function () {
-    return view('home/welcome');
+    return view('home/sibima');
+});
+
+Route::get('/sibima', function () {
+    return view('home/sibima');
 });
 
 Route::get('/sibima/sikombatan', function () {
