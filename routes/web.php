@@ -11,138 +11,92 @@
 |
 */
 
-// -- Home --
+// ROUTE HOME
 Route::get('/', function () {
-    return view('home/sibima');
+    return view('index');
 });
 
-Route::get('/sibima', function () {
-    return view('home/sibima');
+Route::prefix('sibima')->group(function () {
+    Route::get('/', 'Home\HomeController@index')->name('sibima.home');
+
+    Route::get('sikombatan', 'Home\HomeController@sikombatan')->name('sibima.sikombatan');
+    Route::get('sikombatan/{name}', 'Home\HomeController@sikombatanDetail')->name('sibima.sikombatan.detail');
+
+    Route::get('sikalan', 'Home\HomeController@sikalan')->name('sibima.sikalan');
+    Route::get('sikalan/{name}', 'Home\HomeController@sikalanDetail')->name('sibima.sikalan.detail');
+
+    Route::get('artikel', 'Home\HomeController@artikel')->name('sibima.artikel');
+    Route::get('artikel/{name}', 'Home\HomeController@artikelDetail')->name('sibima.artikel.detail');
+
+    Route::get('galeri', 'Home\HomeController@galeri')->name('sibima.galeri');
+    Route::get('bilik-laporan', 'Home\HomeController@bilikLaporan')->name('sibima.bilik_laporan');
+    Route::get('profil', 'Home\HomeController@profil')->name('sibima.profil');
 });
 
-Route::get('/sibima/sikombatan', function () {
-    return view('home/sikombatan');
-});
+// ROUTE ADMIN
+Route::prefix('admin')->group(function () {
+    Route::get('/', 'Admin\DashboardController@index')->name('admin.home');
+    
+    Route::get('provinsi', 'Admin\ProvinsiController@index')->name('admin.provinsi');
+    Route::get('provinsi/buat', 'Admin\ProvinsiController@create')->name('admin.provinsi.create');
+    Route::post('provinsi/store', 'Admin\ProvinsiController@store')->name('admin.provinsi.store');
+    Route::get('provinsi/edit/{id}', 'Admin\ProvinsiController@edit')->name('admin.provinsi.edit');
+    Route::put('provinsi/edit/{id}', 'Admin\ProvinsiController@update')->name('admin.provinsi.update');
+    Route::delete('provinsi/delete/{id}', 'Admin\ProvinsiController@destroy')->name('admin.provinsi.destroy');
+    
+    Route::get('kabupaten-kota', 'Admin\KabkotaController@index')->name('admin.kabkota');
+    Route::get('kabupaten-kota/buat', 'Admin\KabkotaController@create')->name('admin.kabkota.create');
+    Route::post('kabupaten-kota/store', 'Admin\KabkotaController@store')->name('admin.kabkota.store');
+    Route::get('kabupaten-kota/edit/{id}', 'Admin\KabkotaController@edit')->name('admin.kabkota.edit');
+    Route::put('kabupaten-kota/edit/{id}', 'Admin\KabkotaController@update')->name('admin.kabkota.update');
+    Route::delete('kabupaten-kota/delete/{id}', 'Admin\KabkotaController@destroy')->name('admin.kabkota.destroy');
 
-Route::get('/sibima/sikombatan-detail', function () {
-    return view('home/sikombatan-detail');
-});
+    Route::get('kondisi-jalan', 'Admin\SikalanController@index')->name('admin.sikalan');
+    Route::get('kondisi-jalan/buat', 'Admin\SikalanController@create')->name('admin.sikalan.create');
+    Route::get('kondisi-jalan/{id}', 'Admin\SikalanController@show')->name('admin.sikalan.show');
+    Route::post('kondisi-jalan/store', 'Admin\SikalanController@store')->name('admin.sikalan.store');
+    Route::get('kondisi-jalan/edit/{id}', 'Admin\SikalanController@edit')->name('admin.sikalan.edit');
+    Route::put('kondisi-jalan/edit/{id}', 'Admin\SikalanController@update')->name('admin.sikalan.update');
+    Route::delete('kondisi-jalan/delete/{id}', 'Admin\SikalanController@destroy')->name('admin.sikalan.destroy');
 
-Route::get('/sibima/sikalan', function () {
-    return view('home/sikalan');
-});
+    Route::get('kondisi-jembatan', 'Admin\SikombatanController@index')->name('admin.sikombatan');
+    Route::get('kondisi-jembatan/buat', 'Admin\SikombatanController@create')->name('admin.sikombatan.create');
+    Route::get('kondisi-jembatan/{id}', 'Admin\SikombatanController@show')->name('admin.sikombatan.show');
+    Route::post('kondisi-jembatan/store', 'Admin\SikombatanController@store')->name('admin.sikombatan.store');
+    Route::get('kondisi-jembatan/edit/{id}', 'Admin\SikombatanController@edit')->name('admin.sikombatan.edit');
+    Route::put('kondisi-jembatan/edit/{id}', 'Admin\SikombatanController@update')->name('admin.sikombatan.update');
+    Route::delete('kondisi-jembatan/delete/{id}', 'Admin\SikombatanController@destroy')->name('admin.sikombatan.destroy');
 
-Route::get('/sibima/sikalan-detail', function () {
-    return view('home/sikalan-detail');
-});
+    Route::get('artikel', 'Admin\ArtikelController@index')->name('admin.artikel');
+    Route::get('artikel/{id}', 'Admin\ArtikelController@show')->name('admin.artikel.show');
+    Route::get('artikel/buat', 'Admin\ArtikelController@create')->name('admin.artikel.create');
+    Route::post('artikel/store', 'Admin\ArtikelController@store')->name('admin.artikel.store');
+    Route::get('artikel/edit/{id}', 'Admin\ArtikelController@edit')->name('admin.artikel.edit');
+    Route::put('artikel/edit/{id}', 'Admin\ArtikelController@update')->name('admin.artikel.update');
+    Route::delete('artikel/delete/{id}', 'Admin\ArtikelController@destroy')->name('admin.artikel.destroy');
 
-Route::get('/sibima/artikel', function () {
-    return view('home/artikel');
-});
+    Route::get('galeri', 'Admin\GaleriController@index')->name('admin.galeri');
+    Route::get('galeri/buat', 'Admin\GaleriController@create')->name('admin.galeri.create');
+    Route::post('galeri/store', 'Admin\GaleriController@store')->name('admin.galeri.store');
+    Route::get('galeri/edit/{id}', 'Admin\GaleriController@edit')->name('admin.galeri.edit');
+    Route::put('galeri/edit/{id}', 'Admin\GaleriController@update')->name('admin.galeri.update');
+    Route::delete('galeri/delete/{id}', 'Admin\GaleriController@destroy')->name('admin.galeri.destroy');
 
-Route::get('/sibima/artikel-detail', function () {
-    return view('home/artikel-detail');
-});
+    Route::get('profil', 'Admin\ProfilController@index')->name('admin.profil');
+    Route::get('profil/buat', 'Admin\ProfilController@create')->name('admin.profil.create');
+    Route::post('profil/store', 'Admin\ProfilController@store')->name('admin.profil.store');
+    Route::get('profil/edit/{id}', 'Admin\ProfilController@edit')->name('admin.profil.edit');
+    Route::put('profil/edit/{id}', 'Admin\ProfilController@update')->name('admin.profil.update');
+    Route::delete('profil/delete/{id}', 'Admin\ProfilController@destroy')->name('admin.profil.destroy');
 
-Route::get('/sibima/galery', function () {
-    return view('home/galery');
-});
+    Route::get('users', 'Admin\UserController@index')->name('admin.users');
+    Route::get('users/{id}', 'Admin\UserController@show')->name('admin.users.show');
+    Route::get('users/buat', 'Admin\UserController@create')->name('admin.users.create');
+    Route::post('users/store', 'Admin\UserController@store')->name('admin.users.store');
+    Route::get('users/edit/{id}', 'Admin\UserController@edit')->name('admin.users.edit');
+    Route::put('users/edit/{id}', 'Admin\UserController@update')->name('admin.users.update');
+    Route::delete('users/delete/{id}', 'Admin\UserController@destroy')->name('admin.users.destroy');
 
-Route::get('/sibima/bilik-laporan', function () {
-    return view('home/bilik_laporan');
 });
-
-Route::get('/sibima/profil', function () {
-    return view('home/profil');
-});
-
-// -- Super Admin --
-Route::get('/super-admin', function () {
-    return view('superadmin/dashboard');
-});
-
-Route::get('/super-admin/dashboard', function () {
-    return view('superadmin/dashboard');
-});
-
-Route::get('/super-admin/data-provinsi', function () {
-    return view('superadmin/data_provinsi');
-});
-
-Route::get('/super-admin/data-kabupaten-kota', function () {
-    return view('superadmin/data_kabupaten_kota');
-});
-
-Route::get('/super-admin/data-kondisi-jalan', function () {
-    return view('superadmin/data_kondisi_jalan');
-});
-
-Route::get('/super-admin/data-kondisi-jembatan', function () {
-    return view('superadmin/data_kondisi_jembatan');
-});
-
-Route::get('/super-admin/artikel', function () {
-    return view('superadmin/artikel');
-});
-
-Route::get('/super-admin/galeri', function () {
-    return view('superadmin/galeri');
-});
-
-Route::get('/super-admin/profil', function () {
-    return view('superadmin/profil');
-});
-
-Route::get('/super-admin/user', function () {
-    return view('superadmin/user');
-});
-
-// -- Tambah Data Super Admin --
-Route::get('/super-admin/data-provinsi/tambah', function () {
-    return view('superadmin/tambah/tambah_data_provinsi');
-});
-
-Route::get('/super-admin/data-kabupaten-kota/tambah', function () {
-    return view('superadmin/tambah/tambah_data_kabupaten_kota');
-});
-
-Route::get('/super-admin/data-kondisi-jalan/tambah', function () {
-    return view('superadmin/tambah/tambah_data_kondisi_jalan');
-});
-
-Route::get('/super-admin/data-kondisi-jembatan/tambah', function () {
-    return view('superadmin/tambah/tambah_data_kondisi_jembatan');
-});
-
-Route::get('/super-admin/artikel/tambah', function () {
-    return view('superadmin/tambah/tambah_artikel');
-});
-
-Route::get('/super-admin/galeri/tambah', function () {
-    return view('superadmin/tambah/tambah_galeri');
-});
-
-Route::get('/super-admin/profil/tambah', function () {
-    return view('superadmin/tambah/tambah_profil');
-});
-
-Route::get('/super-admin/user/tambah', function () {
-    return view('superadmin/tambah/tambah_user');
-});
-
-// -- Detail Data --
-Route::get('/super-admin/data-kondisi-jalan/detail', function () {
-    return view('superadmin/detail/detail_data_kondisi_jalan');
-});
-
-Route::get('/super-admin/data-kondisi-jembatan/detail', function () {
-    return view('superadmin/detail/detail_data_kondisi_jembatan');
-});
-
-Route::get('/super-admin/artikel/detail', function () {
-    return view('superadmin/detail/detail_artikel');
-});
-
-Route::get('/super-admin/user/detail', function () {
-    return view('superadmin/detail/detail_user');
-});
+Auth::routes();
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
