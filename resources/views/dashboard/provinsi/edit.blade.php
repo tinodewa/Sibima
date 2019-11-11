@@ -62,7 +62,7 @@
                 <div class="modal-footer">
                     <button type="submit" class="btn control-icon btn-fill btn-info" href="{{ url('/super-admin/data-provinsi') }}">Ya</button>
                     <button type="button" class="btn btn-link btn-simple" data-dismiss="modal">Batal</button>
-                </div
+                </div>
             </div>
         </div>
     </div>

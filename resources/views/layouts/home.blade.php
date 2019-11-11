@@ -45,22 +45,22 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('sibima.home') }}">Beranda<span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item {{ Request::is('sibima/sikombatan') ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('sibima.sikombatan') }}">Sikombatan</a>
                         </li>
-                        <li class="nav-item active">
+                        <li class="nav-item {{ Request::is('sibima/sikalan') ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('sibima.sikalan') }}">Sikalan</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item {{ Request::is('sibima/artikel') ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('sibima.artikel') }}">Artikel</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item {{ Request::is('sibima/galeri') ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('sibima.galeri') }}">Galeri</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item {{ Request::is('sibima/bilik-laporan') ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('sibima.bilik_laporan') }}">Bilik Laporan</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item {{ Request::is('sibima/profil') ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('sibima.profil') }}">Profil</a>
                         </li>
                     </ul>
