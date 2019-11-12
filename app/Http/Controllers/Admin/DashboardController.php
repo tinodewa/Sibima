@@ -16,9 +16,9 @@ class DashboardController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
         //guarded
-        $this->middleware('role:Admin 2')->only(['index']);
+        //$this->middleware('role:Admin 2')->only(['index']);
     }
 
 

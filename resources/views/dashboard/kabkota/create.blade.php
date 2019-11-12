@@ -1,8 +1,18 @@
 @extends('layouts/dashboard')
 @section('title', 'Kabupaten - Kota')
 
+@section('css')
+<style>
+    button{
+        border: none;
+    }
+</style>
+@endsection
+
 @section('content')
-<div class="container-fluid">
+<form action="{{ route('admin.kabkota.store') }}" method="POST">    
+{{ csrf_field() }}  
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <div class="card striped-tabled-with-hover">
@@ -11,17 +21,24 @@
                     </div>
                     <div class="card-body">
                         <div class="paket">
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </div>
+                            @endif
+                                    
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="col-md-4 pr-1">
                                         <div class="form-group">
                                             <label>Pilih Provinsi</label>
-                                            <select class="form-control" id="fungsi">
-                                                <option disabled selected hidden>Choose</option>
-                                                <option value="1">Kalimantan Timur</option>
-                                                <option value="2">Kalimantan Barat</option>
-                                                <option value="3">Kalimantan Utara</option>
-                                                <option value="4">Kalimantan Selatan</option>
+                                            <select class="form-control" id="fungsi" name="provinsi_id">
+                                                <option disabled selected default>Pilih Provinsi</option>
+                                                @foreach ($provinsis as $provinsi)
+                                                    <option value="{{ $provinsi->id }}">{{ $provinsi->nama }}</option> 
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -30,14 +47,14 @@
                                     <div class="col-md-4 pr-1">
                                         <div class="form-group">
                                             <label>Nama Kabupaten / Kota</label>
-                                            <input type="text" class="form-control" placeholder="">
+                                        <input type="text" class="form-control" placeholder="" name="nama" value="{{ old('nama') }}">
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <a class="ml-3 control-icon btn-fill btn-info" data-toggle="modal" data-target="#myModal2" href="#">
+                            <button type="button" class="ml-3 control-icon btn-fill btn-info" data-toggle="modal" data-target="#myModal2" href="#">
                                 Simpan
-                            </a>
+                            </button>
                             <div class="clearfix"></div>
                         </div>
                     </div>
@@ -56,11 +73,12 @@
                     <p>Apakah anda sudah yakin?</p>
                 </div>
                 <div class="modal-footer">
-                    <a class="btn control-icon btn-fill btn-info" href="{{ url('/super-admin/data-kabupaten-kota') }}">Ya</a>
+                    <button type="submit" class="btn control-icon btn-fill btn-info">Ya</button>
                     <button type="button" class="btn btn-link btn-simple" data-dismiss="modal">Batal</button>
                 </div>
             </div>
         </div>
     </div>
-    <!--  End Confirmation -->
+</form>
+<!--  End Confirmation -->
 @endsection

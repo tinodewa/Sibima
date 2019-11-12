@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Kota;
+use App\Provinsi;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,7 +17,8 @@ class KabkotaController extends Controller
     public function index()
     {
         //
-        return view('dashboard/kabkota/index');
+        $kotas = Kota::orderBy('id', 'DESC')->get();
+        return view('dashboard/kabkota/index', compact('kotas'));
     }
 
     /**
@@ -26,7 +29,8 @@ class KabkotaController extends Controller
     public function create()
     {
         //
-        return view('dashboard/kabkota/create');
+        $provinsis = Provinsi::orderBy('id', 'ASC')->get();
+        return view('dashboard/kabkota/create', compact('provinsis'));
     }
 
     /**
@@ -38,6 +42,19 @@ class KabkotaController extends Controller
     public function store(Request $request)
     {
         //
+        
+        $request->validate([
+            'provinsi_id' => 'required|integer',
+            'nama' => 'required|string|min:6'
+        ]);
+        $post = Kota::Create([
+            'provinsi_id' => $request->provinsi_id,
+            'nama' => $request->nama
+        ]);
+        
+        return redirect()->route('admin.kabkota')->with([
+            'success' => 'Berhasil menambah data'
+        ]);
     }
 
     /**
@@ -60,7 +77,9 @@ class KabkotaController extends Controller
     public function edit($id)
     {
         //
-        return view('dashboard/kabkota/edit');
+        $kota = Kota::where('id', $id)->firstOrFail();
+        $provinsis = Provinsi::orderBy('id', 'ASC')->get();
+        return view('dashboard/kabkota/edit', compact('kota', 'provinsis'));
     }
 
     /**
@@ -73,6 +92,17 @@ class KabkotaController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate([
+            'nama' => 'required|string|min:6'
+        ]);
+
+        $kota = Kota::where('id', $id)->firstOrFail();
+        $kota->update([
+            'nama' => $request->nama,
+        ]);
+
+        return redirect()->route('admin.kabkota')
+                ->with(['success' => 'Kabupaten / Kota berhasil diperbarui']);
     }
 
     /**
@@ -84,5 +114,10 @@ class KabkotaController extends Controller
     public function destroy($id)
     {
         //
+        $kota = Kota::where('id', $id)->firstOrFail();
+        $kota->delete();
+
+        return redirect()->route('admin.kabkota')
+                ->with(['success' => 'Kabupaten / Kota berhasil dihapus']);
     }
 }

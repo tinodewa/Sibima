@@ -16,7 +16,7 @@ class ProvinsiController extends Controller
     public function index()
     {
         //
-        $provinsis = Provinsi::all();
+        $provinsis = Provinsi::orderBy('id', 'DESC')->get();
         return view('dashboard/provinsi/index', compact('provinsis'));
     }
 

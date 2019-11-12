@@ -13,24 +13,31 @@
                         <a href="{{ route('admin.kabkota.create') }}" type="submit" class="btn btn-info btn-fill btn-tambah">Tambah Data</a>
                     </div>
                     <div class="card-body table-responsive">
+                        @if (Session::has('success'))
+                            <div class="alert alert-success">
+                                {{ Session::get('success') }}
+                            </div>
+                        @endif
                         <table class="table table-hover table-striped">
                             <thead>
                                 <th class="w-50">Nama Kabupaten / Kota</th>
                                 <th>Kontrol</th>
                             </thead>
                             <tbody>
+                                @foreach ($kotas as $kota)
                                 <tr>
-                                    <td>Mataram</td>
+                                    <td>{{ $kota-> nama }}</td>
                                     <td style="display:table-cell;">
-                                        <a class="control-icon alert-success" href="{{ route('admin.kabkota.edit', 1) }}">
+                                        <a class="control-icon alert-success" href="{{ route('admin.kabkota.edit', $kota->id) }}">
                                             <i class="nc-icon nc-settings-tool-66"></i>
                                             Edit
                                         </a>
-                                        <a class="control-icon alert-danger" data-toggle="modal" data-target="#myModal2" href="#pablo">                                                            <i class="nc-icon nc-simple-remove"></i>
-                                            Delete
+                                        <a class="control-icon alert-danger delete-btn" data-toggle="modal" data-target="#myModal2" href="{{ route('admin.kabkota.destroy', $kota->id) }}" >                                                            <i class="nc-icon nc-simple-remove"></i>
+                                        Delete
                                         </a>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -46,14 +53,28 @@
             <div class="modal-header justify-content-center">
             </div>
             <div class="modal-body text-center">
-                <p>Yakin hapus paket ini?</p>
+                <p>Yakin hapus kabupaten / Kota  ini?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-link btn-simple">Hapus</button>
+                <form action="#" id="delete-form" method="POST">
+                    {{ csrf_field() }}
+                    {{ method_field('DELETE') }}
+                    <button id="confirm-btn" class="btn btn-link btn-simple" style="cursor:pointer;">Hapus</button>
+                </form>
                 <button type="button" class="btn btn-link btn-simple" data-dismiss="modal">Batal</button>
             </div>
         </div>
     </div>
 </div>
 <!--  End Confirmation -->
+@endsection
+
+@section('js')
+<script>
+    $('.delete-btn').click(function(){
+        var url = $(this).attr('href');
+        $('#delete-form').attr('action', url);
+    });
+</script>
+
 @endsection

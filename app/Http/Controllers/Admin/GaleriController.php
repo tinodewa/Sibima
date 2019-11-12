@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+Use App\Galeri;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class GaleriController extends Controller
 {
@@ -15,7 +17,8 @@ class GaleriController extends Controller
     public function index()
     {
         //
-        return view('dashboard/galeri/index');
+        $galeris = Galeri::orderBy('id', 'DESC')->get();
+        return view('dashboard/galeri/index', compact('galeris'));
     }
 
     /**
@@ -38,6 +41,22 @@ class GaleriController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'caption' => 'required|string|min:10',
+        ]);
+        
+        
+        $filename = time().'.'.$request->image_file->getClientOriginalName();
+        $request->image_file->storeAs('galeri', $filename);
+        
+        $galeri = Galeri::Create([
+            'caption' => $request->caption,
+            'image_url' => $filename
+        ]);
+        
+        return redirect()->route('admin.galeri')->with([
+            'success' => 'Berhasil menambah data'
+        ]);
     }
 
     /**
@@ -84,5 +103,10 @@ class GaleriController extends Controller
     public function destroy($id)
     {
         //
+        $galeri = Galeri::where('id', $id)->firstOrFail();
+        $galeri->delete();
+
+        return redirect()->route('admin.galeri')
+                ->with(['success' => 'Galeri berhasil dihapus']);
     }
 }
