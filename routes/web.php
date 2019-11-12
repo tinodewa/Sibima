@@ -68,8 +68,8 @@ Route::prefix('admin')->group(function () {
     Route::delete('kondisi-jembatan/delete/{id}', 'Admin\SikombatanController@destroy')->name('admin.sikombatan.destroy');
 
     Route::get('artikel', 'Admin\ArtikelController@index')->name('admin.artikel');
-    Route::get('artikel/{id}', 'Admin\ArtikelController@show')->name('admin.artikel.show');
     Route::get('artikel/buat', 'Admin\ArtikelController@create')->name('admin.artikel.create');
+    Route::get('artikel/{id}', 'Admin\ArtikelController@show')->name('admin.artikel.show');
     Route::post('artikel/store', 'Admin\ArtikelController@store')->name('admin.artikel.store');
     Route::get('artikel/edit/{id}', 'Admin\ArtikelController@edit')->name('admin.artikel.edit');
     Route::put('artikel/edit/{id}', 'Admin\ArtikelController@update')->name('admin.artikel.update');

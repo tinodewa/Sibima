@@ -14,9 +14,21 @@
                         </h4>
                     </div>
                     <div>
-                        <div class="article-news-item">
+                        @foreach ($articles as $key => $article)
+                            <div class="article-news-item">
+                                <div class="article-news-number">
+                                    #{{ $key+1 }}
+                                </div>
+                                <div class="article-news-content">
+                                    <a href="{{ route('sibima.artikel.detail', $article->id) }}">                                        
+                                        {{ $article->title }}
+                                    </a>
+                                </div>
+                            </div>
+                        @endforeach
+                        {{-- <div class="article-news-item">
                             <div class="article-news-number">
-                                #1
+                                #1a
                             </div>
                             <div class="article-news-content">
                                 <a href="#">                                        
@@ -103,13 +115,32 @@
                                     Bangun Tiga Jembatan dan 13 Jalan Desa; Kondisi Defisit, Pembangunan Tetap Berlangsung
                                 </a>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
             <div class="col-md-8">
                 <div class="row">
-                    <div class="col-md-6">
+                    @foreach ($articles as $key => $article)
+                        <div class="col-md-6">
+                            <div class="article-card">
+                                <a href="{{ route('sibima.artikel.detail', $article->id)}}">
+                                    <div class="article-img-box" style="background:url({{asset('storage/galeri/'.$article->thumbnail)}});">
+                                        <div class="article-category">
+                                            {{$article->category}}
+                                        </div>
+                                        <div class="article-writer">
+                                            {{$article->user->name}}
+                                        </div>
+                                    </div>
+                                    <div class="article-description">
+                                        {{$article->title}}
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                    {{-- <div class="col-md-6">
                         <div class="article-card">
                             <a href="{{ route('sibima.artikel.detail', 'name')}}">
                                 <div class="article-img-box">
@@ -130,23 +161,6 @@
                         <div class="article-card">
                             <a href="{{ route('sibima.artikel.detail', 'name')}}">
                                 <div class="article-img-box">
-                                    <div class="article-category">
-                                        Umum
-                                    </div>
-                                    <div class="article-writer">
-                                        Admin
-                                    </div>
-                                </div>
-                                <div class="article-description">
-                                    Ismunandar Inventarisir Usulan Program Mendesak di Kutai Timur
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="article-card">
-                            <a href="{{ route('sibima.artikel.detail', 'name')}}">
-                                <div class="article-img-box">
                                 <div class="article-category">
                                     Umum
                                 </div>
@@ -210,7 +224,7 @@
                                 </div>
                             </a>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

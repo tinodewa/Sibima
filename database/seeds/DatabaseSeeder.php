@@ -16,6 +16,8 @@ class DatabaseSeeder extends Seeder
             UsersTableSeeder::class,
             ProvinsisTableSeeder::class,
             KotasTableSeeder::class,
+            GalerisTableSeeder::class,
+            ArticlesTableSeeder::class,
         ]);
     }
 }

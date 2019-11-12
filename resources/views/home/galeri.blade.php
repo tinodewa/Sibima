@@ -5,10 +5,24 @@
 {{-- content --}}
 <div class="content galery">
     <div class="container">
-        <h2 class="font-weight-normal text-center">Galery</h2>
+        <h2 class="font-weight-normal text-center">Galeri</h2>
         <div class="content-inner">
             <div class="row">
-                <div class="content-item col-md-4">
+                @foreach ($galeris as $galeri)
+                    <div class="content-item col-md-4">
+                        <a class="example-image-link" href="{{ asset('storage/galeri/'.$galeri->image_url) }}" data-lightbox="example-1">
+                            <div class="content-item-inner">
+                                <img class="example-image" src="{{ asset('storage/galeri/'.$galeri->image_url) }}" alt="Girl looking out people on beach">
+                                <div class="content-item-address galery-text-box">
+                                    <p class="content-item-road galery-text">
+                                        {{ $galeri->caption }}
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+                {{-- <div class="content-item col-md-4">
                     <a class="example-image-link" href="https://sibima-kutim.com/assets/images/gallery/IMG_3294.JPG" data-lightbox="example-1">
                         <div class="content-item-inner">
                             <img class="example-image" src="https://sibima-kutim.com/assets/images/gallery/IMG_3294.JPG" alt="Girl looking out people on beach">
@@ -79,7 +93,7 @@
                             </div>
                         </div>
                     </a>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
