@@ -1,7 +1,6 @@
 @extends('layouts/dashboard')
 @section('title', 'Provinsi')
 
-
 @section('css')
 <style>
     button{
@@ -9,6 +8,7 @@
     }
 </style>
 @endsection
+
 @section('content')
 <div class="container-fluid">
         <div class="row">
@@ -17,7 +17,7 @@
                     <div class="card-header ">
                         <h4 class="card-title">Perbarui Provinsi</h4>
                     </div>
-                    <form action="{{ route('admin.provinsi.update', $provinsi->id) }}" method="POST">    
+                    <form action="{{ route('admin.provinsi.update', $provinsi->id) }}" method="POST">
                     <div class="card-body">
                         <div class="paket">
                             @if ($errors->any())

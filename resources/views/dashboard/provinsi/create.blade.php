@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-<div class="container-fluid">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <div class="card striped-tabled-with-hover">
@@ -27,26 +27,26 @@
                                 </div>
                             @endif
                             <form action="{{ route('admin.provinsi.store') }}" method="POST">    
-                                {{ csrf_field() }}                            
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <div class="col-md-4 pr-1">
-                                            <div class="form-group">
-                                                <label>Nama Provinsi</label>
-                                                <input type="text" class="form-control" name="nama" placeholder="" value="{{ old('nama') }}">
-                                            </div>
+                            {{ csrf_field() }}
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-4 pr-1">
+                                        <div class="form-group">
+                                            <label>Nama Provinsi</label>
+                                            <input type="text" class="form-control" name="nama" placeholder="" value="{{ old('nama') }}">
                                         </div>
                                     </div>
                                 </div>
-                                <button type="button" class="ml-3 control-icon btn-fill btn-info" data-toggle="modal" data-target="#myModal2" href="#">
-                                    Simpan
-                                </button>
-                                <div class="clearfix"></div>
                             </div>
+                            <button type="button" class="ml-3 control-icon btn-fill btn-info" data-toggle="modal" data-target="#myModal2" href="#">
+                                Simpan
+                            </button>
+                            <div class="clearfix"></div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
     
     <!-- Mini Confirmation -->

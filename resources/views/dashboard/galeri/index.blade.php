@@ -2,7 +2,7 @@
 @section('title', 'Galeri')
 
 @section('content')
-<div class="container-fluid">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <div class="card striped-tabled-with-hover">
@@ -40,7 +40,7 @@
                                         </a>
                                         <a class="control-icon alert-danger delete-btn" data-toggle="modal" data-target="#myModal2" href="{{ route('admin.galeri.destroy', $galeri->id) }}" >                                                            <i class="nc-icon nc-simple-remove"></i>
                                             Delete
-                                            </a>
+                                        </a>
                                     </td>
                                 </tr>
                                 @endforeach

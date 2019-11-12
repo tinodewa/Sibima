@@ -1,7 +1,16 @@
 @extends('layouts/dashboard')
 @section('title', 'Artikel')
 
+@section('css')
+<style>
+    button{
+        border: none;
+    }
+</style>
+@endsection
+
 @section('content')
+<form action="#" method="POST" enctype="multipart/form-data">
 <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -11,12 +20,21 @@
                     </div>
                     <div class="card-body">
                         <div class="paket">
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </div>
+                            @endif
+                            {{ csrf_field() }}  
+                            {{ method_field('PUT') }}
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="col-md-4 pr-1">
                                         <div class="form-group">
                                             <label>Foto Artikel</label>
-                                            <input type="file" data-upload="" accept="image/*" class="" name="image">
+                                            <input type="file" data-upload="" accept="image/*" class="" name="image_file name="caption" value="{{ $artikel->foto }}">
                                         </div>
                                     </div>
                                 </div>
@@ -47,7 +65,7 @@
                                     <div class="col-md-4 pr-1">
                                         <div class="form-group">
                                             <label>Judul</label>
-                                            <input type="text" class="form-control" placeholder="">
+                                            <input type="text" class="form-control" placeholder="" name="judul" value="{{ $artikel->judul }}">
                                         </div>
                                     </div>
                                 </div>
@@ -55,7 +73,7 @@
                                     <div class="col-md-4 pr-1">
                                         <div class="form-group">
                                             <label>User Post</label>
-                                            <input type="text" class="form-control" placeholder="">
+                                            <input type="text" class="form-control" placeholder="" name="user_post" value="{{ $artikel->user_post }}">
                                         </div>
                                     </div>
                                 </div>
@@ -63,7 +81,7 @@
                                     <div class="col-md-4 pr-1">
                                         <div class="form-group">
                                             <label>Tanggal Post</label>
-                                            <input type="text" class="form-control" placeholder="">
+                                            <input type="datetime-local" class="form-control" placeholder="" name="tgl_post" value="{{ $artikel->tgl_post }}">
                                         </div>
                                     </div>
                                 </div>
@@ -71,7 +89,8 @@
                                     <div class="col-md-12 pr-1">
                                         <div class="form-group">
                                             <label>Konten</label>
-                                            <textarea class="form-control" rows="4" cols="50">
+                                            <textarea class="form-control" rows="4" cols="50" name="konten">
+                                                {{ $artikel->konten }}
                                             </textarea>
                                         </div>
                                     </div>
@@ -80,7 +99,7 @@
                                     <div class="col-md-4 pr-1">
                                         <div class="form-group">
                                             <label>Nama Reporter</label>
-                                            <input type="text" class="form-control" placeholder="">
+                                            <input type="text" class="form-control" placeholder="" name="nama_reporter" value="{{ $galeri->nama_reporter }}">
                                         </div>
                                     </div>
                                 </div>
@@ -88,7 +107,7 @@
                                     <div class="col-md-4 pr-1">
                                         <div class="form-group">
                                             <label>Nama Editor</label>
-                                            <input type="text" class="form-control" placeholder="">
+                                            <input type="text" class="form-control" placeholder="" name="nama_editor" value="{{ $galeri->nama_editor }}">
                                         </div>
                                     </div>
                                 </div>
@@ -114,7 +133,7 @@
                     <p>Apakah anda sudah yakin?</p>
                 </div>
                 <div class="modal-footer">
-                    <a class="btn control-icon btn-fill btn-info" href="{{ url('/super-admin/artikel') }}">Ya</a>
+                    <button type="submit" class="btn control-icon btn-fill btn-info">Ya</button>
                     <button type="button" class="btn btn-link btn-simple" data-dismiss="modal">Batal</button>
                 </div>
             </div>

@@ -1,8 +1,16 @@
 @extends('layouts/dashboard')
 @section('title', 'Artikel')
 
+@section('css')
+<style>
+    button{
+        border: none;
+    }
+</style>
+@endsection
+
 @section('content')
-<div class="container-fluid">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <div class="card striped-tabled-with-hover">
@@ -11,6 +19,15 @@
                     </div>
                     <div class="card-body">
                         <div class="paket">
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </div>
+                            @endif
+                            <form action="{{ route('admin.provinsi.store') }}" method="POST">    
+                            {{ csrf_field() }} 
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="col-md-4 pr-1">
@@ -93,9 +110,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <a class="ml-3 control-icon btn-fill btn-info" data-toggle="modal" data-target="#myModal2" href="#">
+                            <button type="button" class="ml-3 control-icon btn-fill btn-info" data-toggle="modal" data-target="#myModal2" href="#">
                                 Simpan
-                            </a>
+                            </button>
                             <div class="clearfix"></div>
                         </div>
                     </div>
@@ -114,7 +131,7 @@
                     <p>Apakah anda sudah yakin?</p>
                 </div>
                 <div class="modal-footer">
-                    <a class="btn control-icon btn-fill btn-info" href="{{ url('/super-admin/artikel') }}">Ya</a>
+                    <button type="submit" class="btn control-icon btn-fill btn-info">Ya</button>
                     <button type="button" class="btn btn-link btn-simple" data-dismiss="modal">Batal</button>
                 </div>
             </div>

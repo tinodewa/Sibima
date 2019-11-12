@@ -9,7 +9,6 @@
 </style>
 @endsection
 
-
 @section('content')
 <form action="#" method="POST" enctype="multipart/form-data">    
 <div class="container-fluid">
@@ -75,5 +74,6 @@
             </div>
         </div>
     </div>
+    </form>
     <!--  End Confirmation -->
 @endsection

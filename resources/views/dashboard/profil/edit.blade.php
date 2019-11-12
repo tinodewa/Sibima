@@ -1,7 +1,16 @@
 @extends('layouts/dashboard')
 @section('title', 'Profil')
 
+@section('css')
+<style>
+    button{
+        border: none;
+    }
+</style>
+@endsection
+
 @section('content')
+<form action="#" method="POST" enctype="multipart/form-data"> 
 <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -11,6 +20,15 @@
                     </div>
                     <div class="card-body">
                         <div class="paket">
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </div>
+                            @endif
+                            {{ csrf_field() }}  
+                            {{ method_field('PUT') }}  
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="col-md-4 pr-1">
@@ -25,6 +43,7 @@
                                         <div class="form-group">
                                             <label>Konten</label>
                                             <textarea class="form-control" rows="4" cols="50">
+                                                {{ $profil->konten }}
                                             </textarea>
                                         </div>
                                     </div>
@@ -51,12 +70,13 @@
                     <p>Apakah anda sudah yakin?</p>
                 </div>
                 <div class="modal-footer">
-                    <a class="btn control-icon btn-fill btn-info" href="{{ url('/super-admin/profil') }}">Ya</a>
+                    <button type="submit" class="btn control-icon btn-fill btn-info" href="{{ url('/super-admin/data-provinsi') }}">Ya</button>
                     <button type="button" class="btn btn-link btn-simple" data-dismiss="modal">Batal</button>
                 </div>
             </div>
         </div>
     </div>
+    </form>
     <!--  End Confirmation -->
 @endsection
 

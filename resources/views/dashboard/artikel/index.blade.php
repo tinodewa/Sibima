@@ -13,6 +13,11 @@
                         <a href="{{ route('admin.artikel.create') }}" type="submit" class="btn btn-info btn-fill btn-tambah">Tambah Data</a>
                     </div>
                     <div class="card-body table-responsive">
+                        @if (Session::has('success'))
+                            <div class="alert alert-success">
+                                {{ Session::get('success') }}
+                            </div>
+                        @endif
                         <table class="table table-hover table-striped">
                             <thead>
                                 <th class="w-25">Foto Thumbnail</th>
@@ -62,7 +67,11 @@
                     <p>Yakin hapus paket ini?</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-link btn-simple">Hapus</button>
+                    <form action="#" id="delete-form" method="POST">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+                        <button id="confirm-btn" class="btn btn-link btn-simple" style="cursor:pointer;">Hapus</button>
+                    </form>
                     <button type="button" class="btn btn-link btn-simple" data-dismiss="modal">Batal</button>
                 </div>
             </div>
