@@ -45,7 +45,6 @@ class GaleriController extends Controller
             'caption' => 'required|string|min:10',
         ]);
         
-        
         $filename = time().'.'.$request->image_file->getClientOriginalName();
         $request->image_file->storeAs('galeri', $filename);
         
@@ -79,7 +78,8 @@ class GaleriController extends Controller
     public function edit($id)
     {
         //
-        return view('dashboard/galeri/edit');
+        $galeri = Galeri::where('id', $id)->firstOrFail();
+        return view('dashboard/galeri/edit', compact('galeri'));
     }
 
     /**
@@ -92,6 +92,28 @@ class GaleriController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate([
+            'caption' => 'required|string|min:6'
+        ]);
+
+        $galeri = Galeri::where('id', $id)->firstOrFail();
+        if($request->image_file){
+            unlink(storage_path('app\public\galeri\\'.$galeri->image_url));
+            $filename = time().'.'.$request->image_file->getClientOriginalName();
+            $request->image_file->storeAs('galeri', $filename);
+            $galeri->update([
+                'caption' => $request->caption,
+                'image_url' => $filename
+            ]);
+        }
+        else {
+            $galeri->update([
+                'caption' => $request->caption
+            ]);
+        }
+
+        return redirect()->route('admin.galeri')
+                ->with(['success' => 'Galeri berhasil diperbarui']);
     }
 
     /**
@@ -104,8 +126,11 @@ class GaleriController extends Controller
     {
         //
         $galeri = Galeri::where('id', $id)->firstOrFail();
+        
+        //Storage::delete('app\public\galeri', $galeri->image_url);
+        unlink(storage_path('app\public\galeri\\'.$galeri->image_url));
+        
         $galeri->delete();
-
         return redirect()->route('admin.galeri')
                 ->with(['success' => 'Galeri berhasil dihapus']);
     }

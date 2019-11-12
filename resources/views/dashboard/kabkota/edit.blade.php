@@ -75,7 +75,7 @@
                 <p>Apakah anda sudah yakin?</p>
             </div>
             <div class="modal-footer">
-                    <button type="submit" class="btn control-icon btn-fill btn-info">Ya</button>
+                <button type="submit" class="btn control-icon btn-fill btn-info">Ya</button>
                 <button type="button" class="btn btn-link btn-simple" data-dismiss="modal">Batal</button>
             </div>
         </div>

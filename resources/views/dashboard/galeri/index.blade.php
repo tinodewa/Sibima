@@ -23,7 +23,7 @@
                                 <th class="w-25">Foto</th>
                                 <th>Caption</th>
                                 <th>Kontrol</th>
-                            </thead>
+                            </thead>        
                             <tbody>
                                 @foreach ($galeris as $galeri)
                                 <tr>
