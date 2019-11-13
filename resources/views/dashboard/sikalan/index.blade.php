@@ -13,6 +13,11 @@
                         <a href="{{ route('admin.sikalan.create') }}" type="submit" class="btn btn-info btn-fill btn-tambah">Tambah Data</a>
                     </div>
                     <div class="card-body table-responsive">
+                        @if (Session::has('success'))
+                            <div class="alert alert-success">
+                                {{ Session::get('success') }}
+                            </div>
+                        @endif
                         <table class="table table-hover table-striped">
                             <thead>
                                 <th>Kelompok Data Dasar</th>
@@ -21,25 +26,27 @@
                                 <th>Kontrol</th>
                             </thead>
                             <tbody>
-                                    <tr>
-                                        <td>Non Tol</td>
-                                        <td>Jl. Jbt Benu Muda Kiri - Jbt. Himba Lestari</td>
-                                        <td>2018</td>
-                                        <td style="display:table-cell;">
-                                            <a class="control-icon alert-info" href="{{ route('admin.sikalan.show', 1) }}">
-                                                <i class="nc-icon nc-paper-2"></i>
-                                                More
-                                            </a>
-                                            <a class="control-icon alert-success" href="{{ route('admin.sikalan.edit', 1) }}">
-                                                <i class="nc-icon nc-settings-tool-66"></i>
-                                                Edit
-                                            </a>
-                                            <a class="control-icon alert-danger" data-toggle="modal" data-target="#myModal2" href="#pablo">
-                                                <i class="nc-icon nc-simple-remove"></i>
-                                                Delete
-                                            </a>
-                                        </td>
-                                    </tr>
+                                @foreach ($sikalans as $sikalan)
+                                <tr>
+                                    <td>{{ $sikalan->data_dasar}}</td>
+                                    <td>{{ $sikalan->nama_ruas_jalan}}</td>
+                                    <td>{{ $sikalan->tahun_data}}</td>
+                                    <td style="display:table-cell;">
+                                        <a class="control-icon alert-info" href="{{ route('admin.sikalan.show', $sikalan->id) }}">
+                                            <i class="nc-icon nc-paper-2"></i>
+                                            More
+                                        </a>
+                                        <a class="control-icon alert-success" href="{{ route('admin.sikalan.edit', $sikalan->id) }}">
+                                            <i class="nc-icon nc-settings-tool-66"></i>
+                                            Edit
+                                        </a>
+                                        <a class="control-icon alert-danger" data-toggle="modal" data-target="#myModal2" href="{{ route('admin.sikalan.destroy', $sikalan->id) }}">
+                                            <i class="nc-icon nc-simple-remove"></i>
+                                            Delete
+                                        </a>
+                                    </td>
+                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -58,11 +65,25 @@
                     <p>Yakin hapus paket ini?</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-link btn-simple">Hapus</button>
+                    <form action="#" id="delete-form" method="POST">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+                        <button id="confirm-btn" class="btn btn-link btn-simple" style="cursor:pointer;">Hapus</button>
+                    </form>
                     <button type="button" class="btn btn-link btn-simple" data-dismiss="modal">Batal</button>
                 </div>
             </div>
         </div>
     </div>
     <!--  End Confirmation -->
+@endsection
+
+@section('js')
+<script>
+    $('.delete-btn').click(function(){
+        var url = $(this).attr('href');
+        $('#delete-form').attr('action', url);
+    });
+</script>
+
 @endsection

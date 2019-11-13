@@ -20,8 +20,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <div class="img-box">
-                                        <img src="#" alt="img">
+                                    <div class="">
+                                        <img src="{{ asset('storage/artikel/'.$article->thumbnail) }}" alt="img" style="max-width:100%;">
                                     </div>
                                 </div>
                             </div>
@@ -33,7 +33,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <p>Umum</p>
+                                    <p>{{$article->category}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -44,7 +44,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <p>Pengen Siaran</p>
+                                    <p>{{$article->title}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -55,7 +55,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <p>Pengen pengen, pengen pengen</p>
+                                    <p>{{$article->content}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -66,7 +66,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <p>El Admin</p>
+                                    <p>{{$article->reporter}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -77,14 +77,14 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <p>El Editor</p>
+                                    <p>{{$article->editor}}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12 ml-3">
                                 <div class="form-group">
-                                    <a class="control-icon alert-success" href="{{ route('admin.artikel.edit', 1) }}">
+                                    <a class="control-icon alert-success" href="{{ route('admin.artikel.edit', $article->id) }}">
                                         <i class="nc-icon nc-settings-tool-66"></i>
                                         Edit
                                     </a>

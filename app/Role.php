@@ -8,4 +8,9 @@ class Role extends Model
 {
     //
     public $guarded = [];
+
+    public function users() 
+    {
+        return $this->HasMany(User::class);
+    }
 }

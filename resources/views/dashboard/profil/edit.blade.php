@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-<form action="#" method="POST" enctype="multipart/form-data"> 
+<form action="{{ route('admin.profil.update', $profil->id)}}" method="POST" enctype="multipart/form-data"> 
 <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -43,7 +43,7 @@
                                         <div class="form-group">
                                             <label>Konten</label>
                                             <textarea class="form-control" rows="4" cols="50">
-                                                {{ $profil->konten }}
+                                                {{ old('content', $profil->content) }}
                                             </textarea>
                                         </div>
                                     </div>

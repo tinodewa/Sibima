@@ -29,7 +29,7 @@
                                 <tr>
                                     <td>
                                         <div class="img-box">
-                                            <img src="{{ asset('storage/galeri/'.$profil->image_url) }}" alt="bromo" class="img-fluid">
+                                            <img src="{{ asset('storage/profil/'.$profil->foto) }}" alt="bromo" class="img-fluid">
                                         </div>
                                     </td>
                                     <td>{{ $profil->konten }}</td>
@@ -39,6 +39,7 @@
                                             Edit
                                         </a>
                                         <a class="control-icon alert-danger delete-btn" data-toggle="modal" data-target="#myModal2" href="{{ route('admin.profil.destroy', $profil->id) }}" >                                                            <i class="nc-icon nc-simple-remove"></i>
+                                            <i class="nc-icon nc-simple-remove"></i>
                                             Delete
                                         </a>
                                     </td>

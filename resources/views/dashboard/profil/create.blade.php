@@ -1,17 +1,8 @@
 @extends('layouts/dashboard')
 @section('title', 'Profil')
 
-@section('css')
-<style>
-    button{
-        border: none;
-    }
-</style>
-@endsection
-
 @section('content')
-<form action="{{ route('admin.galeri.store') }}" method="POST" enctype="multipart/form-data">    
-{{ csrf_field() }}  
+<form action="{{ route('admin.profil.store') }}" method="POST" enctype="multipart/form-data">
 <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -28,12 +19,13 @@
                                     @endforeach
                                 </div>
                             @endif
+                            {{ csrf_field() }}
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="col-md-4 pr-1">
                                         <div class="form-group">
                                             <label>Foto</label>
-                                            <input type="file" data-upload="" accept="image/*" class="" name="image">
+                                            <input type="file" data-upload="" accept="image/*" class="" name="foto">
                                         </div>
                                     </div>
                                 </div>
@@ -42,7 +34,7 @@
                                         <div class="form-group">
                                             <label>Konten</label>
                                             <textarea class="form-control" rows="4" cols="50">
-                                                {{ old('konten') }}
+                                                {{ old('content') }}
                                             </textarea>
                                         </div>
                                     </div>

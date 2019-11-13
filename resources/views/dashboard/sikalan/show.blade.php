@@ -20,7 +20,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <p>15.01.01</p>
+                                    <p>{{$sikalan->nomor_ruas}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -31,7 +31,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <p>Non Tol</p>
+                                    <p>{{$sikalan->data_dasar}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -42,7 +42,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <p>Jl. Jbt Benu Muda Kiri - Jbt. Himba Lestari</p>
+                                    <p>{{$sikalan->nama_ruas}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -53,7 +53,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <p>2018</p>
+                                    <p>{{$sikalan->tahun_data}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -64,7 +64,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <p>Jalan Kabupaten</p>
+                                    <p>status</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -75,7 +75,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <p>JKP-4</p>
+                                    <p>{{$sikalan->fungsi}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -86,7 +86,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <p>Mendukung</p>
+                                    <p>{{$sikalan->mendukung}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -97,7 +97,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <p>Truk</p>
+                                    <p>{{$sikalan->uraian_dukungan}}</p>
                                 </div>
                             </div>
                             <div class="card striped-tabled-with-hover">
@@ -115,7 +115,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>15</p>
+                                                    <p>{{$sikalan->kode_bidang_pekerjaan_umum}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -126,7 +126,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-7">
-                                                    <p>1</p>
+                                                    <p>{{$sikalan->kode_data_dasar_jenis_infrastruktur}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -137,7 +137,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>1    </p>
+                                                    <p>{{$sikalan->kode_infrastruktur}}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -159,7 +159,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>Kalimantan Timur</p>
+                                                    <p>{{$sikalan->provinsi}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -170,7 +170,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>Kutai Timur</p>
+                                                    <p>{{$sikalan->kabupatenkota}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -181,7 +181,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>Batu Ampar</p>
+                                                    <p>{{$sikalan->kecamatan}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -192,7 +192,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>Desa Himba Lestari</p>
+                                                    <p>{{$sikalan->kelurahandesa}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -203,7 +203,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>Jbt. Benu Muda Kiri</p>
+                                                    <p>{{$sikalan->titik_pengenal_ruas_awal}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -214,7 +214,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>Jbt. Himba Lestari</p>
+                                                    <p>{{$sikalan->titik_pengenal_ruas_akhir}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -225,7 +225,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>21</p>
+                                                    <p>{{$sikalan->kode_patok}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -236,7 +236,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>0</p>
+                                                    <p>{{$sikalan->km_awal_ruas}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -247,7 +247,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>26,48</p>
+                                                    <p>{{$sikalan->km_akhir_ruas}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -258,7 +258,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>Abogoboga</p>
+                                                    <p>{{$sikalan->nama_lintas}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -316,7 +316,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>10326</p>
+                                                    <p>{{$sikalan->kondisi_baik}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -327,7 +327,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>959</p>
+                                                    <p>{{$sikalan->kondisi_sedang}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -338,7 +338,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>15192</p>
+                                                    <p>{{$sikalan->kondisi_rusak_ringan}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -349,7 +349,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>0</p>
+                                                    <p>{{$sikalan->kondisi_rusak_berat}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -360,7 +360,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>11285</p>
+                                                    <p>{{$sikalan->kondisi_mantap}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -371,7 +371,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-7">
-                                                    <p>15192</p>
+                                                    <p>{{$sikalan->kondisi_tidak_mantap}}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -393,7 +393,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>26478</p>
+                                                    <p>{{$sikalan->panjang_jalan}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -404,7 +404,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>6</p>
+                                                    <p>{{$sikalan->lebar_perkerasan_jalan}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -415,7 +415,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <p>0</p>
+                                                    <p>{{$sikalan->lalulintas_harian_jalan}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -426,7 +426,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>0</p>
+                                                    <p>{{$sikalan->volume_capacity_jalan}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -437,7 +437,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>2</p>
+                                                    <p>{{$sikalan->tipe_jalan}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -448,7 +448,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>0</p>
+                                                    <p>{{$sikalan->kapasitan_mst_jalan}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -466,7 +466,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>0</p>
+                                                    <p>{{$sikalan->tanah_krikil}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -477,7 +477,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-7">
-                                                    <p>1677</p>
+                                                    <p>{{$sikalan->penetrasi_macadam}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -488,7 +488,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>24801</p>
+                                                    <p>{{$sikalan->ashpalt}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -499,7 +499,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>0</p>
+                                                    <p>{{$sikalan->rigid_beton}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -510,7 +510,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>0</p>
+                                                    <p>{{$sikalan->tahun_penganan_terakhir}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -521,7 +521,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>0</p>
+                                                    <p>{{$sikalan->jenis_penanganan}}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -543,7 +543,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-8">
-                                                        <p>117,1335752991</p>
+                                                        <p>{{$sikalan->Koordinat_x_titik_awal_ruas}}</p>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -554,7 +554,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-8">
-                                                        <p>0,7048846718</p>
+                                                        <p>{{$sikalan->Koordinat_y_titik_awal_ruas}}</p>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -565,7 +565,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-8">
-                                                        <p>117,0116778839</p>
+                                                        <p>{{$sikalan->Koordinat_x_titik_akhir_ruas}}</p>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -576,7 +576,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-8">
-                                                        <p>0,6483465026</p>
+                                                        <p>{{$sikalan->Koordinat_y_titik_akhir_ruas}}</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -599,7 +599,7 @@
                             <div class="row">
                                 <div class="col-md-12 ml-3">
                                     <div class="form-group">
-                                        <a class="control-icon alert-success" href="{{ route('admin.sikalan.edit', 1) }}">
+                                        <a class="control-icon alert-success" href="{{ route('admin.sikalan.edit', $sikalan->id) }}">
                                             <i class="nc-icon nc-settings-tool-66"></i>
                                             Edit
                                         </a>

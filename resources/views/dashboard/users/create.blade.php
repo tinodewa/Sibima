@@ -1,17 +1,8 @@
 @extends('layouts/dashboard')
 @section('title', 'Users')
 
-@section('css')
-<style>
-    button{
-        border: none;
-    }
-</style>
-@endsection
-
 @section('content')
 <form action="{{ route('admin.user.store') }}" method="POST" enctype="multipart/form-data">    
-{{ csrf_field() }}  
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -28,6 +19,7 @@
                                     @endforeach
                                 </div>
                             @endif
+                            {{ csrf_field() }}
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="col-md-4 pr-1">
@@ -70,14 +62,14 @@
                                             </div>
                                             <div class="form-check form-check-radio">
                                                 <label class="form-check-label">
-                                                    <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios1" value="option1">
+                                                    <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios1" value="Admin 1">
                                                     <span class="form-check-sign"></span>
                                                     Admin 1
                                                 </label>
                                             </div>
                                             <div class="form-check form-check-radio">
                                                 <label class="form-check-label">
-                                                    <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios2" value="option2">
+                                                    <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios2" value="Admin 2">
                                                     <span class="form-check-sign"></span>
                                                     Admin 2
                                                 </label>
@@ -93,14 +85,14 @@
                                             </div>
                                             <div class="form-check form-check-radio">
                                                 <label class="form-check-label">
-                                                    <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios1" value="option1">
+                                                    <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios1" value="active">
                                                     <span class="form-check-sign"></span>
                                                     Active
                                                 </label>
                                             </div>
                                             <div class="form-check form-check-radio">
                                                 <label class="form-check-label">
-                                                    <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios2" value="option2">
+                                                    <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios2" value="non-active">
                                                     <span class="form-check-sign"></span>
                                                     non-active
                                                 </label>
@@ -137,4 +129,7 @@
         </div>
     </div>
     <!--  End Confirmation -->
+@endsection
+
+@section('js')
 @endsection

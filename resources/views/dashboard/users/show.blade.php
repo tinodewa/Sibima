@@ -20,7 +20,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <p>Admininstrator</p>
+                                    <p>{{$user->nama_lengkap}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -32,7 +32,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="img-box">
-                                        <img src="#" alt="img">
+                                        <img src="{{ asset('storage/users/'.$user->foto) }}" alt="img">
                                     </div>
                                 </div>
                             </div>
@@ -44,7 +44,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <p>4dmin</p>
+                                    <p>{{$user->username}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -55,7 +55,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <p>Pengen_Siaran</p>
+                                    <p>{{$user->password}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -66,7 +66,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <p>Admin 1</p>
+                                    <p>{{$user->level}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -77,7 +77,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <p>2 Agustus 2019 , 17.23 WIB</p>
+                                    <p>{{$user->terakhir_login}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -88,14 +88,14 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <p>non-active</p>
+                                    <p>{{$user->status}}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12 ml-3">
                                 <div class="form-group">
-                                    <a class="control-icon alert-success" href="{{ url('/super-admin/user/tambah') }}">
+                                    <a class="control-icon alert-success" href="{{ route('admin.user.edit', $user->id) }}">
                                         <i class="nc-icon nc-settings-tool-66"></i>
                                         Edit
                                     </a>

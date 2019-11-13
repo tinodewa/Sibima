@@ -26,29 +26,31 @@
                                 <th>Kontrol</th>
                             </thead>
                             <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="img-box">
-                                                <img src="" alt="bromo" class="img-fluid">
-                                            </div>
-                                        </td>
-                                        <td>Umum</td>
-                                        <td>Kenangan yang pernah ada</td>
-                                        <td style="display:table-cell;">
-                                            <a class="control-icon alert-info" href="{{ route('admin.artikel.show', 1) }}">
-                                                <i class="nc-icon nc-paper-2"></i>
-                                                More
-                                            </a>
-                                            <a class="control-icon alert-success" href="{{ route('admin.artikel.edit', 1) }}">
-                                                <i class="nc-icon nc-settings-tool-66"></i>
-                                                Edit
-                                            </a>
-                                            <a class="control-icon alert-danger" data-toggle="modal" data-target="#myModal2" href="#pablo">`
-                                                <i class="nc-icon nc-simple-remove"></i>
-                                                Delete
-                                            </a>
-                                        </td>
-                                    </tr>
+                                @foreach ($articles as $article)
+                                <tr>
+                                    <td>
+                                        <div class="img-box">
+                                            <img src="{{ asset('storage/artikel/'.$article->thumbnail) }}" alt="bromo" class="img-fluid">
+                                        </div>
+                                    </td>
+                                    <td>{{ $article->category }}</td>
+                                    <td>{{ $article->title }}</td>
+                                    <td style="display:table-cell;">
+                                        <a class="control-icon alert-info" href="{{ route('admin.artikel.show', $article->id) }}">
+                                            <i class="nc-icon nc-paper-2"></i>
+                                            More
+                                        </a>
+                                        <a class="control-icon alert-success" href="{{ route('admin.artikel.edit', $article->id) }}">
+                                            <i class="nc-icon nc-settings-tool-66"></i>
+                                            Edit
+                                        </a>
+                                        <a class="control-icon alert-danger delete-btn" data-toggle="modal" data-target="#myModal2" href="{{ route('admin.artikel.destroy', $article->id) }}">
+                                            <i class="nc-icon nc-simple-remove"></i>
+                                            Delete
+                                        </a>
+                                    </td>
+                                </tr>   
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -79,4 +81,14 @@
     </div>
 
     <!--  End Confirmation -->
+@endsection
+
+@section('js')
+<script>
+    $('.delete-btn').click(function(){
+        var url = $(this).attr('href');
+        $('#delete-form').attr('action', url);
+    });
+</script>
+
 @endsection

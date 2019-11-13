@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers\Home;
 
+use App\Galeri;
+use App\User;
+use App\Article;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -70,7 +73,8 @@ class HomeController extends Controller
     public function artikel()
     {
         //
-        return view('home.artikel');
+        $articles = Article::with('user')->orderBy('id', 'DESC')->get();
+        return view('home.artikel', compact('articles'));
     }
 
     /**
@@ -81,7 +85,9 @@ class HomeController extends Controller
     public function artikelDetail($id)
     {
         //
-        return view('home.artikel_detail');
+        $articles = Article::orderBy('id', 'DESC')->get();
+        $article = Article::with('user')->where('id', $id)->first();
+        return view('home.artikel_detail', compact('article', 'articles'));
     }
 
     /**
@@ -92,7 +98,8 @@ class HomeController extends Controller
     public function galeri()
     {
         //
-        return view('home.galeri');
+        $galeris = Galeri::orderBy('id', 'DESC')->get();
+        return view('home.galeri', compact('galeris'));
     }
 
     /**

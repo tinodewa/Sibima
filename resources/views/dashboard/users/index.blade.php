@@ -38,15 +38,15 @@
                                     <td>{{ $user->username }}</td>
                                     <td>{{ $user->last_login }}</td>
                                     <td style="display:table-cell;">
-                                        <a class="control-icon alert-info" href="{{ url('/super-admin/user/detail') }}">
+                                        <a class="control-icon alert-info" href="{{ route('admin.user.show', $user->id) }}">
                                             <i class="nc-icon nc-paper-2"></i>
                                             More
                                         </a>
-                                        <a class="control-icon alert-success" href="{{ route('admin.galeri.edit', $user->id) }}">
+                                        <a class="control-icon alert-success" href="{{ route('admin.user.edit', $user->id) }}">
                                             <i class="nc-icon nc-settings-tool-66"></i>
                                             Edit
                                         </a>
-                                        <a class="control-icon alert-danger" data-toggle="modal" data-target="#myModal2" href="#pablo">
+                                        <a class="control-icon alert-danger" data-toggle="modal" data-target="#myModal2" href="{{ route('admin.user.destroy', $user->id) }}">
                                             <i class="nc-icon nc-simple-remove"></i>
                                             Delete
                                         </a>
