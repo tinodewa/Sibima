@@ -2,7 +2,7 @@
 @section('title', 'Users')
 
 @section('content')
-<form action="{{ route('admin.user.store') }}" method="POST" enctype="multipart/form-data">    
+<form action="{{ route('admin.users.store') }}" method="POST" enctype="multipart/form-data">    
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -25,7 +25,7 @@
                                     <div class="col-md-4 pr-1">
                                         <div class="form-group">
                                             <label>nama Lengkap</label>
-                                            <input type="text" class="form-control" placeholder="" name="nama_lengkap" value="{{ old('nama_lengkap') }}">
+                                            <input type="text" class="form-control" placeholder="" name="name" value="{{ old('name') }}">
                                         </div>
                                     </div>
                                 </div>
@@ -33,7 +33,7 @@
                                     <div class="col-md-4 pr-1">
                                         <div class="form-group">
                                             <label>Foto Profil</label>
-                                            <input type="file" data-upload="" accept="image/*" class="" name="image_file">
+                                            <input type="file" data-upload="" accept="image/*" class="" name="image_url">
                                         </div>
                                     </div>
                                 </div>
@@ -62,14 +62,14 @@
                                             </div>
                                             <div class="form-check form-check-radio">
                                                 <label class="form-check-label">
-                                                    <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios1" value="Admin 1">
+                                                    <input class="form-check-input" type="radio" name="role_id" id="exampleRadios1" value="2">
                                                     <span class="form-check-sign"></span>
                                                     Admin 1
                                                 </label>
                                             </div>
                                             <div class="form-check form-check-radio">
                                                 <label class="form-check-label">
-                                                    <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios2" value="Admin 2">
+                                                    <input class="form-check-input" type="radio" name="role_id" id="exampleRadios2" value="3">
                                                     <span class="form-check-sign"></span>
                                                     Admin 2
                                                 </label>
@@ -85,14 +85,14 @@
                                             </div>
                                             <div class="form-check form-check-radio">
                                                 <label class="form-check-label">
-                                                    <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios1" value="active">
+                                                    <input class="form-check-input" type="radio" name="status" id="exampleRadios1" value="active">
                                                     <span class="form-check-sign"></span>
                                                     Active
                                                 </label>
                                             </div>
                                             <div class="form-check form-check-radio">
                                                 <label class="form-check-label">
-                                                    <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios2" value="non-active">
+                                                    <input class="form-check-input" type="radio" name="status" id="exampleRadios2" value="non-active">
                                                     <span class="form-check-sign"></span>
                                                     non-active
                                                 </label>

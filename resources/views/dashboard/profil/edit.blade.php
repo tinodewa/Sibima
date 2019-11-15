@@ -34,7 +34,7 @@
                                     <div class="col-md-4 pr-1">
                                         <div class="form-group">
                                             <label>Foto</label>
-                                            <input type="file" data-upload="" accept="image/*" class="" name="image">
+                                            <input type="file" data-upload="" accept="image/*" class="" name="image_thumbnail">
                                         </div>
                                     </div>
                                 </div>
@@ -42,7 +42,7 @@
                                     <div class="col-md-12 pr-1">
                                         <div class="form-group">
                                             <label>Konten</label>
-                                            <textarea class="form-control" rows="4" cols="50">
+                                            <textarea class="form-control" rows="4" cols="50" name="content">
                                                 {{ old('content', $profil->content) }}
                                             </textarea>
                                         </div>

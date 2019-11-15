@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Profil;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,7 +16,8 @@ class ProfilController extends Controller
     public function index()
     {
         //
-        return view('dashboard/profil/index');
+        $profil = Profil::where('id', 1)->first();
+        return view('dashboard/profil/index', compact('profil'));
     }
 
     /**
@@ -49,6 +51,7 @@ class ProfilController extends Controller
     public function show($id)
     {
         //
+        
     }
 
     /**
@@ -60,7 +63,8 @@ class ProfilController extends Controller
     public function edit($id)
     {
         //
-        return view('dashboard/profil/edit');
+        $profil = Profil::where('id', 1)->first();
+        return view('dashboard/profil/edit', compact('profil'));
     }
 
     /**
@@ -73,6 +77,28 @@ class ProfilController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate([
+            'content' => 'required|string',
+        ]);
+
+        $profil = Profil::where('id', $id)->firstOrFail();
+        if($request->image_thumbnail){
+            unlink(storage_path('app\public\profil\\'.$profil->thumbnail));
+            $filename = time().'.'.$request->image_thumbnail->getClientOriginalName();
+            $request->image_thumbnail->storeAs('profil', $filename);
+            $profil->update([
+                'content' => $request->content,
+                'thumbnail' => $filename
+            ]);
+        }
+        else {
+            $profil->update([
+                'content' => $request->content
+            ]);
+        }
+
+        return redirect()->route('admin.profil')
+                ->with(['success' => 'Profil berhasil diperbarui']);
     }
 
     /**
@@ -84,5 +110,13 @@ class ProfilController extends Controller
     public function destroy($id)
     {
         //
+        $artikel = Profil::where('id', $id)->firstOrFail();
+        
+        //Storage::delete('app\public\galeri', $artikel->image_url);
+        //unlink(storage_path('app\public\artikel\\'.$artikel->thumbnail));
+        
+        $artikel->delete();
+        return redirect()->route('admin.profil')
+                ->with(['success' => 'Profil berhasil dihapus']);
     }
 }

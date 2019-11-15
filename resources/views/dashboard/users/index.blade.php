@@ -29,24 +29,24 @@
                             <tbody>
                                 @foreach ($users as $user)
                                 <tr>
-                                    <td>{{ $user->full_name }}</td>
+                                    <td>{{ $user->name }}</td>
                                     <td>
                                         <div class="img-box">
-                                            <img src="{{ asset('storage/galeri/'.$user->image_url) }}" alt="bromo" class="img-fluid">
+                                            <img src="{{ asset('storage/user/'.$user->image_url) }}" alt="bromo" class="img-fluid">
                                         </div>
                                     </td>
                                     <td>{{ $user->username }}</td>
                                     <td>{{ $user->last_login }}</td>
                                     <td style="display:table-cell;">
-                                        <a class="control-icon alert-info" href="{{ route('admin.user.show', $user->id) }}">
+                                        <a class="control-icon alert-info" href="{{ route('admin.users.show', $user->id) }}">
                                             <i class="nc-icon nc-paper-2"></i>
                                             More
                                         </a>
-                                        <a class="control-icon alert-success" href="{{ route('admin.user.edit', $user->id) }}">
+                                        <a class="control-icon alert-success" href="{{ route('admin.users.edit', $user->id) }}">
                                             <i class="nc-icon nc-settings-tool-66"></i>
                                             Edit
                                         </a>
-                                        <a class="control-icon alert-danger" data-toggle="modal" data-target="#myModal2" href="{{ route('admin.user.destroy', $user->id) }}">
+                                        <a class="control-icon alert-danger delete-bt" data-toggle="modal" data-target="#myModal2" href="{{ route('admin.users.destroy', $user->id) }}">
                                             <i class="nc-icon nc-simple-remove"></i>
                                             Delete
                                         </a>
@@ -68,13 +68,13 @@
                 <div class="modal-header justify-content-center">
                 </div>
                 <div class="modal-body text-center">
-                    <p>Yakin hapus paket ini?</p>
+                    <p>Yakin hapus User ini?</p>
                 </div>
                 <div class="modal-footer">
                     <form action="#" id="delete-form" method="POST">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
-                        <button id="confirm-btn" class="btn btn-link btn-simple" style="cursor:pointer;">Hapus</button>
+                        <button id="confirm-btn" class="btn btn-link btn-simple btn-danger" style="cursor:pointer;">Hapus</button>
                     </form>
                     <button type="button" class="btn btn-link btn-simple" data-dismiss="modal">Batal</button>
                 </div>

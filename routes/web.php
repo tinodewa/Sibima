@@ -90,8 +90,8 @@ Route::prefix('admin')->group(function () {
     Route::delete('profil/delete/{id}', 'Admin\ProfilController@destroy')->name('admin.profil.destroy');
 
     Route::get('users', 'Admin\UserController@index')->name('admin.users');
-    Route::get('users/{id}', 'Admin\UserController@show')->name('admin.users.show');
     Route::get('users/buat', 'Admin\UserController@create')->name('admin.users.create');
+    Route::get('users/{id}', 'Admin\UserController@show')->name('admin.users.show');
     Route::post('users/store', 'Admin\UserController@store')->name('admin.users.store');
     Route::get('users/edit/{id}', 'Admin\UserController@edit')->name('admin.users.edit');
     Route::put('users/edit/{id}', 'Admin\UserController@update')->name('admin.users.update');

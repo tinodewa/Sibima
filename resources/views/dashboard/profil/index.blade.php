@@ -9,9 +9,9 @@
                     <div class="card-header ">
                         <h4 class="card-title">Profil</h4>
                     </div>
-                    <div class="btn-box">
+                    {{-- <div class="btn-box">
                         <a href="{{ route('admin.profil.create') }}" type="submit" class="btn btn-info btn-fill btn-tambah">Tambah Data</a>
-                    </div>
+                    </div> --}}
                     <div class="card-body table-responsive">
                         @if (Session::has('success'))
                             <div class="alert alert-success">
@@ -25,26 +25,23 @@
                                 <th>Kontrol</th>
                             </thead>
                             <tbody>
-                                @foreach ($profils as $profil)
                                 <tr>
                                     <td>
                                         <div class="img-box">
-                                            <img src="{{ asset('storage/profil/'.$profil->foto) }}" alt="bromo" class="img-fluid">
+                                            <img src="{{ asset('storage/profil/'.$profil->thumbnail) }}" alt="bromo" class="img-fluid">
                                         </div>
                                     </td>
-                                    <td>{{ $profil->konten }}</td>
+                                    <td>{{ substr($profil->content, 0, 100) }}...</td>
                                     <td style="display:table-cell;">
                                         <a class="control-icon alert-success" href="{{ route('admin.profil.edit', $profil->id) }}">
                                             <i class="nc-icon nc-settings-tool-66"></i>
                                             Edit
                                         </a>
-                                        <a class="control-icon alert-danger delete-btn" data-toggle="modal" data-target="#myModal2" href="{{ route('admin.profil.destroy', $profil->id) }}" >                                                            <i class="nc-icon nc-simple-remove"></i>
-                                            <i class="nc-icon nc-simple-remove"></i>
+                                        {{-- <a class="control-icon alert-danger delete-btn" data-toggle="modal" data-target="#myModal2" href="{{ route('admin.profil.destroy', $profil->id) }}" >   <i class="nc-icon nc-simple-remove"></i>
                                             Delete
-                                        </a>
+                                        </a> --}}
                                     </td>
                                 </tr>
-                                @endforeach
                             </tbody>
                         </table>
                     </div>

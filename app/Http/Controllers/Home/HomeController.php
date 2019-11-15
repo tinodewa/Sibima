@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Home;
 use App\Galeri;
 use App\User;
 use App\Article;
+use App\Profil;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -121,7 +122,8 @@ class HomeController extends Controller
     public function profil()
     {
         //
-        return view('home.profil');
+        $profil = Profil::first();
+        return view('home.profil', compact('profil'));
     }
 
 }
