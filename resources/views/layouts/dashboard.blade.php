@@ -126,7 +126,8 @@
                                 </a>
                             </li>
                              <li class="nav-item">
-                                 <a class="nav-link" href="{{ url('/logout') }}">
+                                 <!-- Test View Login <a class="nav-link" href="{{ url('/logout') }}"> -->
+                                    <a class="nav-link" href="{{ url('/admin/login') }}">
                                      <span class="no-icon">Log out</span>
                                  </a>
                              </li>

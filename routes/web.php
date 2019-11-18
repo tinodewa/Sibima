@@ -100,3 +100,8 @@ Route::prefix('admin')->group(function () {
 });
 Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+//login 
+Route::get('/admin/login',function (){
+    return view('dashboard/login');
+});
