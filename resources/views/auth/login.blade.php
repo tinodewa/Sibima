@@ -1,69 +1,41 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-                        {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a>
-                            </div>
-                        </div>
-                    </form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>ADMIN DASHBOARD</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no" name="viewport" />
+    <link rel="stylesheet" href="{{ asset('assets/superadmin/css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="{{ asset('assets/superadmin/css/ready.min.pro.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/superadmin/css/ready.css')}}">
+</head>
+<body class="login">
+<div class="wrapper wrapper-login">
+    <div class="container container-login animated fadeIn">
+        <h3 class="text-center">Sign In To Admin</h3>
+        <div class="login-form">
+            <form action="/login-proses" method="post">
+                {{ csrf_field() }}
+            <div class="form-group form-floating-label">
+                <input id="username" name="username" name="username" type="text" class="form-control input-border-bottom" required>
+                <label for="username" class="placeholder">Username</label>
+            </div>
+            <div class="form-group form-floating-label">
+                <input id="password" name="password" name="password" type="password" class="form-control input-border-bottom" required>
+                <label for="password" class="placeholder">Password</label>
+                <div class="show-password">
+                    <i class="flaticon-interface"></i>
                 </div>
             </div>
-        </div>
+            <div class="form-action">
+            <!--    <button type="submit" class="btn btn-primary btn-rounded btn-login">Sign In</button> -->
+                <a href="{{ url('/admin') }}" class="btn btn-primary btn-rounded btn-login">Sign In</a>
+            </div>
+            </form>
     </div>
+    </div>
+    <!--END OF LOGIN PAGE END OF LOGIN PAGE END OF LOGIN PAGE END OF LOGIN PAGE-->
+
 </div>
-@endsection
+</body>
+</html>

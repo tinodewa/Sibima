@@ -14,6 +14,7 @@ class GalerisTableSeeder extends Seeder
     {
         //
         Galeri::create([
+            'user_id' => 1,
             'caption' => 'Proses ProPer SIKOMBATAN',
             'image_url' => '1573568065.proses_proper.jpg'
         ]);

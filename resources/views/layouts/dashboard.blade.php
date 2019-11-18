@@ -97,12 +97,15 @@
                              <p>Profil</p>
                          </a>
                      </li>
-                     <li class="nav-item {{ Request::is('admin/users') || Request::is('admin/users/*') ? 'active' : '' }}">
-                         <a class="nav-link" href="{{ route('admin.users') }}">
-                             <i class="nc-icon nc-circle-09"></i>
-                             <p>User</p>
-                         </a>
-                     </li>
+
+                     @if (Auth::user()->isSuperAdmin())
+                        <li class="nav-item {{ Request::is('admin/users') || Request::is('admin/users/*') ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ route('admin.users') }}">
+                                <i class="nc-icon nc-circle-09"></i>
+                                <p>User</p>
+                            </a>
+                        </li>
+                     @endif
                  </ul>
              </div>
          </div>
@@ -122,12 +125,11 @@
                          <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
                                 <a class="nav-link" href="#">
-                                {{-- <span class="no-icon">Welcome, {{ Auth::user()->name }}</span> --}}
+                                 <span class="no-icon">Welcome, {{ Auth::user()->name }}</span>
                                 </a>
                             </li>
                              <li class="nav-item">
-                                 <!-- Test View Login <a class="nav-link" href="{{ url('/logout') }}"> -->
-                                    <a class="nav-link" href="{{ url('/admin/login') }}">
+                                 <a class="nav-link" href="{{ url('/logout') }}">
                                      <span class="no-icon">Log out</span>
                                  </a>
                              </li>

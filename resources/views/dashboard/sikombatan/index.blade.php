@@ -13,35 +13,44 @@
                         <a href="{{ route('admin.sikombatan.create') }}" type="submit" class="btn btn-info btn-fill btn-tambah">Tambah Data</a>
                     </div>
                     <div class="card-body table-responsive">
+                        @if (Session::has('success'))
+                            <div class="alert alert-success">
+                                {{ Session::get('success') }}
+                            </div>
+                        @endif
                         <table class="table table-hover table-striped">
                             <thead>
-                                <th>Kelompok Data Dasar</th>
+                                <th>Nomor Ruas</th>
+                                <th>Nama Ruas</th>
+                                <th>Nomor Jembatan</th>
                                 <th>Nama Jembatan</th>
-                                <th>Tahun Data</th>
-                                <th>Status</th>
                                 <th>Kontrol</th>
                             </thead>
                             <tbody>
+                                @foreach ($sikombatans as $sikombatan)
                                     <tr>
-                                        <td>Jembatan Non Tol</td>
-                                        <td>Jl. Kenangan</td>
-                                        <td>2018</td>
-                                        <td>Arteri</td>
+                                        <td>{{ $sikombatan->sikalan->no_ruas }}</td>
+                                        <td>{{ $sikombatan->sikalan->nama_ruas_jalan }}</td>
+                                        <td>{{ $sikombatan->no_jembatan }}</td>
+                                        <td>{{ $sikombatan->nama_jembatan }}</td>
                                         <td style="display:table-cell;">
-                                            <a class="control-icon alert-info" href="{{ route('admin.sikombatan.show', 1) }}">
+                                            <a class="control-icon alert-info" href="{{ route('admin.sikombatan.show', $sikombatan->id) }}">
                                                 <i class="nc-icon nc-paper-2"></i>
                                                 More
                                             </a>
-                                            <a class="control-icon alert-success" href="{{ route('admin.sikombatan.edit', 1) }}">
+                                            <a class="control-icon alert-success" href="{{ route('admin.sikombatan.edit', $sikombatan->id) }}">
                                                 <i class="nc-icon nc-settings-tool-66"></i>
                                                 Edit
                                             </a>
-                                            <a class="control-icon alert-danger" data-toggle="modal" data-target="#myModal2" href="#pablo">
-                                                <i class="nc-icon nc-simple-remove"></i>
-                                                Delete
-                                            </a>
+                                            @if (! Auth::user()->isAdmin2())
+                                                <a class="control-icon alert-danger delete-btn" data-toggle="modal" data-target="#myModal2" href="{{ route('admin.sikombatan.destroy', $sikombatan->id) }}">
+                                                    <i class="nc-icon nc-simple-remove"></i>
+                                                    Delete
+                                                </a>
+                                            @endif
                                         </td>
                                     </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -60,11 +69,24 @@
                     <p>Yakin hapus paket ini?</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-link btn-simple">Hapus</button>
+                    <form action="" id="delete-form" method="POST">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+                        <button id="confirm-btn" class="btn btn-link btn-simple" style="cursor:pointer;">Hapus</button>
+                    </form>
                     <button type="button" class="btn btn-link btn-simple" data-dismiss="modal">Batal</button>
                 </div>
             </div>
         </div>
     </div>
     <!--  End Confirmation -->
+@endsection
+
+@section('js')
+<script>
+    $('.delete-btn').click(function(){
+        var url = $(this).attr('href');
+        $('#delete-form').attr('action', url);
+    });
+</script>
 @endsection

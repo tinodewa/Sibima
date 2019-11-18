@@ -20,7 +20,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <p>{{$user->nama_lengkap}}</p>
+                                    <p>{{$user->name}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -31,8 +31,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <div class="img-box">
-                                        <img src="{{ asset('storage/users/'.$user->foto) }}" alt="img">
+                                    <div class="">
+                                        <img src="{{ asset('storage/user/'.$user->image_url) }}" alt="img" style="max-width:100%;">
                                     </div>
                                 </div>
                             </div>
@@ -66,7 +66,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <p>{{$user->level}}</p>
+                                    <p>{{$user->role_id}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -77,7 +77,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <p>{{$user->terakhir_login}}</p>
+                                    <p>{{$user->last_login}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -95,7 +95,8 @@
                         <div class="row">
                             <div class="col-md-12 ml-3">
                                 <div class="form-group">
-                                    <a class="control-icon alert-success" href="{{ route('admin.user.edit', $user->id) }}">
+                                    
+                                    <a class="control-icon alert-success" href="{{ route('admin.users.edit', $user->id) }}">
                                         <i class="nc-icon nc-settings-tool-66"></i>
                                         Edit
                                     </a>

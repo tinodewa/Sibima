@@ -28,7 +28,7 @@
                             <tbody>
                                 @foreach ($sikalans as $sikalan)
                                 <tr>
-                                    <td>{{ $sikalan->data_dasar}}</td>
+                                    <td>{{ $sikalan->kelompok_data_dasar}}</td>
                                     <td>{{ $sikalan->nama_ruas_jalan}}</td>
                                     <td>{{ $sikalan->tahun_data}}</td>
                                     <td style="display:table-cell;">
@@ -40,10 +40,12 @@
                                             <i class="nc-icon nc-settings-tool-66"></i>
                                             Edit
                                         </a>
-                                        <a class="control-icon alert-danger" data-toggle="modal" data-target="#myModal2" href="{{ route('admin.sikalan.destroy', $sikalan->id) }}">
-                                            <i class="nc-icon nc-simple-remove"></i>
-                                            Delete
-                                        </a>
+                                        @if (! Auth::user()->isAdmin2())
+                                            <a class="control-icon alert-danger delete-btn" data-toggle="modal" data-target="#myModal2" href="{{ route('admin.sikalan.destroy', $sikalan->id) }}">
+                                                <i class="nc-icon nc-simple-remove"></i>
+                                                Delete
+                                            </a>
+                                        @endif
                                     </td>
                                 </tr>
                                 @endforeach
@@ -65,7 +67,7 @@
                     <p>Yakin hapus paket ini?</p>
                 </div>
                 <div class="modal-footer">
-                    <form action="#" id="delete-form" method="POST">
+                    <form action="" id="delete-form" method="POST">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
                         <button id="confirm-btn" class="btn btn-link btn-simple" style="cursor:pointer;">Hapus</button>
@@ -85,5 +87,4 @@
         $('#delete-form').attr('action', url);
     });
 </script>
-
 @endsection

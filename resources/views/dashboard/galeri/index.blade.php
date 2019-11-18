@@ -38,9 +38,11 @@
                                             <i class="nc-icon nc-settings-tool-66"></i>
                                             Edit
                                         </a>
-                                        <a class="control-icon alert-danger delete-btn" data-toggle="modal" data-target="#myModal2" href="{{ route('admin.galeri.destroy', $galeri->id) }}" >                                                            <i class="nc-icon nc-simple-remove"></i>
-                                            Delete
-                                        </a>
+                                        @if (! Auth::user()->isAdmin2())
+                                            <a class="control-icon alert-danger delete-btn" data-toggle="modal" data-target="#myModal2" href="{{ route('admin.galeri.destroy', $galeri->id) }}" >                                                            <i class="nc-icon nc-simple-remove"></i>
+                                                Delete
+                                            </a>
+                                        @endif
                                     </td>
                                 </tr>
                                 @endforeach

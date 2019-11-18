@@ -20,7 +20,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <p>15.01.01</p>
+                                    <p>{{ $sikombatan->sikalan->no_ruas }}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -31,7 +31,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <p>Jl. Jbt Benu Muda Kiri - Jbt. Himba Lestari</p>
+                                    <p>{{ $sikombatan->sikalan->nama_ruas_jalan }}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -58,15 +58,11 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="row">
-                                        <div class="img-box col-md-4">
-                                            <img src="" alt="img" class="form-img">
-                                        </div>
-                                        <div class="img-box col-md-4">
-                                            <img src="" alt="img" class="form-img">
-                                        </div>
-                                        <div class="img-box col-md-4">
-                                            <img src="" alt="img" class="form-img">
-                                        </div>
+                                        @foreach ($sikombatan->images as $image)
+                                            <div class="img-box col-md-4">
+                                                <img src="{{ asset('storage/jembatan/'.$image->filename) }}" alt="img" class="form-img">
+                                            </div>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
@@ -78,7 +74,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <p>Jembatan Sei Benu Muda Kiri</p>
+                                    <p>{{ $sikombatan->nama_jembatan }}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -89,7 +85,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <p>1</p>
+                                    <p>{{ $sikombatan->no_jembatan }}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -100,7 +96,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <p>Jembatan Rangka</p>
+                                    <p>{{ $sikombatan->jenis_konstruksi }}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -111,7 +107,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <p>0</p>
+                                    <p>{{ $sikombatan->km_post }}</p>
                                 </div>
                             </div>
                             <div class="card striped-tabled-with-hover">
@@ -129,7 +125,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>30</p>
+                                                    <p>{{ $sikombatan->panjang }}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -140,7 +136,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>6</p>
+                                                    <p>{{ $sikombatan->lebar }}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -151,7 +147,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>1</p>
+                                                    <p>{{ $sikombatan->jumlah_bentang }}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -180,7 +176,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>Rangka</p>
+                                                    <p>{{ $sikombatan->tipe_bangunan_atas }}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -191,7 +187,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>Baik</p>
+                                                    <p>{{ $sikombatan->kondisi_bangunan_atas }}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -209,7 +205,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>Abutmen Beton</p>
+                                                    <p>{{ $sikombatan->tipe_bangunan_bawah }}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -220,7 +216,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>Baik</p>
+                                                    <p>{{ $sikombatan->kondisi_bangunan_bawah }}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -238,7 +234,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p></p>
+                                                    <p>{{ $sikombatan->tipe_fondasi }}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -249,7 +245,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p></p>
+                                                <p>{{ $sikombatan->kondisi_fondasi }}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -267,7 +263,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>Beton</p>
+                                                    <p>{{ $sikombatan->tipe_lantai }}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -278,7 +274,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>Baik</p>
+                                                    <p>{{ $sikombatan->kondisi_lantai }}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -300,7 +296,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-8">
-                                                        <p>117,133574223873</p>
+                                                        <p>{{ $sikombatan->koordinat_x }}</p>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -311,7 +307,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-8">
-                                                        <p>0,704882406477569</p>
+                                                        <p>{{ $sikombatan->koordinat_y }}</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -324,7 +320,7 @@
                                     <div class="form-group">
                                         <label>Ditolak</label>
                                         <label class="switch">
-                                            <input type="checkbox">
+                                            <input type="checkbox" {{ $sikombatan->status_approve ? 'checked' : '' }}>
                                             <span class="slider round"></span>
                                         </label>
                                         <label>Diterima</label>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Auth;
 use App\Article;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -16,7 +17,7 @@ class ArtikelController extends Controller
     public function index()
     {
         //
-        $articles = Article::orderBy('id', 'DESC')->get();
+        $articles = Article::where('user_id', Auth::user()->id)->orderBy('id', 'DESC')->get();
         return view('dashboard/artikel/index', compact('articles'));
     }
 
@@ -51,7 +52,7 @@ class ArtikelController extends Controller
         $filename = time().'.'.$request->image_thumbnail->getClientOriginalName();
         $request->image_thumbnail->storeAs('artikel', $filename);
         $article = Article::Create([
-            'user_id' => 1,
+            'user_id' => Auth::user()->id,
             'title' => $request->title,
             'category' => $request->category,
             'content' => $request->content,

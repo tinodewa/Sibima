@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="{{asset('assets/home/vendor/flowuplabel/jquery.FlowupLabels.css')}}">
     <link rel="stylesheet" href="{{asset('assets/home/vendor/bootstrap-4.3.1/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/home/css/custom.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/home/vendor/lightbox2-2.11.1/css/lightbox.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/home/css/style.css')}}">
     @yield('css')
 </head>
 
@@ -87,6 +89,8 @@
     <script src="{{asset('assets/home/vendor/flowuplabel/jquery.FlowupLabels.min.js')}}"></script>
     <script src="{{asset('assets/home/vendor/flowuplabel/main.js')}}"></script>
     <script src="{{asset('assets/home/vendor/bootstrap-4.3.1/js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('assets/home/vendor/lightbox2-2.11.1/js/lightbox.min.js') }}"></script>
+
     <script>
         function myFunction() {
         // Declare variables
@@ -107,7 +111,7 @@
             }
         }
     }
-    @yield('js')
     </script>
+    @yield('js')
 </html>
 

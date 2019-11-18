@@ -6,6 +6,10 @@ use App\Galeri;
 use App\User;
 use App\Article;
 use App\Profil;
+use App\Sikalan;
+use App\SikalanImage;
+use App\Sikombatan;
+use App\SikombatanImage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -30,7 +34,10 @@ class HomeController extends Controller
     public function sikombatan()
     {
         //
-        return view('home.sikombatan');
+        $sikombatans = Sikombatan::with('sikalan')->get();
+        $sikombatans = $sikombatans->groupBy('sikalan.kecamatan');
+        $sikombatanImages = SikombatanImage::get();
+        return view('home.sikombatan', compact('sikombatans', 'sikombatanImages'));
     }
 
     /**
@@ -41,7 +48,9 @@ class HomeController extends Controller
     public function sikombatanDetail($id)
     {
         //
-        return view('home.sikombatan_detail');
+        $sikombatan = Sikombatan::with('sikalan')->where('id', $id)->first();
+        $sikombatanImages = SikombatanImage::where('sikombatan_id', $id)->get();
+        return view('home.sikombatan_detail', compact('sikombatan', 'sikombatanImages'));
     }
 
     /**
@@ -51,8 +60,10 @@ class HomeController extends Controller
      */
     public function sikalan()
     {
-        //
-        return view('home.sikalan');
+        $sikalans = Sikalan::get();
+        $sikalans = $sikalans->groupBy('kecamatan');
+        $sikalanImages = SikalanImage::get();
+        return view('home.sikalan', compact('sikalans', 'sikalanImages'));
     }
 
     /**
@@ -63,7 +74,22 @@ class HomeController extends Controller
     public function sikalanDetail($id)
     {
         //
-        return view('home.sikalan_detail');
+        $sikalan = Sikalan::where('id', $id)->first();
+        $sikalanImages = SikalanImage::where('sikalan_id', $id)->get();
+
+        // get persentase
+        $totalKondisi = $sikalan->baik + $sikalan->sedang + $sikalan->rusak_ringan + $sikalan->rusak_berat;
+        $baik = $sikalan->baik / $totalKondisi * 100; 
+        $sedang = $sikalan->sedang / $totalKondisi * 100; 
+        $rusak_ringan = $sikalan->rusak_ringan / $totalKondisi * 100; 
+        $rusak_berat = $sikalan->rusak_berat / $totalKondisi * 100; 
+        $kondisi = json_decode(json_encode(array(
+            'baik' => number_format($baik, 2),
+            'sedang' => number_format($sedang, 2),
+            'rusak_ringan' => number_format($rusak_ringan, 2),
+            'rusak_berat' => number_format($rusak_berat, 2)
+        )));
+        return view('home.sikalan_detail', compact('sikalan', 'sikalanImages', 'kondisi'));
     }
 
     /**

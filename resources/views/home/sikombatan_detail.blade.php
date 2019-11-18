@@ -1,16 +1,21 @@
 @extends('layouts.home')
 @section('title', 'Sikombatan')
 
+@section('css')
+    <link rel="stylesheet" href="{{ asset('assets/home/css/lightbox.min.css')}}">
+    <link rel="stylesheet" href="http://unpkg.com/leaflet@1.3.1/dist/leaflet.css" />
+@endsection
+
 @section('content')
 {{-- content --}}
 <div class="content">
     <div class="container">
-        <div class="content-map-box">
+        <div class="content-map-box" id="map">
         </div>
         <div class="content-description">
 
             {{-- Keterangan Peta --}}
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-md-4">
                     <div class="content-description-title-box">
                         <div class="content-description-title">
@@ -26,23 +31,35 @@
                             <div class="col-md-8">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <div class="content-description-poin-inner-legenda">
-                                            Ruas Jalan
+                                        <div class="content-description-poin-inner-title">
+                                            Nama Ruas 
+                                        </div>
+                                        <div class="content-description-poin-inner-text">
+                                            Jl. Jbt Benu Muda Kiri - Jbt. Himba Lestari
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="content-description-poin-inner-legenda">
-                                            Pin Jalan
+                                        <div class="content-description-poin-inner-title">
+                                            Nama Jembatan
+                                        </div>
+                                        <div class="content-description-poin-inner-text">
+                                            {{ $sikombatan->nama_jembatan }}
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="content-description-poin-inner-legenda">
-                                            Titik Rusak Ringan
+                                        <div class="content-description-poin-inner-title">
+                                            Jenis Konstruksi
+                                        </div>
+                                        <div class="content-description-poin-inner-text">
+                                            {{ $sikombatan->jenis_konstruksi }}
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="content-description-poin-inner-legenda">
-                                            Titik Rusak Berat
+                                        <div class="content-description-poin-inner-title">
+                                            Km-Post (m)
+                                        </div>
+                                        <div class="content-description-poin-inner-text">
+                                            {{ $sikombatan->km_post }}
                                         </div>
                                     </div>
                                 </div>
@@ -50,7 +67,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             {{-- Foto Jalan --}}
             <div class="row">
@@ -58,7 +75,7 @@
                     <div class="content-description-title-box">
                         <div class="content-description-title">
                             <p>
-                                Foto Jalan
+                                Foto Jembatan
                             </p>
                         </div>
                     </div>
@@ -66,26 +83,15 @@
                 <div class="col-md-8">
                     <div class="content-description-poin-box">
                         <div class="row">
-                            <div class="col-md-3">
-                                <div class="content-description-poin-photo">
-                                    asd
+                            @foreach ($sikombatanImages as $sikombatanImage)
+                                <div class="content-item col-md-3">
+                                    <a class="example-image-link" href="{{ asset('storage/jembatan/'.$sikombatanImage->filename) }}" data-lightbox="example-1">
+                                        <div class="content-item-inner" style="height:auto;">
+                                            <img class="example-image" src="{{ asset('storage/jembatan/'.$sikombatanImage->filename) }}" style="max-width:100%;">
+                                        </div>
+                                    </a>
                                 </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="content-description-poin-photo">
-                                    asd
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="content-description-poin-photo">
-                                    asd
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="content-description-poin-photo">
-                                    asd
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -109,26 +115,18 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="content-description-poin-inner-title">
-                                            Nomor Jalan
+                                            Nomor Jembatan
                                         </div>
                                         <div class="content-description-poin-inner-text">
-                                            017-1.0
+                                            {{ $sikombatan->no_jembatan }}
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="content-description-poin-inner-title">
-                                            Kecamatan
+                                            Nama Jembatan
                                         </div>
                                         <div class="content-description-poin-inner-text">
-                                            Sangatta Selatan
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="content-description-poin-inner-title">
-                                            Akses ke Jalan
-                                        </div>
-                                        <div class="content-description-poin-inner-text">
-                                            Kabupaten
+                                            {{ $sikombatan->nama_jembatan }}
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -136,7 +134,15 @@
                                             Nama Jalan
                                         </div>
                                         <div class="content-description-poin-inner-text">
-                                            Jalan Poros ke Desa Sangkima Lama
+                                            {{ $sikombatan->sikalan->nama_ruas_jalan }}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="content-description-poin-inner-title">
+                                            Kecamatan
+                                        </div>
+                                        <div class="content-description-poin-inner-text">
+                                            {{ $sikombatan->sikalan->kecamatan }}
                                         </div>
                                     </div>
                                 </div>
@@ -164,18 +170,32 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="content-description-poin-inner-title">
-                                            Panjang Ruas
+                                            Panjang (m)
                                         </div>
                                         <div class="content-description-poin-inner-text">
-                                            5,533 Kilometer
+                                            {{ $sikombatan->panjang }} Meter
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="content-description-poin-inner-title">
-                                            Lebar
+                                            Lebar (m)
                                         </div>
                                         <div class="content-description-poin-inner-text">
-                                            6 Meter
+                                            {{ $sikombatan->lebar }} Meter
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="content-description-poin-inner-title">
+                                            Jumlah Bentang
+                                        </div>
+                                        <div class="content-description-poin-inner-text">
+                                            {{ $sikombatan->jumlah_bentang }}
                                         </div>
                                     </div>
                                 </div>
@@ -185,13 +205,14 @@
                 </div>
             </div>
 
-            {{-- Panjang Tiap Jenis Permukaan --}}
+            
+            {{-- Tipe Atau Kondisi --}}
             <div class="row">
                 <div class="col-md-4">
                     <div class="content-description-title-box">
                         <div class="content-description-title">
                             <p>
-                                Panjang Tiap Jenis Permukaan
+                                Tipe/Kondisi
                             </p>
                         </div>
                     </div>
@@ -203,73 +224,41 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="content-description-poin-inner-title">
-                                            Aspal / Penetrasi / Macadam
+                                            Tipe Bangunan Atas
                                         </div>
                                         <div class="content-description-poin-inner-text">
-                                            0 Kilometer
+                                            {{ $sikombatan->tipe_bangunan_atas }}
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="content-description-poin-inner-title">
-                                            Telford / Kerikil
+                                            Kondisi Bangunan Atas
                                         </div>
                                         <div class="content-description-poin-inner-text">
-                                            5,533 Kilometer
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="content-description-poin-inner-title">
-                                            Perkerasan Beton
-                                        </div>
-                                        <div class="content-description-poin-inner-text">
-                                            0 Kilometer
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="content-description-poin-inner-title">
-                                            Tanah / Belum Tembus
-                                        </div>
-                                        <div class="content-description-poin-inner-text">
-                                            0 Kilometer
+                                            {{ $sikombatan->kondisi_bangunan_atas }}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="content-description-poin-inner-title">
+                                            Tipe Bangunan Bawah
+                                        </div>
+                                        <div class="content-description-poin-inner-text">
+                                            {{ $sikombatan->tipe_bangunan_bawah }}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="content-description-poin-inner-title">
+                                            Kondisi Bangunan Bawah
 
-            {{-- Panjang Tiap Kondisi --}}
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="content-description-title-box">
-                        <div class="content-description-title">
-                            <p>
-                                Panjang Tiap Kondisi
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <div class="content-description-poin-box">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="content-description-poin-inner-title">
-                                            Baik (Km)
                                         </div>
                                         <div class="content-description-poin-inner-text">
-                                            0 Kilometer
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="content-description-poin-inner-title">
-                                            Baik (%)
-                                        </div>
-                                        <div class="content-description-poin-inner-text">
-                                            0 %
+                                            {{ $sikombatan->kondisi_bangunan_bawah }}
                                         </div>
                                     </div>
                                 </div>
@@ -280,40 +269,18 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="content-description-poin-inner-title">
-                                            Sedang (Km)
+                                            Tipe Fondasi
                                         </div>
                                         <div class="content-description-poin-inner-text">
-                                            0 Kilometer
+                                            {{ $sikombatan->tipe_fondasi }}
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="content-description-poin-inner-title">
-                                            Sedang (%)
+                                            Kondisi Fondasi
                                         </div>
                                         <div class="content-description-poin-inner-text">
-                                            0 %
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="content-description-poin-inner-title">
-                                            Rusak Ringan (Km)
-                                        </div>
-                                        <div class="content-description-poin-inner-text">
-                                            0 Kilometer
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="content-description-poin-inner-title">
-                                            Rusak Ringan (%)
-                                        </div>
-                                        <div class="content-description-poin-inner-text">
-                                            0 %
+                                            {{ $sikombatan->kondisi_fondasi }}
                                         </div>
                                     </div>
                                 </div>
@@ -324,18 +291,18 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="content-description-poin-inner-title">
-                                            Rusak Berat (Km)
+                                            Tipe Lantai
                                         </div>
                                         <div class="content-description-poin-inner-text">
-                                            5,533 Kilometer
+                                            {{ $sikombatan->tipe_lantai }}
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="content-description-poin-inner-title">
-                                            Rusak Berat (%)
+                                            Kondisi Lantai
                                         </div>
                                         <div class="content-description-poin-inner-text">
-                                            100 %
+                                            {{ $sikombatan->kondisi_lantai }}
                                         </div>
                                     </div>
                                 </div>
@@ -366,6 +333,7 @@
                                             Informasi
                                         </div>
                                         <div class="content-description-poin-inner-text">
+                                            {{ $sikombatan->informasi }}
                                         </div>
                                     </div>
                                 </div>
@@ -377,4 +345,24 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('js')
+	<script src="http://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+    <script src="{{ asset('embedkml/layer/vector/KML.js') }}"></script>
+    <script>
+        var urlKml = "{{ asset('storage/peta_jembatan/'.$sikombatan->gambar_peta) }}";
+        console.log( urlKml);
+
+        var map = new L.Map('map', {center: new L.LatLng(58.4, 43.0), zoom: 50});
+		var osm = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+		var track = new L.KML(urlKml, {async: true});
+		console.log(track);
+		track.on("loaded", function(e) {
+			map.fitBounds(e.target.getBounds());
+		});
+		map.addLayer(track);
+		map.addLayer(osm);
+		map.addControl(new L.Control.Layers({}, {'Track':track}));
+    </script>
 @endsection

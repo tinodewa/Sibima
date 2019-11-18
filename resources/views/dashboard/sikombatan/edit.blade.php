@@ -10,19 +10,29 @@
                         <h4 class="card-title">Kondisi Jembatan</h4>
                     </div>
                     <div class="card-body">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </div>
+                        @endif
                         <div class="paket">
+                        <form action="{{ route('admin.sikombatan.update', $sikombatan->id) }}" enctype="multipart/form-data" method="POST">
+                            {{ csrf_field() }}
+                            {{ method_field('PUT') }}
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="col-md-4 pr-1">
                                         <div class="form-group">
                                             <label>Nomor Ruas</label>
-                                            <select class="form-control" id="tipe">
+                                            <select class="form-control" name="nomor_ruas" id="tipe">
                                                 <option disabled selected hidden>Choose</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
+                                                @foreach ($sikalans as $item)
+                                                    <option value="{{ $item->id }}"
+                                                        data-nama="{{ $item->nama_ruas_jalan }}"
+                                                        {{ $sikombatan->sikalan_id == $item->id ? 'selected' : '' }}>{{ $item->no_ruas }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -31,7 +41,7 @@
                                     <div class="col-md-4 pr-1">
                                         <div class="form-group">
                                             <label>Nama Ruas</label>
-                                            <input type="text" class="form-control" disabled>
+                                            <input type="text" id="nama-ruas" name="nama_ruas" class="form-control" disabled>
                                         </div>
                                     </div>
                                 </div>
@@ -39,15 +49,15 @@
                                     <div class="col-md-4 pr-1">
                                         <div class="form-group">
                                             <label>Gambar Peta</label>
-                                            <input type="file" class="form-control" multiple>
+                                            <input type="file" name="gambar_peta" class="form-control">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4 pr-1">
                                         <div class="form-group">
-                                            <label>Foto Jalan</label>
-                                            <input type="file" class="form-control" multiple>
+                                            <label>Foto Jembatan</label>
+                                            <input type="file" name="foto_jembatan[]" class="form-control" multiple>
                                         </div>
                                     </div>
                                 </div>
@@ -55,7 +65,7 @@
                                     <div class="col-md-4 pr-1">
                                         <div class="form-group">
                                             <label>Nama Jembatan</label>
-                                            <input type="text" class="form-control" placeholder="">
+                                            <input type="text" name="nama_jembatan" class="form-control" placeholder="" value="{{ old('nama_jembatan', $sikombatan->nama_jembatan) }}">
                                         </div>
                                     </div>
                                 </div>
@@ -63,7 +73,7 @@
                                     <div class="col-md-4 pr-1">
                                         <div class="form-group">
                                             <label>No Jembatan</label>
-                                            <input type="text" class="form-control" placeholder="">
+                                            <input type="text" class="form-control" name="no_jembatan" placeholder="" value="{{ old('no_jembatan', $sikombatan->no_jembatan) }}">
                                         </div>
                                     </div>
                                 </div>
@@ -71,7 +81,7 @@
                                     <div class="col-md-4 pr-1">
                                         <div class="form-group">
                                             <label>Jenis Konstruksi</label>
-                                            <input type="text" class="form-control" placeholder="">
+                                        <input type="text" class="form-control" name="jenis_konstruksi" placeholder="" value="{{ old('jenis_konstruksi', $sikombatan->jenis_konstruksi) }}">
                                         </div>
                                     </div>
                                 </div>
@@ -79,7 +89,7 @@
                                     <div class="col-md-4 pr-1">
                                         <div class="form-group">
                                             <label>Km-Post (m)</label>
-                                            <input type="text" class="form-control" placeholder="">
+                                            <input type="text" name="km_post" value="{{ old('km_post', $sikombatan->km_post) }}" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                 </div>
@@ -94,7 +104,7 @@
                                                     <div class="col-md-4 pr-1">
                                                         <div class="form-group">
                                                             <label>Panjang (m)</label>
-                                                            <input type="text" class="form-control" placeholder="">
+                                                        <input type="text" name="panjang" value="{{ old('panjang', $sikombatan->panjang) }}" class="form-control" placeholder="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -102,7 +112,7 @@
                                                     <div class="col-md-4 pr-1">
                                                     <div class="form-group">
                                                             <label>Lebar (m)</label>
-                                                            <input type="text" class="form-control" placeholder="">
+                                                        <input type="text" name="lebar" value="{{ old('lebar', $sikombatan->lebar) }}" class="form-control" placeholder="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -110,7 +120,7 @@
                                                     <div class="col-md-4 pr-1">
                                                         <div class="form-group">
                                                             <label>Jumlah Bentang</label>
-                                                            <input type="text" class="form-control" placeholder="">
+                                                            <input type="text" name="jumlah_bentang" value="{{ old('jumlah_bentang', $sikombatan->jumlah_bentang) }}" class="form-control" placeholder="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -136,7 +146,7 @@
                                                     <div class="col-md-4 pl-5">
                                                         <div class="form-group">
                                                             <label>Tipe</label>
-                                                            <input type="text" class="form-control" placeholder="">
+                                                        <input type="text" name="tipe_bangunan_atas" value="{{ old('tipe_bangunan_atas', $sikombatan->tipe_bangunan_atas) }}" class="form-control" placeholder="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -144,7 +154,7 @@
                                                     <div class="col-md-4 pl-5">
                                                         <div class="form-group">
                                                             <label>Kondisi</label>
-                                                            <input type="text" class="form-control" placeholder="">
+                                                            <input type="text" name="kondisi_bangunan_atas" value="{{ old('kondisi_bangunan_atas', $sikombatan->kondisi_bangunan_atas) }}" class="form-control" placeholder="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -159,7 +169,7 @@
                                                     <div class="col-md-4 pl-5">
                                                         <div class="form-group">
                                                             <label>Tipe</label>
-                                                            <input type="text" class="form-control" placeholder="">
+                                                            <input type="text" name="tipe_bangunan_bawah" value="{{ old('tipe_bangunan_bawah', $sikombatan->tipe_bangunan_bawah) }}" class="form-control" placeholder="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -167,7 +177,7 @@
                                                     <div class="col-md-4 pl-5">
                                                         <div class="form-group">
                                                             <label>Kondisi</label>
-                                                            <input type="text" class="form-control" placeholder="">
+                                                        <input type="text" name="kondisi_bangunan_bawah" value="{{ old('kondisi_bangunan_bawah', $sikombatan->kondisi_bangunan_bawah) }}" class="form-control" placeholder="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -182,7 +192,7 @@
                                                     <div class="col-md-4 pl-5">
                                                         <div class="form-group">
                                                             <label>Tipe</label>
-                                                            <input type="text" class="form-control" placeholder="">
+                                                            <input type="text" name="tipe_fondasi" value="{{ old('tipe_fondasi', $sikombatan->tipe_fondasi) }}" class="form-control" placeholder="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -190,7 +200,7 @@
                                                     <div class="col-md-4 pl-5">
                                                         <div class="form-group">
                                                             <label>Kondisi</label>
-                                                            <input type="text" class="form-control" placeholder="">
+                                                            <input type="text" name="kondisi_fondasi" value="{{ old('kondisi_fondasi', $sikombatan->kondisi_fondasi) }}" class="form-control" placeholder="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -205,7 +215,7 @@
                                                     <div class="col-md-4 pl-5">
                                                         <div class="form-group">
                                                             <label>Tipe</label>
-                                                            <input type="text" class="form-control" placeholder="">
+                                                        <input type="text" name="tipe_lantai" value="{{ old('tipe_lantai', $sikombatan->tipe_lantai) }}" class="form-control" placeholder="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -213,7 +223,7 @@
                                                     <div class="col-md-4 pl-5">
                                                         <div class="form-group">
                                                             <label>Kondisi</label>
-                                                            <input type="text" class="form-control" placeholder="">
+                                                        <input type="text" name="kondisi_lantai" value="{{ old('kondisi_lantai', $sikombatan->kondisi_lantai) }}" class="form-control" placeholder="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -232,7 +242,7 @@
                                                     <div class="col-md-4 pr-1">
                                                         <div class="form-group">
                                                             <label>Koordinat X</label>
-                                                            <input type="text" class="form-control" placeholder="">
+                                                            <input type="text" name="koordinat_x" value="{{ old('koordinat_x', $sikombatan->koordinat_x) }}" class="form-control" placeholder="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -240,7 +250,7 @@
                                                     <div class="col-md-4 pr-1">
                                                         <div class="form-group">
                                                             <label>Koordinat Y</label>
-                                                            <input type="text" class="form-control" placeholder="">
+                                                            <input type="text" name="koordinat_y" value="{{ old('koordinat_y', $sikombatan->koordinat_y) }}" class="form-control" placeholder="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -250,20 +260,28 @@
                                 </div>
                             </div>
                             <div class="row">
+                                <div class="col-md-4 pr-1">
+                                    <div class="form-group">
+                                        <label>Informasi lainnya</label>
+                                        <textarea name="informasi" class="form-control" rows="20">{{ old('informasi', $sikombatan->informasi) }}</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-md-12 ml-3">
                                     <div class="form-group">
                                         <label>Ditolak</label>
                                         <label class="switch">
-                                            <input type="checkbox">
+                                            <input type="checkbox" name="status_approve" {{ $sikombatan->status_approve ? 'checked' : '' }}>
                                             <span class="slider round"></span>
                                         </label>
                                         <label>Diterima</label>
                                     </div>
                                 </div>
                             </div>
-                            <a class="ml-3 control-icon btn-fill btn-info" data-toggle="modal" data-target="#myModal2" href="#">
+                            <button type="button" class="ml-3 control-icon btn-fill btn-info" data-toggle="modal" data-target="#myModal2" href="#">
                                 Simpan
-                            </a>
+                            </button>
                             <div class="clearfix"></div>
                         </div>
                     </div>
@@ -282,11 +300,28 @@
                     <p>Apakah anda sudah yakin?</p>
                 </div>
                 <div class="modal-footer">
-                    <a class="btn control-icon btn-fill btn-info" href="{{ url('/super-admin/data-kondisi-jembatan') }}">Ya</a>
+                    <button type="submit" class="btn control-icon btn-fill btn-info" >Ya</button>
                     <button type="button" class="btn btn-link btn-simple" data-dismiss="modal">Batal</button>
                 </div>
             </div>
         </div>
     </div>
+</form>
     <!--  End Confirmation -->
+@endsection
+
+@section('js')
+<script>
+    $(document).ready(function () {
+        $('select[name="nomor_ruas"]').ready(function () {
+            let nama = $('option:selected', this).attr('data-nama');
+            $('#nama-ruas').val(nama);
+        });
+
+        $('select[name="nomor_ruas"]').change(function () {
+            let nama = $('option:selected', this).attr('data-nama');
+            $('#nama-ruas').val(nama);
+        });
+    });
+</script>
 @endsection

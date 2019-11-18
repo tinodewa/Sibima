@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Profil;
+use App\User;
+Use Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -16,8 +18,17 @@ class ProfilController extends Controller
     public function index()
     {
         //
-        $profil = Profil::where('id', 1)->first();
-        return view('dashboard/profil/index', compact('profil'));
+        $role_id = Auth::user()->role_id;
+        $user_id = Auth::user()->id;
+        if($role_id == 1) {
+            $profil = Profil::where('id', 1)->first();
+            return view('dashboard/profil/index', compact('profil'));
+        }
+        else {
+            $user = User::where('id', $user_id)->first();
+            return view('dashboard/users/show', compact('user'));
+        }
+        
     }
 
     /**

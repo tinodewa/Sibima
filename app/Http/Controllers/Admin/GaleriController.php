@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Auth;
 Use App\Galeri;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -17,7 +18,7 @@ class GaleriController extends Controller
     public function index()
     {
         //
-        $galeris = Galeri::orderBy('id', 'DESC')->get();
+        $galeris = Galeri::where('user_id', Auth::user()->id)->orderBy('id', 'DESC')->get();
         return view('dashboard/galeri/index', compact('galeris'));
     }
 
@@ -49,6 +50,7 @@ class GaleriController extends Controller
         $request->image_file->storeAs('galeri', $filename);
         
         $galeri = Galeri::Create([
+            'user_id' => Auth::user()->id,
             'caption' => $request->caption,
             'image_url' => $filename
         ]);

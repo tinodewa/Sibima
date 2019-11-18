@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use Auth;
+use App\Sikalan;
+use App\Sikombatan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -29,8 +31,9 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        //
-        return view('dashboard/index');
+        $sikalans = Sikalan::with('thumbnail')->orderBy('id', 'desc')->get();
+        $sikombatans = Sikombatan::with('thumbnail')->orderBy('id', 'desc')->get();
+        return view('dashboard/index', compact('sikalans', 'sikombatans'));
     }
 
     /**

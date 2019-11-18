@@ -19,23 +19,25 @@
                             <th>Kontrol</th>
                         </thead>
                         <tbody>
+                            @foreach ($sikalans as $sikalan)
                                 <tr>
                                     <td>
                                         <div class="img-box">
-                                            <img src="" alt="bromo" class="img-fluid">
+                                            <img src="{{ asset('storage/jalan/'.$sikalan->thumbnail->filename) }}" alt="bromo" class="img-fluid">
                                         </div>
                                     </td>
-                                    <td>Jl. Kenangan</td>
-                                    <td>Mantan</td>
-                                    <td>kamis, 20 Oktober 2019</td>
-                                    <td>08.23 WIB</td>
+                                    <td>{{ $sikalan->nama_ruas_jalan }}</td>
+                                    <td>{{ $sikalan->kecamatan }}</td>
+                                    <td>{{ $sikalan->created_at->format('l, d F Y') }}</td>
+                                    <td>{{ $sikalan->created_at->format('H.i') }} WIB</td>
                                     <td style="display:table-cell;">
-                                        <a class="control-icon alert-info" href="{{ url('/super-admin/data-kondisi-jalan/detail') }}">
+                                        <a class="control-icon alert-info" href="{{ route('admin.sikalan.show', $sikalan->id) }}">
                                             <i class="nc-icon nc-paper-2"></i>
                                             More
                                         </a>
                                     </td>
                                 </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -55,23 +57,25 @@
                             <th>Kontrol</th>
                         </thead>
                         <tbody>
+                            @foreach ($sikombatans as $sikombatan)
                                 <tr>
                                     <td>
                                         <div class="img-box">
-                                            <img src="" alt="bromo" class="img-fluid">
+                                            <img src="{{ asset('storage/jembatan/'.$sikombatan->thumbnail->filename) }}" alt="bromo" class="img-fluid">
                                         </div>
                                     </td>
-                                    <td>Jl. Tangisan</td>
-                                    <td>Doi</td>
-                                    <td>kamis, 21 Oktober 2019</td>
-                                    <td>01.23 WIB</td>
+                                    <td>{{ $sikombatan->nama_jembatan }}</td>
+                                    <td>{{ $sikombatan->kecamatan }}</td>
+                                    <td>{{ $sikombatan->created_at->format('l, d F Y') }}</td>
+                                    <td>{{ $sikombatan->created_at->format('H.i') }} WIB</td>
                                     <td style="display:table-cell;">
-                                        <a class="control-icon alert-info" href="{{ url('/super-admin/data-kondisi-jembatan/detail') }}">
+                                        <a class="control-icon alert-info" href="{{ route('admin.sikombatan.show', $sikombatan->id) }}">
                                             <i class="nc-icon nc-paper-2"></i>
                                             More
                                         </a>
                                     </td>
                                 </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

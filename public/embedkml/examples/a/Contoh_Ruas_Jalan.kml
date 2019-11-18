@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="Contoh_Ruas" id="Contoh_Ruas">
+	<SimpleField name="altitudeMode" type="string"></SimpleField>
+	<SimpleField name="Desa_Kel" type="string"></SimpleField>
+	<SimpleField name="Lbr_Keras" type="string"></SimpleField>
+	<SimpleField name="Funsi" type="string"></SimpleField>
+	<SimpleField name="MST" type="string"></SimpleField>
+	<SimpleField name="Macadam" type="string"></SimpleField>
+	<SimpleField name="Propinsi" type="string"></SimpleField>
+	<SimpleField name="Km_Akhir" type="string"></SimpleField>
+	<SimpleField name="Kab_Kot" type="string"></SimpleField>
+	<SimpleField name="Status" type="string"></SimpleField>
+	<SimpleField name="Tk_Ruas_Ak" type="string"></SimpleField>
+	<SimpleField name="Koord_X_Aw" type="string"></SimpleField>
+	<SimpleField name="Panjang" type="string"></SimpleField>
+	<SimpleField name="Aspal" type="string"></SimpleField>
+	<SimpleField name="Kd_Inf" type="string"></SimpleField>
+	<SimpleField name="Jns_Pen" type="string"></SimpleField>
+	<SimpleField name="Rigid" type="string"></SimpleField>
+	<SimpleField name="Tipe_Jln" type="string"></SimpleField>
+	<SimpleField name="Kd_Bd_PU" type="string"></SimpleField>
+	<SimpleField name="Tk_Ruas_Aw" type="string"></SimpleField>
+	<SimpleField name="Thn_Pen_Ak" type="string"></SimpleField>
+	<SimpleField name="Nm_Ruas" type="string"></SimpleField>
+	<SimpleField name="Koord_X_Ak" type="string"></SimpleField>
+	<SimpleField name="Nm_Lintas" type="string"></SimpleField>
+	<SimpleField name="Thn_Data" type="string"></SimpleField>
+	<SimpleField name="Kecamatan" type="string"></SimpleField>
+	<SimpleField name="Kd_Ins_Inf" type="string"></SimpleField>
+	<SimpleField name="Ura_Dukung" type="string"></SimpleField>
+	<SimpleField name="LHRT" type="string"></SimpleField>
+	<SimpleField name="Mendukung" type="string"></SimpleField>
+	<SimpleField name="FID" type="string"></SimpleField>
+	<SimpleField name="Km_Awal" type="string"></SimpleField>
+	<SimpleField name="Kon_Rgn" type="string"></SimpleField>
+	<SimpleField name="Kon_Mntp" type="string"></SimpleField>
+	<SimpleField name="Field_1" type="string"></SimpleField>
+	<SimpleField name="Kon_Rusak" type="string"></SimpleField>
+	<SimpleField name="Kon_Baik" type="string"></SimpleField>
+	<SimpleField name="NO_RUAS" type="string"></SimpleField>
+	<SimpleField name="Koord_Y_Aw" type="string"></SimpleField>
+	<SimpleField name="VCR" type="string"></SimpleField>
+	<SimpleField name="Kon_Sdg" type="string"></SimpleField>
+	<SimpleField name="Koord_Y_Ak" type="string"></SimpleField>
+	<SimpleField name="Tanah_Kri" type="string"></SimpleField>
+	<SimpleField name="Kl_Dat_Das" type="string"></SimpleField>
+	<SimpleField name="Kd_Patok" type="string"></SimpleField>
+	<SimpleField name="Kon_T_Mntp" type="string"></SimpleField>
+</Schema>
+<Folder><name>Contoh_Ruas</name>
+  <Placemark>
+	<name>014-2.0</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Contoh_Ruas">
+		<SimpleData name="altitudeMode">clampToGround</SimpleData>
+		<SimpleData name="Desa_Kel"></SimpleData>
+		<SimpleData name="Lbr_Keras">8</SimpleData>
+		<SimpleData name="Funsi">Jalan Kolektor III</SimpleData>
+		<SimpleData name="MST">0</SimpleData>
+		<SimpleData name="Macadam">0</SimpleData>
+		<SimpleData name="Propinsi">Kalimantan Timur</SimpleData>
+		<SimpleData name="Km_Akhir">0</SimpleData>
+		<SimpleData name="Kab_Kot">Kutai Timur</SimpleData>
+		<SimpleData name="Status">Jalan Kabupaten</SimpleData>
+		<SimpleData name="Tk_Ruas_Ak">Desa Senyiur ( Tepi Sungai)</SimpleData>
+		<SimpleData name="Koord_X_Aw">116.62219</SimpleData>
+		<SimpleData name="Panjang">52.319721</SimpleData>
+		<SimpleData name="Aspal">0</SimpleData>
+		<SimpleData name="Kd_Inf">014-2.0</SimpleData>
+		<SimpleData name="Jns_Pen"></SimpleData>
+		<SimpleData name="Rigid">1.4</SimpleData>
+		<SimpleData name="Tipe_Jln">2</SimpleData>
+		<SimpleData name="Kd_Bd_PU">2</SimpleData>
+		<SimpleData name="Tk_Ruas_Aw">Simpang 3 Kelinjau Ulu</SimpleData>
+		<SimpleData name="Thn_Pen_Ak">0</SimpleData>
+		<SimpleData name="Nm_Ruas">Jalan Poros Desa Kelinjau Ulu - Tepi Sungai Senyiur</SimpleData>
+		<SimpleData name="Koord_X_Ak">116.674161</SimpleData>
+		<SimpleData name="Nm_Lintas"></SimpleData>
+		<SimpleData name="Thn_Data">2017</SimpleData>
+		<SimpleData name="Kecamatan">Muara Ancalong</SimpleData>
+		<SimpleData name="Kd_Ins_Inf">1</SimpleData>
+		<SimpleData name="Ura_Dukung"></SimpleData>
+		<SimpleData name="LHRT">0</SimpleData>
+		<SimpleData name="Mendukung"></SimpleData>
+		<SimpleData name="FID">0</SimpleData>
+		<SimpleData name="Km_Awal">0</SimpleData>
+		<SimpleData name="Kon_Rgn">6.858094</SimpleData>
+		<SimpleData name="Kon_Mntp">39.12673</SimpleData>
+		<SimpleData name="Field_1">014-2.0</SimpleData>
+		<SimpleData name="Kon_Rusak">6.334897</SimpleData>
+		<SimpleData name="Kon_Baik">17.095916</SimpleData>
+		<SimpleData name="NO_RUAS">014-2.0</SimpleData>
+		<SimpleData name="Koord_Y_Aw">0.316093</SimpleData>
+		<SimpleData name="VCR">0</SimpleData>
+		<SimpleData name="Kon_Sdg">22.030814</SimpleData>
+		<SimpleData name="Koord_Y_Ak">0.437973</SimpleData>
+		<SimpleData name="Tanah_Kri">50.919721</SimpleData>
+		<SimpleData name="Kl_Dat_Das">Non Jalan Tol</SimpleData>
+		<SimpleData name="Kd_Patok"></SimpleData>
+		<SimpleData name="Kon_T_Mntp">13.192991</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><LineString><coordinates>116.67416112,0.437972580000014 116.67456864,0.43895961 116.67463308,0.43981794 116.67510504,0.44099811 116.67626388,0.442693260000031 116.67654288,0.443294010000011 116.67729384,0.443894850000028 116.67761568,0.44451711 116.67819492,0.445203810000021 116.6783022,0.44548272 116.67819492,0.44569728000002 116.67647844,0.44692038 116.67332412,0.448229340000041 116.67195072,0.44855118000002 116.67029868,0.44973135 116.66830284,0.449967420000016 116.66598552,0.45069696 116.66414016,0.45065403 116.661222,0.45174834 116.66008476,0.45176985 116.65881864,0.45202734 116.65699488,0.452027340000012 116.65641564,0.452456460000018 116.65560024,0.456404670000014 116.65433412,0.45863631 116.65407672,0.458915220000025 116.6541624,0.458722079999986 116.65405512,0.458807940000014 116.65296072,0.460352880000017 116.65218816,0.46204803 116.65068624,0.46395783 116.65004256,0.465738750000035 116.64866916,0.46876428 116.64806832,0.47065257 116.64785376,0.47299149 116.64693108,0.475630740000015 116.64686664,0.47616723 116.64697392,0.47749761 116.6468238,0.48125268 116.64723168,0.486037710000012 116.64716724,0.486638550000012 116.63933508,0.495522 116.6384124,0.49573656 116.6264604,0.496616400000018 116.625924,0.49655196 116.62543044,0.496144260000015 116.62201872,0.49243212000001 116.6207958,0.491251950000016 116.61375744,0.488784330000029 116.60744916,0.483956370000017 116.60624748,0.48318390000001 116.57331,0.473484960000013 116.57200104,0.47296998000002 116.56446948,0.47065257 116.56279548,0.46996596 116.55687348,0.46820637000001 116.54376264,0.463936320000039 116.53975008,0.46279908 116.53919208,0.462541590000041 116.53848396,0.461468700000038 116.53816212,0.46116828 116.53464312,0.460803510000037 116.531253,0.459601920000027 116.51949396,0.458529030000026 116.51552424,0.458829360000022 116.51451588,0.45870066 116.51370048,0.458786520000036 116.51269212,0.45912978 116.51232708,0.459108360000012 116.51172624,0.458807940000025 116.51022432,0.45874359 116.50874364,0.459151290000014 116.50554648,0.459172710000024 116.50346532,0.45945171000002 116.50200588,0.459194220000021 116.5002894,0.459237060000018 116.498916,0.45945171 116.49591216,0.459473130000025 116.49582612,0.45947313 116.495676,0.45915129 116.49548304,0.45595404 116.49556872,0.45091152 116.49537576,0.449259300000015 116.49548304,0.44640540000001 116.49586932,0.44370171 116.49222144,0.43848756 116.49232872,0.43823007 116.4932514,0.437500440000022 116.49365892,0.436942620000024 116.49363768,0.43477533 116.49385224,0.43138503 116.49490344,0.428445360000022 116.49550428,0.427458330000024 116.49565476,0.42698619 116.49554712,0.426557069999987 116.4948822,0.42546276 116.49479616,0.42494778 116.49494664,0.419926680000018 116.49438864,0.415248840000021 116.49453876,0.409584059999981 116.49436704,0.407953260000013 116.49443148,0.405721620000024 116.49423852,0.403361280000019 116.49445308,0.40173057 116.49535416,0.40211676 116.49634128,0.401966550000029 116.4975858,0.402073830000021 116.49833676,0.40196655 116.49863736,0.40207383000002 116.4989376,0.40246011 116.49932388,0.40411233 116.49983868,0.40477752 116.50009644,0.40561434 116.50037544,0.40591476 116.5008258,0.40593627 116.50114764,0.40561434 116.50174848,0.40441275 116.5021992,0.403919189999981 116.50277844,0.403554420000038 116.50447368,0.40297509 116.50498884,0.40261032 116.50631904,0.4005504 116.507628,0.399112740000018 116.50936608,0.398490390000011 116.50988088,0.39806127 116.510868,0.397052730000023 116.51151168,0.39606570000002 116.51571756,0.38795472000001 116.5160178,0.387053459999975 116.51608224,0.385487100000027 116.51644692,0.38473605 116.51719824,0.38389923 116.52026652,0.381474450000011 116.52479424,0.37832022 116.52548076,0.37769796 116.52588828,0.376968420000032 116.52648912,0.375230340000025 116.5279914,0.37218330000003 116.52889248,0.371003130000015 116.52979392,0.36930798 116.53157484,0.36662580000001 116.5320468,0.36611082 116.53279776,0.365552910000013 116.5333986,0.36542412000001 116.5345146,0.36563877 116.53700364,0.365788980000019 116.53917084,0.36548856 116.54082288,0.36548856000001 116.54181,0.36516663 116.54356968,0.363965040000013 116.5439988,0.363836250000038 116.54466408,0.3640509 116.54582256,0.364930650000012 116.546724,0.36523107 116.54775396,0.3659391 116.54848332,0.36626103 116.54957772,0.366282450000024 116.55176652,0.36596061 116.55447012,0.364930650000013 116.55852552,0.362613240000014 116.56047816,0.36083223 116.56170144,0.35907273 116.56223784,0.35857917 116.56279548,0.358343100000018 116.56369692,0.358514820000023 116.56485576,0.359180010000025 116.5654134,0.35969499 116.56672236,0.36141156 116.56710864,0.361604700000028 116.56775232,0.36149742 116.5689756,0.360810720000014 116.5714218,0.358772310000021 116.57230128,0.35787105 116.57350296,0.35604711 116.57414664,0.35553213 116.57541276,0.355038660000019 116.57757996,0.35450217 116.5792536,0.354609450000021 116.58124908,0.35422326 116.58184992,0.35387991000001 116.5825368,0.35327907 116.58350232,0.352034550000024 116.58397428,0.351605430000014 116.585262,0.35139087 116.58951036,0.348901740000028 116.592021,0.348644250000024 116.592858,0.348300900000022 116.59405932,0.34682031 116.594982,0.345125160000021 116.59558284,0.34443855000003 116.59644144,0.34420248 116.59781448,0.34433127 116.59878,0.34392357 116.60197752,0.340747830000031 116.6029002,0.339202890000037 116.60322204,0.338859540000014 116.60508864,0.33742188 116.6066766,0.33553359 116.60843628,0.334396350000027 116.6096592,0.332958690000011 116.61148296,0.33130647 116.61287796,0.32892462 116.61390792,0.325963530000015 116.61444432,0.32521248 116.61701904,0.32341005 116.61802776,0.322938 116.6189076,0.3221226 116.62019496,0.32032017 116.62096752,0.317680830000037 116.6216112,0.316822500000018 116.62231932,0.31624317 116.622190179931,0.316093222867712</coordinates></LineString></MultiGeometry>
+  </Placemark>
+</Folder>
+</Document></kml>

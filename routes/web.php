@@ -34,7 +34,7 @@ Route::prefix('sibima')->group(function () {
 });
 
 // ROUTE ADMIN
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/', 'Admin\DashboardController@index')->name('admin.home');
     
     Route::get('provinsi', 'Admin\ProvinsiController@index')->name('admin.provinsi');
@@ -100,8 +100,3 @@ Route::prefix('admin')->group(function () {
 });
 Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
-
-//login 
-Route::get('/admin/login',function (){
-    return view('dashboard/login');
-});

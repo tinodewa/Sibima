@@ -19,98 +19,42 @@
 {{-- content --}}
 <div class="content">
     <div class="container">
-        <h5 class="content-title">
-            <i class="glyphicon glyphicon-map-marker"></i>
-            Sangatta Selatan
-        </h5>
-        <div class="content-inner">
-            <div class="row">
-                <div class="content-item col-md-4">
-                    <a href="{{ route('sibima.sikombatan.detail', 'name') }}">
-                        <div class="content-item-inner">
-                            <div class="content-item-address">
-                                <p class="content-item-province">
-                                    Sangatta Selatan
-                                </p>
-                                <p class="content-item-road">
-                                    Jalan Poros ke Desa Sangkima Lama
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="content-item col-md-4">
-                    <a href="{{ route('sibima.sikombatan.detail', 'name') }}">
-                        <div class="content-item-inner">
-                            <div class="content-item-address">
-                                <p class="content-item-province">
-                                    Sangatta Selatan
-                                </p>
-                                <p class="content-item-road">
-                                    Jalan Poros ke Desa Sangkima Lama
-                                </p>
-                            </div>
-                        </div>
-                    </a> 
-                </div>
-                <div class="content-item col-md-4">
-                    <a href="{{ route('sibima.sikombatan.detail', 'name') }}">
-                        <div class="content-item-inner">
-                            <div class="content-item-address">
-                                <p class="content-item-province">
-                                    Sangatta Selatan
-                                </p>
-                                <p class="content-item-road">
-                                    Jalan Poros ke Desa Sangkima Lama
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="content-item col-md-4">
-                    <a href="{{ route('sibima.sikombatan.detail', 'name') }}">
-                        <div class="content-item-inner">
-                            <div class="content-item-address">
-                                <p class="content-item-province">
-                                    Sangatta Selatan
-                                </p>
-                                <p class="content-item-road">
-                                    Jalan Poros ke Desa Sangkima Lama
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="content-item col-md-4">
-                    <a href="{{ route('sibima.sikombatan.detail', 'name') }}">
-                        <div class="content-item-inner">
-                            <div class="content-item-address">
-                                <p class="content-item-province">
-                                    Sangatta Selatan
-                                </p>
-                                <p class="content-item-road">
-                                    Jalan Poros ke Desa Sangkima Lama
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="content-item col-md-4">
-                    <a href="{{ route('sibima.sikombatan.detail', 'name') }}">
-                        <div class="content-item-inner">
-                            <div class="content-item-address">
-                                <p class="content-item-province">
-                                    Sangatta Selatan
-                                </p>
-                                <p class="content-item-road">
-                                    Jalan Poros ke Desa Sangkima Lama
-                                </p>
-                            </div>
-                        </div>
-                    </a>
+        @foreach ($sikombatans as $kecamatan => $data)
+            <h5 class="content-title">
+                <i class="glyphicon glyphicon-map-marker"></i>
+                {{ $kecamatan }}
+            </h5>
+            <div class="content-inner">
+                <div class="row">
+                    @foreach ($data as $sikombatan)
+                        @php
+                            $it = 0;
+                        @endphp
+                        @foreach($sikombatanImages->where('sikombatan_id', $sikombatan->id) as $sikombatanImage)
+                            @if ($it < 1)
+                                <div class="content-item col-md-4">
+                                    <a href="{{ route('sibima.sikombatan.detail', $sikombatan->id) }}" >
+                                        <div class="content-item-inner" style="background:url('{{asset('storage/jembatan/'.$sikombatanImage->filename)}}'); background-size:100%;">
+                                            <div class="content-item-address">
+                                                <p class="content-item-province">
+                                                    {{ $sikombatan->sikalan->kecamatan}}
+                                                </p>
+                                                <p class="content-item-road">
+                                                    {{ $sikombatan->nama_jembatan}}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            @endif
+                            @php
+                                $it++;
+                            @endphp
+                        @endforeach
+                    @endforeach
                 </div>
             </div>
-        </div>
+        @endforeach
     </div>
 </div>
 @endsection

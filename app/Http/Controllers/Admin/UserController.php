@@ -2,12 +2,19 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Auth;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('role:1')->only('index', 'create');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -73,7 +80,8 @@ class UserController extends Controller
     public function show($id)
     {
         //
-        return view('dashboard/users/show');
+        $user = User::with('role')->where('id', $id)->first();
+        return view('dashboard/users/show', compact('user'));
     }
 
     /**
@@ -85,7 +93,8 @@ class UserController extends Controller
     public function edit($id)
     {
         //
-        return view('dashboard/users/edit');
+        $user = User::where('id', $id)->first();
+        return view('dashboard/users/edit', compact('user'));
     }
 
     /**
@@ -98,6 +107,68 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $role_id = Auth::user()->role_id;
+        if($role_id == 1) {
+            $request->validate([
+                'name' => 'required|string',
+                'username' => 'required|string',
+                'password' => 'required|string',
+                'role_id' => 'required',
+                'status' => 'required'
+            ]);
+            $user = User::where('id', $id)->firstOrFail();
+            if($request->image_url){
+                unlink(storage_path('app\public\user\\'.$user->image_url));
+                $filename = time().'.'.$request->image_url->getClientOriginalName();
+                $request->image_url->storeAs('user', $filename);
+                $user->update([
+                    'name' => $request->name,
+                    'username' => $request->username,
+                    'password' => $request->password,
+                    'role_id' => $request->role_id,
+                    'status' => $request->status,
+                    'image_url' => $filename,
+                ]);
+            }
+            else {
+                $user->update([
+                    'name' => $request->name,
+                    'username' => $request->username,
+                    'password' => $request->password,
+                    'role_id' => $request->role_id,
+                    'status' => $request->status
+                ]);
+            }
+            return redirect()->route('admin.users')
+                ->with(['success' => 'User berhasil ditambahkan']);
+        }
+        else {
+            $user = User::where('id', $id)->firstOrFail();
+            if($request->image_url){
+                unlink(storage_path('app\public\user\\'.$user->image_url));
+                $filename = time().'.'.$request->image_url->getClientOriginalName();
+                $request->image_url->storeAs('user', $filename);
+                $user->update([
+                    'name' => $request->name,
+                    'username' => $request->username,
+                    'password' => $request->password,
+                    'image_url' => $filename
+                ]);
+            }
+            else {
+                $user->update([
+                    'name' => $request->name,
+                    'username' => $request->username,
+                    'password' => $request->password
+                ]);
+            }
+            return redirect()->route('admin.profil')
+                ->with(['success' => 'Profil berhasil diubah']);
+        }
+
+        
+
+        
     }
 
     /**

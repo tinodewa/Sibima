@@ -36,6 +36,16 @@ class User extends Authenticatable
         return $this->role_id === self::ROLE_SUPER_ADMIN;
     }
 
+    public function isAdmin1()
+    {
+        return $this->role_id == self::ROLE_ADMIN_1;
+    }
+
+    public function isAdmin2()
+    {
+        return $this->role_id == self::ROLE_ADMIN_2;
+    }
+
     public function role()
     {
         return $this->belongsTo(Role::class);
@@ -46,4 +56,18 @@ class User extends Authenticatable
         return $this->HasMany(Article::class);
     }
 
+    public function galeris() 
+    {
+        return $this->HasMany(Galeri::class);
+    }
+
+    public function sikalans()
+    {
+        return $this->hasMany(Sikalan::class);
+    }
+
+    public function sikombatans()
+    {
+        return $this->hasMany(Sikombatan::class);
+    }
 }

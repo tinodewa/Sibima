@@ -1,16 +1,22 @@
 @extends('layouts.home')
 @section('title', 'Sikalan')
 
+@section('css')
+    <link rel="stylesheet" href="{{ asset('assets/home/css/lightbox.min.css')}}">
+    <link rel="stylesheet" href="http://unpkg.com/leaflet@1.3.1/dist/leaflet.css" />
+@endsection
 @section('content')
 {{-- content --}}
 <div class="content">
     <div class="container">
-        <div class="content-map-box">
+        <div class="content-map-box" id="map">
         </div>
+        <script>
+            
+        </script>
         <div class="content-description">
-
             {{-- Keterangan Peta --}}
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-md-4">
                     <div class="content-description-title-box">
                         <div class="content-description-title">
@@ -50,7 +56,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             {{-- Foto Jalan --}}
             <div class="row">
@@ -66,26 +72,15 @@
                 <div class="col-md-8">
                     <div class="content-description-poin-box">
                         <div class="row">
-                            <div class="col-md-3">
-                                <div class="content-description-poin-photo">
-                                    asd
+                            @foreach ($sikalanImages as $sikalanImage)
+                                <div class="content-item col-md-3">
+                                    <a class="example-image-link" href="{{ asset('storage/jalan/'.$sikalanImage->filename) }}" data-lightbox="example-1">
+                                        <div class="content-item-inner" style="height:auto;">
+                                            <img class="example-image" src="{{ asset('storage/jalan/'.$sikalanImage->filename) }}" style="max-width:100%;">
+                                        </div>
+                                    </a>
                                 </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="content-description-poin-photo">
-                                    asd
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="content-description-poin-photo">
-                                    asd
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="content-description-poin-photo">
-                                    asd
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -112,7 +107,7 @@
                                             Nomor Jalan
                                         </div>
                                         <div class="content-description-poin-inner-text">
-                                            017-1.0
+                                            {{ $sikalan->no_ruas }}
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -120,7 +115,7 @@
                                             Kecamatan
                                         </div>
                                         <div class="content-description-poin-inner-text">
-                                            Sangatta Selatan
+                                            {{ $sikalan->kecamatan }}
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -128,7 +123,7 @@
                                             Akses ke Jalan
                                         </div>
                                         <div class="content-description-poin-inner-text">
-                                            Kabupaten
+                                            {{ $sikalan->kecamatan }}
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -136,7 +131,7 @@
                                             Nama Jalan
                                         </div>
                                         <div class="content-description-poin-inner-text">
-                                            Jalan Poros ke Desa Sangkima Lama
+                                            {{ $sikalan->nama_ruas_jalan }}
                                         </div>
                                     </div>
                                 </div>
@@ -167,7 +162,7 @@
                                             Panjang Ruas
                                         </div>
                                         <div class="content-description-poin-inner-text">
-                                            5,533 Kilometer
+                                            {{ $sikalan->panjang }} Kilometer
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -175,7 +170,7 @@
                                             Lebar
                                         </div>
                                         <div class="content-description-poin-inner-text">
-                                            6 Meter
+                                            {{ $sikalan->lebar }} Meter
                                         </div>
                                     </div>
                                 </div>
@@ -206,7 +201,7 @@
                                             Aspal / Penetrasi / Macadam
                                         </div>
                                         <div class="content-description-poin-inner-text">
-                                            0 Kilometer
+                                            {{ $sikalan->ashpalt }} Kilometer
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -214,7 +209,7 @@
                                             Telford / Kerikil
                                         </div>
                                         <div class="content-description-poin-inner-text">
-                                            5,533 Kilometer
+                                            {{ $sikalan->telford }} Kilometer
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -222,7 +217,7 @@
                                             Perkerasan Beton
                                         </div>
                                         <div class="content-description-poin-inner-text">
-                                            0 Kilometer
+                                            {{ $sikalan->rigid }} Kilometer
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -230,7 +225,7 @@
                                             Tanah / Belum Tembus
                                         </div>
                                         <div class="content-description-poin-inner-text">
-                                            0 Kilometer
+                                            {{ $sikalan->tanah }} Kilometer
                                         </div>
                                     </div>
                                 </div>
@@ -261,7 +256,7 @@
                                             Baik (Km)
                                         </div>
                                         <div class="content-description-poin-inner-text">
-                                            0 Kilometer
+                                            {{ $sikalan->baik }} Kilometer
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -269,7 +264,7 @@
                                             Baik (%)
                                         </div>
                                         <div class="content-description-poin-inner-text">
-                                            0 %
+                                            {{ $kondisi->baik }} %
                                         </div>
                                     </div>
                                 </div>
@@ -283,7 +278,7 @@
                                             Sedang (Km)
                                         </div>
                                         <div class="content-description-poin-inner-text">
-                                            0 Kilometer
+                                            {{ $sikalan->sedang }} Kilometer
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -291,7 +286,7 @@
                                             Sedang (%)
                                         </div>
                                         <div class="content-description-poin-inner-text">
-                                            0 %
+                                            {{ $kondisi->sedang }} %
                                         </div>
                                     </div>
                                 </div>
@@ -305,7 +300,7 @@
                                             Rusak Ringan (Km)
                                         </div>
                                         <div class="content-description-poin-inner-text">
-                                            0 Kilometer
+                                            {{ $sikalan->rusak_ringan }} Kilometer
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -313,7 +308,7 @@
                                             Rusak Ringan (%)
                                         </div>
                                         <div class="content-description-poin-inner-text">
-                                            0 %
+                                            {{ $kondisi->rusak_ringan }} %
                                         </div>
                                     </div>
                                 </div>
@@ -327,7 +322,7 @@
                                             Rusak Berat (Km)
                                         </div>
                                         <div class="content-description-poin-inner-text">
-                                            5,533 Kilometer
+                                            {{ $sikalan->rusak_berat }} Kilometer
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -335,7 +330,7 @@
                                             Rusak Berat (%)
                                         </div>
                                         <div class="content-description-poin-inner-text">
-                                            100 %
+                                            {{ $kondisi->rusak_berat }} %
                                         </div>
                                     </div>
                                 </div>
@@ -366,6 +361,7 @@
                                             Informasi
                                         </div>
                                         <div class="content-description-poin-inner-text">
+                                            {{ $sikalan->informasi }}
                                         </div>
                                     </div>
                                 </div>
@@ -377,4 +373,24 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('js')
+	<script src="http://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+    <script src="{{ asset('embedkml/layer/vector/KML.js') }}"></script>
+    <script>
+        var urlKml = "{{ asset('storage/peta/'.$sikalan->gambar_peta) }}";
+        console.log( urlKml);
+
+        var map = new L.Map('map', {center: new L.LatLng(58.4, 43.0), zoom: 50});
+		var osm = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+		var track = new L.KML(urlKml, {async: true});
+		console.log(track);
+		track.on("loaded", function(e) {
+			map.fitBounds(e.target.getBounds());
+		});
+		map.addLayer(track);
+		map.addLayer(osm);
+		map.addControl(new L.Control.Layers({}, {'Track':track}));
+    </script>
 @endsection
