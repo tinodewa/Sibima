@@ -35,6 +35,7 @@
      <link rel="stylesheet" href="{{asset('assets/superadmin/css/light-bootstrap-dashboard.css?v=2.0.0')}}"/>
      <link rel="stylesheet" href="{{asset('assets/superadmin/datatables/css/jquery.dataTables.min.css')}}">    
      <link rel="stylesheet" href="{{asset('assets/superadmin/css/custom.css')}}">
+     <link rel="stylesheet" href="{{asset('assets/home/vendor/lightbox2-2.11.1/css/lightbox.min.css')}}">
      @yield('css')
  </head>
  
@@ -189,6 +190,7 @@
      });
  </script>
  <!-- Plugin -->
+    <script src="{{ asset('assets/home/vendor/lightbox2-2.11.1/js/lightbox.min.js') }}"></script>
  <script src="{{asset('assets/superadmin/datatables/js/jquery.dataTables.min.js')}}"></script>
  <script>
      $(document).ready(function() {

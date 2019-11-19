@@ -10,9 +10,9 @@
             <div class="row">
                 @foreach ($galeris as $galeri)
                     <div class="content-item col-md-4">
-                        <a class="example-image-link" href="{{ asset('storage/galeri/'.$galeri->image_url) }}" data-lightbox="example-1">
+                        <a class="example-image-link" href="{{ asset('storage/galeri/'.$galeri->image_url) }}" data-lightbox="example-1" data-title="{{ $galeri->caption }}">
                             <div class="content-item-inner">
-                                <img class="example-image" src="{{ asset('storage/galeri/'.$galeri->image_url) }}" alt="Girl looking out people on beach">
+                                <img class="example-image" src="{{ asset('storage/galeri/'.$galeri->image_url) }}" alt="{{ $galeri->caption }}">
                                 <div class="content-item-address galery-text-box">
                                     <p class="content-item-road galery-text">
                                         {{ $galeri->caption }}

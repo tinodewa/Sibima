@@ -241,7 +241,7 @@
                                                     <div class="col-md-4 pr-1">
                                                         <div class="form-group">
                                                             <label>Gambar Peta</label>
-                                                            <input type="file" multiple data-upload="" class="" name="gambar_peta">
+                                                            <input type="file" data-upload="" class="" name="gambar_peta">
                                                         </div>
                                                     </div>
                                                 </div>

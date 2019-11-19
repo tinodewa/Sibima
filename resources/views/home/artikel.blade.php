@@ -35,12 +35,14 @@
                         <div class="col-md-6">
                             <div class="article-card">
                                 <a href="{{ route('sibima.artikel.detail', $article->id)}}">
-                                    <div class="article-img-box" style="background:url({{asset('storage/galeri/'.$article->thumbnail)}});">
-                                        <div class="article-category">
-                                            {{$article->category}}
-                                        </div>
-                                        <div class="article-writer">
-                                            {{$article->user->name}}
+                                    <div class="article-img-box" style="background:url({{asset('storage/artikel/'.$article->thumbnail)}});">
+                                        <div class="article-info-box">
+                                            <div class="article-category">
+                                                {{$article->category}}
+                                            </div>
+                                            <div class="article-writer">
+                                                {{$article->user->name}}
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="article-description">

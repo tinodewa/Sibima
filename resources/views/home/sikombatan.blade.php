@@ -34,7 +34,7 @@
                             @if ($it < 1)
                                 <div class="content-item col-md-4">
                                     <a href="{{ route('sibima.sikombatan.detail', $sikombatan->id) }}" >
-                                        <div class="content-item-inner" style="background:url('{{asset('storage/jembatan/'.$sikombatanImage->filename)}}'); background-size:100%;">
+                                        <div class="content-item-inner" style="background:url('{{asset('storage/jembatan/'.$sikombatanImage->filename)}}') no-repeat; background-size:cover;">
                                             <div class="content-item-address">
                                                 <p class="content-item-province">
                                                     {{ $sikombatan->sikalan->kecamatan}}
@@ -53,6 +53,7 @@
                         @endforeach
                     @endforeach
                 </div>
+                <hr class="d-block garis-bawah-1">
             </div>
         @endforeach
     </div>

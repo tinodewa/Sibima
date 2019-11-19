@@ -29,7 +29,7 @@
             </div>
             <div class="form-action">
             <!--    <button type="submit" class="btn btn-primary btn-rounded btn-login">Sign In</button> -->
-                <a href="{{ url('/admin') }}" class="btn btn-primary btn-rounded btn-login">Sign In</a>
+                <btn type="submit" class="btn btn-primary btn-rounded btn-login">Sign In</b>
             </div>
             </form>
     </div>
