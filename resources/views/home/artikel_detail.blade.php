@@ -20,7 +20,7 @@
                         </p>
                     </div>
                     <div class="article-detail-img-box">
-                        <img class="article-detail-img" src="{{asset('storage/galeri/'.$article->thumbnail)}}" alt="">
+                        <img class="article-detail-img" src="{{asset('storage/artikel/'.$article->thumbnail)}}" alt="">
                     </div>
                     <div class="article-detail-text-box">
                         {!! $article->content !!}

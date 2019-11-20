@@ -205,6 +205,15 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+.img-display img{
+    min-width: 300px;
+    width: 350px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+
 @media only screen and (max-width: 640px) {
   .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter{
       text-align: left;

@@ -53,6 +53,7 @@
                         @endforeach
                         
                     @endforeach
+                    <div class="garis-batas"><hr/></div>
                 </div>
             </div>
         @endforeach

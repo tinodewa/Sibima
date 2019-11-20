@@ -96,11 +96,21 @@
 }
 
 .garis-batas{
-  border-top: white 1px solid;
-  width: 100%;
-  max-width: 400px;
+  display: block;
   margin: 0 auto;
-  margin-bottom: 1rem;
+  width: 100%;
+  height: 40px;  
+  z-index: 3;
+}
+
+.garis-batas hr{
+  border: 0;
+  clear:both;
+  display:block;
+  width: 100%;               
+  background-color:#aaa;
+  z-index: 3;
+  height: 2px;
 }
 
 /* decoration */
@@ -249,8 +259,8 @@
   border-radius:6px;
   position: relative;
   overflow: hidden;
-  box-shadow: 1px 3px 5px 0 rgba(0, 0, 0, 0.14);
-  transition: 0.2s all ease;
+  box-shadow: 2px 3px 5px 0 rgba(0, 0, 0, 0.18);
+  transition: all .2s ease;
 }
 
 .content-item-inner:hover {
@@ -271,6 +281,7 @@
   margin: 0;
   margin-bottom: 17px;
   font-weight: 600;
+  font-size: 1.1rem;
   margin-top: 5px;
 }
 
@@ -332,7 +343,7 @@
 
 .content-description-poin-inner-text {
   font-size: 16px;
-  color: white;
+  color: #343434;
   padding: 3px 0 10px;
 }
 
@@ -343,10 +354,20 @@
 
 /*Garis batas content*/
 .garis-batas-1{
-  border-top: #aaa 3px solid;
-  width: 100%;
-  margin: 1.2rem auto;
-  margin-bottom: 1rem;
+  display: block;
+  margin: 0 auto;
+  width: 400px;
+  max-width: 100%;
+  height: 40px;  
+}
+.garis-batas-1 hr{
+  border: 0;
+  clear:both;
+  display:block;
+  width: 400px;
+  max-width: 100%;               
+  background-color:#aaa;
+  height: 1px;
 }
 
 /* article */
@@ -360,6 +381,8 @@
 
 .article-card {
   position: relative;
+  border-radius: 2px;
+  background: #ecf0f1;
   transition: 0.2s all ease;
 }
 
@@ -377,14 +400,19 @@
   display:grid;
   height: 200px;
   grid-template-columns: repeat(2,minmax(65px,max-content));
+  grid-gap: 2.5px;
 }
 .article-category {
   padding: 3px 15px;
-  background: #f4f4f4;
+  background: #ecf0f1;
   border-top-right-radius: 5px;
   align-self: end;
   grid-column: 2/3;
   bottom:0;
+
+  border-radius: 4px;
+  margin-bottom: 5px;
+  margin-left:5px;
 }
 
 .article-writer {
@@ -393,6 +421,10 @@
   grid-column: 1/2;
   align-self: end;
   grid-row: 1/2;
+
+  border-radius: 4px;
+  margin-left:5px;
+  margin-bottom: 5px;
 }
 
 .article-img-box {
@@ -404,7 +436,9 @@
 .article-description {
   padding: 10px;
   padding-bottom: 40px;
-  background: #927f7f;
+  background:#ecf0f1;
+  font-weight: 300;
+  font-size: 1.2rem;
 }
 
 .article-news {

@@ -292,7 +292,7 @@
                                                         @foreach ($sikalan->images as $image)
                                                             <div class="content-item col-md-3">
                                                             <a class="example-image-link" href="{{ asset('storage/jalan/'.$image->filename) }}" data-lightbox="example-1">
-                                                                <div class="content-item-inner" style="height:auto;">
+                                                                <div class="content-item-inner" style="height:auto; width:250px;">
                                                                     <img class="example-image" src="{{ asset('storage/jalan/'.$image->filename) }}" style="max-width:100%;">
                                                                 </div>
                                                             </a>

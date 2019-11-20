@@ -52,8 +52,8 @@
                             @endphp
                         @endforeach
                     @endforeach
+                    <div class="garis-batas"><hr/></div>
                 </div>
-                <hr class="d-block garis-bawah-1">
             </div>
         @endforeach
     </div>

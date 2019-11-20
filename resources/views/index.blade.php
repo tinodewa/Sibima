@@ -52,7 +52,7 @@
                         </a>
                     </li>
                 </ul>
-                <hr class="garis-batas">
+                <div  class="garis-batas-1"><hr></div>   
                 <ul class="homepage-menu row justify-content-center">
                     <li class="col-3">
                         <a class="homepage-menu-item" href="{{ route('sibima.profil') }}">

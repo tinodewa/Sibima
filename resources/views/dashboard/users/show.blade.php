@@ -31,7 +31,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <div class="">
+                                    <div class="img-display">
                                         <img src="{{ asset('storage/user/'.$user->image_url) }}" alt="img" style="max-width:100%;">
                                     </div>
                                 </div>

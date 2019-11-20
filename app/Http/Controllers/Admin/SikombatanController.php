@@ -76,7 +76,7 @@ class SikombatanController extends Controller
         $request->gambar_peta->storeAs('peta_jembatan', $peta);
 
         $status = null;
-        if(Auth::user()->isAdmin2()){
+        if(!Auth::user()->isAdmin2()){
             $status = isset($request->diterima) ? true : false;
         }
         else {
