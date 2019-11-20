@@ -33,7 +33,7 @@
                                 <div class="col-md-4 pr-1">
                                     <div class="form-group">
                                         <label>Foto</label>
-                                        <input type="file" data-upload="" accept="image/*" class="" name="image_file">
+                                        <input type="file" data-upload="" accept="image/*" class="" name="image_file" required>
                                     </div>
                                 </div>
                             </div>

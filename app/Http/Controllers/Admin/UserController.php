@@ -60,7 +60,7 @@ class UserController extends Controller
         $user = User::Create([
             'name' => $request->name,
             'username' => $request->username,
-            'password' => $request->password,
+            'password' => Hash::make($request->password),
             'role_id' => $request->role_id,
             'status' => $request->status,
             'image_url' => $filename,
@@ -124,7 +124,7 @@ class UserController extends Controller
                 $user->update([
                     'name' => $request->name,
                     'username' => $request->username,
-                    'password' => $request->password,
+                    'password' => Hash::make($request->password),
                     'role_id' => $request->role_id,
                     'status' => $request->status,
                     'image_url' => $filename,
@@ -134,7 +134,7 @@ class UserController extends Controller
                 $user->update([
                     'name' => $request->name,
                     'username' => $request->username,
-                    'password' => $request->password,
+                    'password' => Hash::make($request->password),
                     'role_id' => $request->role_id,
                     'status' => $request->status
                 ]);
@@ -151,7 +151,7 @@ class UserController extends Controller
                 $user->update([
                     'name' => $request->name,
                     'username' => $request->username,
-                    'password' => $request->password,
+                    'password' => Hash::make($request->password),
                     'image_url' => $filename
                 ]);
             }
@@ -159,7 +159,7 @@ class UserController extends Controller
                 $user->update([
                     'name' => $request->name,
                     'username' => $request->username,
-                    'password' => $request->password
+                    'password' => Hash::make($request->password)
                 ]);
             }
             return redirect()->route('admin.profil')

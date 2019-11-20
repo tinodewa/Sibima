@@ -103,6 +103,14 @@ class SikalanController extends Controller
         $peta = time().'_'.$request->gambar_peta->getClientOriginalName();
         $request->gambar_peta->storeAs('peta', $peta);
 
+        $status = null;
+        if(Auth::user()->isAdmin2()){
+            $status = isset($request->diterima) ? true : false;
+        }
+        else {
+            $status = false;
+        }
+
         $sikalan = Sikalan::create([
             'user_id' => Auth::user()->id,
             'no_ruas' => $request->nomor_ruas,
@@ -150,7 +158,7 @@ class SikalanController extends Controller
             'koordinat_x_akhir_ruas' => $request->koordinat_x_titik_akhir_ruas,
             'koordinat_y_akhir_ruas' => $request->koordinat_y_titik_akhir_ruas,
             'informasi' => $request->informasi,
-            'status_approve' => isset($request->diterima) ? true : false
+            'status_approve' => $status
         ]);
 
         foreach ($request->foto_jalan as $item) {

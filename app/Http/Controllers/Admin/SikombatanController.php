@@ -75,6 +75,14 @@ class SikombatanController extends Controller
         $peta = time().'_'.$request->gambar_peta->getClientOriginalName();
         $request->gambar_peta->storeAs('peta_jembatan', $peta);
 
+        $status = null;
+        if(Auth::user()->isAdmin2()){
+            $status = isset($request->diterima) ? true : false;
+        }
+        else {
+            $status = false;
+        }
+
         $sikombatan = Sikombatan::create([
             'user_id' => Auth::user()->id,
             'sikalan_id' => $request->nomor_ruas,
@@ -97,7 +105,7 @@ class SikombatanController extends Controller
             'koordinat_y' => $request->koordinat_y,
             'informasi' => $request->informasi,
             'gambar_peta' => $peta,
-            'status_approve' => isset($request->status_approve) ? true : false
+            'status_approve' => $status
         ]);
 
         foreach ($request->foto_jembatan as $item) {

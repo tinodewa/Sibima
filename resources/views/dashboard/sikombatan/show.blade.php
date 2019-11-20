@@ -1,6 +1,11 @@
 @extends('layouts/dashboard')
 @section('title', 'Kondisi Jembatan')
 
+@section('css')
+    <link rel="stylesheet" href="{{ asset('assets/home/css/lightbox.min.css')}}">
+    <link rel="stylesheet" href="http://unpkg.com/leaflet@1.3.1/dist/leaflet.css" />
+@endsection
+
 @section('content')
 <div class="container-fluid">
     <div class="row">
@@ -43,8 +48,8 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="row">
-                                        <div class="map-box col-md-12">
-                                            <iframe class="map-screen" src="https://www.youtube.com/watch?v=q7jG-m0MEyM"></iframe>
+                                        <div class="map-box col-md-12" id="map">
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -319,6 +324,7 @@
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="row">
                                 <div class="col-md-12 ml-3">
                                     <div class="form-group">
@@ -334,7 +340,7 @@
                             <div class="row">
                                 <div class="col-md-12 ml-3">
                                     <div class="form-group">
-                                        <a class="control-icon alert-success" href="{{ route('admin.sikombatan.edit', 1) }}">
+                                        <a class="control-icon alert-success" href="{{ route('admin.sikombatan.edit', $sikombatan->id) }}">
                                             <i class="nc-icon nc-settings-tool-66"></i>
                                             Edit
                                         </a>
@@ -348,4 +354,24 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('js')
+	<script src="http://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+    <script src="{{ asset('embedkml/layer/vector/KML.js') }}"></script>
+    <script>
+        var urlKml = "{{ asset('storage/peta_jembatan/'.$sikombatan->gambar_peta) }}";
+        console.log( urlKml);
+
+        var map = new L.Map('map', {center: new L.LatLng(58.4, 43.0), zoom: 50});
+		var osm = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+		var track = new L.KML(urlKml, {async: true});
+		console.log(track);
+		track.on("loaded", function(e) {
+			map.fitBounds(e.target.getBounds());
+		});
+		map.addLayer(track);
+		map.addLayer(osm);
+		map.addControl(new L.Control.Layers({}, {'Track':track}));
+    </script>
 @endsection

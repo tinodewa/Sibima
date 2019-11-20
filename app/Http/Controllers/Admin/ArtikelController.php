@@ -17,7 +17,13 @@ class ArtikelController extends Controller
     public function index()
     {
         //
-        $articles = Article::where('user_id', Auth::user()->id)->orderBy('id', 'DESC')->get();
+        $articles = null;
+        if(Auth::user()->role_id == 1){
+            $articles = Article::orderBy('id', 'DESC')->get();
+        }
+        else {
+            $articles = Article::where('user_id', Auth::user()->id)->orderBy('id', 'DESC')->get();
+        }
         return view('dashboard/artikel/index', compact('articles'));
     }
 

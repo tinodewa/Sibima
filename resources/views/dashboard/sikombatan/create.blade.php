@@ -266,6 +266,7 @@
                                     </div>
                                 </div>
                             </div>
+                            @if(!Auth::user()->isAdmin2())
                             <div class="row">
                                 <div class="col-md-12 ml-3">
                                     <div class="form-group">
@@ -278,6 +279,7 @@
                                     </div>
                                 </div>
                             </div>
+                            @endif
                             <button type="button" class="ml-3 control-icon btn-fill btn-info" data-toggle="modal" data-target="#myModal2" href="#">
                                 Simpan
                             </button>

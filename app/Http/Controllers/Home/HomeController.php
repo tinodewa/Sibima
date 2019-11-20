@@ -34,7 +34,7 @@ class HomeController extends Controller
     public function sikombatan()
     {
         //
-        $sikombatans = Sikombatan::with('sikalan')->get();
+        $sikombatans = Sikombatan::with('sikalan')->where('status_approve', true)->get();
         $sikombatans = $sikombatans->groupBy('sikalan.kecamatan');
         $sikombatanImages = SikombatanImage::get();
         return view('home.sikombatan', compact('sikombatans', 'sikombatanImages'));
@@ -60,7 +60,7 @@ class HomeController extends Controller
      */
     public function sikalan()
     {
-        $sikalans = Sikalan::get();
+        $sikalans = Sikalan::where('status_approve', true)->get();
         $sikalans = $sikalans->groupBy('kecamatan');
         $sikalanImages = SikalanImage::get();
         return view('home.sikalan', compact('sikalans', 'sikalanImages'));

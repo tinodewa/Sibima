@@ -18,7 +18,13 @@ class GaleriController extends Controller
     public function index()
     {
         //
-        $galeris = Galeri::where('user_id', Auth::user()->id)->orderBy('id', 'DESC')->get();
+        $galeris = null;
+        if(Auth::user()->role_id == 1){
+            $galeris = Galeri::orderBy('id', 'DESC')->get();
+        }
+        else {
+            $galeris = Galeri::where('user_id', Auth::user()->id)->orderBy('id', 'DESC')->get();
+        }
         return view('dashboard/galeri/index', compact('galeris'));
     }
 
