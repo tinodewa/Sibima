@@ -32,5 +32,6 @@
     <script src="{{asset('assets/new/vendor/bootstrap-4.3.1/js/bootstrap.min.js')}}"></script>
     <script src="{{ asset('assets/new/vendor/lightbox2-2.11.1/js/lightbox.min.js') }}"></script>
 
+    @yield('js')
 </html>
 

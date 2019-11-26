@@ -1,3 +1,10 @@
+//BASE VARIABEL
+//breakpoint responsive
+$bp-large:69em; //1100px
+
+
+///////////////////////
+//global settings
 *,
 *::after,
 *::before
@@ -10,6 +17,9 @@ html{
     //DEFINES WHAT 1rem = 10px 
     font-size: 62.5%; // 1rem = 10px; 10/16 = 62.5 
 
+    @media only screen and (max-width: $bp-large){
+        font-size: 50%;
+    }
 
 }
 body {
@@ -19,17 +29,37 @@ body {
 //MOST OF CODING
 
 .container-box{
+    background: #797d7e;
     display:flex;
+
+    // Medium devices (tablets, 768px and up)
+    @media only screen and (max-width: 991.98px) {
+        display:grid;
+        grid-template-columns: 100%;
+        margin: 0 0 1rem;
+        background: white;
+        grid-template-rows: 60rem 50rem max-content;
+    }
 }
 
 .sidebar-left{
     width: 22%;
+    height: 100vh;
     overflow: hidden;
     position: relative;
-
-    height:100vh;        
+    transition: all .1s ease;
+    transform:translateX(0);
+      
     color:white;
     background: #bdc3c7;
+
+    
+    // Medium devices (tablets, 768px and up)
+    @media only screen and (max-width: 991.98px) {
+        grid-row: 1/2;
+        height: 100%;
+        width:100%;
+    }
 
     .left-head{
     display: grid;
@@ -48,12 +78,21 @@ body {
     }
 
     &__icon{
-        grid-column: 2/3;
-        justify-self: end;
 
-        font-size: 4.6rem;
+        font-size: 4rem;
         color:white;
         margin-right: 1rem;
+    }
+
+    .closebtn{
+        grid-column: 2/3;
+        justify-self: end;
+        cursor: pointer;
+
+        // Medium devices (tablets, 768px and up)
+        @media only screen and (max-width: 991.98px) {
+            display: none;
+        }
     }
 
     .form-box{
@@ -70,6 +109,7 @@ body {
         .chosen{
             padding:15px;
         }
+        
 
         .button-submit{
             padding: 6px 10px;
@@ -89,6 +129,15 @@ body {
         position: absolute;
         bottom: 0;
         width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        margin: 2px auto;
+
+        // Medium devices (tablets, 768px and up)
+        @media only screen and (max-width: 991.98px) {
+            display:none;
+        }
 
         p{
             color:#2c3e50;
@@ -100,14 +149,55 @@ body {
 .maps-box{
     width: 50%;
     height:100vh;
-    background:#7f8c8d;
+    background:#797d7e;
+    position: relative;
+    transition: all .4s ease;
+
+    // Medium devices (tablets, 768px and up)
+    @media only screen and (max-width: 991.98px) {
+        grid-row: 2/3;
+        width:100%;
+        margin: 1rem 0 0;
+        height: 100%;
+        background-color: #f1c40f;
+        overflow: hidden;
+    }
+
+    .menu{
+        position: relative;
+        padding: 1rem;
+        width: 5rem;
+        height: 6rem;
+        z-index: 10;
+    }
+
+    .openbtn{
+        cursor: pointer;
+        display: none;
+
+        // Medium devices (tablets, 768px and up)
+        @media only screen and (max-width: 991.98px) {
+            display: none;
+        }
+    }
 }
 
 .sidebar-right{
     width:28%;
     height:100vh;
+    background: #fff;
     overflow-x: hidden;
+    transition: all .4s ease;
     overflow-y: scroll;
+
+    // Medium devices (tablets, 768px and up)
+    @media only screen and (max-width: 991.98px) {
+        grid-row: 3/4;
+        width:100%;
+        overflow-x: unset;
+        overflow-y: unset;
+        margin: 1rem 0 0;
+    }
 
     .lokasi-box{
         background:#34495e;
@@ -115,18 +205,36 @@ body {
         padding:1rem;
         padding-top:3rem;
 
+        
+        // Medium devices (tablets, 768px and up)
+        @media only screen and (max-width: 991.98px) {
+            padding:3rem 0;
+        }
+
         .lokasi-head{
             display: flex;
-            align-items: center;
             justify-content: center;
             .lokasi-title{
                 font-size: 2rem;
-                font-weight: 500;
+                font-weight: 600;
+
+                @media only screen and (max-width: $bp-large){
+                    font-size: 1.8rem;
+                }
+
+                // Medium devices (tablets, 768px and up)
+                @media only screen and (max-width: 991.98px) {
+                    margin-top:5px;
+                }
             }
             &__icon{
                 font-size: 1.8rem;
-                margin-bottom: 1rem;
+                margin-top: 5px;
                 margin-right: 1rem;
+
+                @media only screen and (max-width: $bp-large){
+                    font-size: 1.6rem;
+                }
             }
         }
 
@@ -134,6 +242,10 @@ body {
             width:100%;
             text-align: center;
             font-size: 1.6rem;
+            @media only screen and (max-width: $bp-large){
+                font-size: 1.45rem;
+            }
+
 
             hr{
                 clear: both;
@@ -154,29 +266,38 @@ body {
                 align-items: center;
                 &__icon{
                     font-size: 1.8rem;
+                    @media only screen and (max-width: $bp-large){
+                        font-size: 1.6rem;
+                    }
                     margin-bottom: 7px;
                     margin-right: 1rem;
                 }
+            }
+
+            .lokasi-paragraf{
+                margin:1rem 6px;
             }
         }
 
         
     }
-    .lokasi-footer{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
+    .lokasi-footer{        
         font-size: 1.5rem;
+        padding:0 1rem;
         margin-bottom: 1rem;
-        .span-card{
-            padding:0 1.2rem;
-            border: #34495e 1px solid;
-            border-radius: 6px;
-            text-align: center;
-            margin:0 auto;
 
-            box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.3);
+        @media only screen and (max-width: $bp-large){
+            font-size: 1.4rem;
+        }
+
+        .span-card{
+            padding:1rem;
+            border: #34495e 1px solid;
+            border-radius: 4px;
+            text-align: center;
+            margin:1.1rem auto;
+
+            box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.3);
         }
         .bold{
             font-weight: 700;

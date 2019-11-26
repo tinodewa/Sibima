@@ -1,5 +1,5 @@
 @extends('new/master')
-@section('title','Sikalan Baru')
+@section('title','Sikombatan Baru')
 
 @section('content')
 <div class="container-box">
@@ -49,14 +49,14 @@
           </select>
         </div>
         <div class="form-group mt-5">
-            <p class="form-text">Pilih <span class="form-title">Jalan</span></p>
-            <select data-placeholder="Pilih Jalan..." class="chosen-select form-control chosen" tabindex="2">
+            <p class="form-text">Pilih <span class="form-title">Jembatan</span></p>
+            <select data-placeholder="Pilih Jembatan..." class="chosen-select form-control chosen" tabindex="2">
             <option value=""></option>
-            <option value="Jl. Jbt Benu Muda Kiri - Jbt. Himba Lestari">Jl. Jbt Benu Muda Kiri - Jbt. Himba Lestari</option>
-            <option value="Jl. Jbt. Himba Lestari - Smp. 3 Beno Harapan">Jl. Jbt. Himba Lestari - Smp. 3 Beno Harapan</option>
-            <option value="Jl. Km. 8 - Simp. Kantor Camat Batu Ampar">Jl. Km. 8 - Simp. Kantor Camat Batu Ampar</option>
-            <option value="Jl. Simp. K.Camat B.Ampar - Simp. 3 Ds Mawai Indah">Jl. Simp. K.Camat B.Ampar - Simp. 3 Ds Mawai Indah</option>
-            <option value="Jl. Simp. Km. 3 - Batu Timbau">Jl. Simp. Km. 3 - Batu Timbau</option>
+            <option value="Jembatan Sei Benu Muda Kiri">Jembatan Sei Benu Muda Kiri</option>
+            <option value="Jembatan Sui Sekrat">Jembatan Sui Sekrat</option>
+            <option value="Jembatan Batu Balai">Jembatan Batu Balai</option>
+            <option value="Jembatan Long Mesangat">Jembatan Long Mesangat</option>
+            <option value="Jembatan Kelinjau II">Jembatan Kelinjau II</option>
           </select>
         </div>
         <div class="form-group mt-5 submit-group">
@@ -74,25 +74,24 @@
   </div>
 
   {{-- --  --  --  --  --  -- -- MAPS --  --  --  --  -- -- -- --}}
-  <div class="maps-box" id="mapsbox">
+  <div class="maps-box"  id="mapsbox">
+  <h1>Maps</h1>
   
   <div class="menu">
     <span class="openbtn" id="openbtn" onclick="openNav()"><i class="icon ion-md-menu sidebar-left__icon"></i></span>
   </div>
 
-  Maps
-
   </div>
 
   {{-- --  --  -- --   -- -- -- SIDEBAR RIGHT -- -- --  --  --  --  -- --}}
   <div class="sidebar-right">
-      <div class="lokasi-box">
-          <div class="lokasi-head mx-auto mb-3">
+      <div class="lokasi-box row">
+          <div class="lokasi-head col-11 mx-auto mb-3">
             <i class="icon ion-md-pin lokasi-head__icon"></i>
-            <p class="lokasi-title text-center">Jl. Jbt Benu Muda Kiri - Jbt. Himba Lestari</p>
+            <p class="lokasi-title text-center">Jembatan Sei Benu Muda Kiri</p>
           </div>
           <div class="lokasi-body">
-              <p class="lokasi-paragraf">Desa Himba Lestari | Jalan Non Tol</p>
+              <p class="lokasi-paragraf">Jl. Jbt Benu Muda Kiri - Jbt. Himba Lestari | Jembatan Rangka</p>
               <hr>
               <div class="latitude-box">
                 <i class="icon ion-md-locate latitude-box__icon"></i>
@@ -103,18 +102,18 @@
       </div>
      
       
-    <div class="lokasi-footer row mt-3">
+      <div class="lokasi-footer row mt-3">
         
-    <div class="col-6">
-            <div class="span-card"> Provinsi <br><span class="bold">Kalimantan Timur</span></div    >
-        </div>
         <div class="col-6">
-            <div class="span-card"> Kabupaten/Kota <br> <span class="bold">Kutai Timur</span></div>
+                <div class="span-card"> Provinsi <br><span class="bold">Kalimantan Timur</span></div    >
+            </div>
+            <div class="col-6">
+                <div class="span-card"> Kabupaten/Kota <br> <span class="bold">Kutai Timur</span></div>
+            </div>
+            <div class="col-12">
+                <div class="span-card"> Kecamatan <br> <span class="bold">Sanggatta Selatan</span></div>
+            </div>
         </div>
-        <div class="col-12">
-            <div class="span-card"> Kecamatan <br> <span class="bold">Sanggatta Selatan</span></div>
-        </div>
-    </div>
 
     {{-- -- Slider Image -- --}}
     <div class="row my-4">
@@ -124,16 +123,20 @@
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                <img src="{{ asset('storage/jalan/1574234172_sikalan 1.jpg') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset('storage/jembatan/1574148201_jembatan-sei-benu-muda-kiri-1.png') }}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                <img src="{{ asset('storage/jalan/1574234172_sikalan 2.jpg') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset('storage/jembatan/1574148201_jembatan-sei-benu-muda-kiri-2.png') }}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                <img src="{{ asset('storage/jalan/1574149091_jembatan-sei-benu-muda-kiri-3.png') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset('storage/jembatan/1574148201_jembatan-sei-benu-muda-kiri-3.png') }}" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                <img src="{{ asset('storage/jembatan/1574148201_jembatan-sei-benu-muda-kiri-4.png') }}" class="d-block w-100" alt="...">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -148,31 +151,36 @@
         </div>
     </div>
 
+    
+    
+    {{-- ///////////////////////////////////////////////////////////////////// --}}
+    {{-- ///Data Umum Dan Lain Lain --}}
+
     <div class="row mb-5">
         <div class="col-11 mx-auto">
             <div class="detail-box">
-                <div class="detail-title mb-3">Data Umum</div>
+                <div class="detail-title mb-4">Data Umum</div>
                 <div class="row">
                     <div class="col-6">
-                        <div class="detail-inner-title">Nomor Jalan</div>
-                        <div class="detail-inner-text">15.01.01</div>
+                        <div class="detail-inner-title">Nomor Jembatan</div>
+                        <div class="detail-inner-text">1</div>
+                    </div>
+                    <div class="col-6">
+                        <div class="detail-inner-title">Nama Jembatan</div>
+                        <div class="detail-inner-text">Jembatan Sei Benu Muda Kiri</div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-6">
+                        <div class="detail-inner-title">Nama Jalan</div>
+                        <div class="detail-inner-text">Jl. Jbt Benu Muda Kiri - Jbt. Himba Lestari</div>
                     </div>
                     <div class="col-6">
                         <div class="detail-inner-title">Kecamatan</div>
                         <div class="detail-inner-text">Sanggatta Selatan</div>
                     </div>
                 </div>
-                
-                <div class="row">
-                    <div class="col-6">
-                        <div class="detail-inner-title">Akses ke Jalan</div>
-                        <div class="detail-inner-text">Jalan entah apa</div>
-                    </div>
-                    <div class="col-6">
-                        <div class="detail-inner-title">Nama Jalan</div>
-                        <div class="detail-inner-text">Jl. Jbt Benu Muda Kiri - Jbt. Himba Lestari</div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -181,43 +189,21 @@
     <div class="row mb-5">
         <div class="col-11 mx-auto">
             <div class="detail-box">
-                <div class="detail-title mb-3">Dimensi</div>
+                <div class="detail-title mb-4">Dimensi</div>
                 <div class="row">
                     <div class="col-6">
-                        <div class="detail-inner-title">Panjang Ruas</div>
-                        <div class="detail-inner-text">26478 Kilometer</div>
+                        <div class="detail-inner-title">Panjang (m)</div>
+                        <div class="detail-inner-text">30 Meter</div>
                     </div>
                     <div class="col-6">
-                        <div class="detail-inner-title">Lebar</div>
+                        <div class="detail-inner-title">Lebar (m)</div>
                         <div class="detail-inner-text">6 Meter</div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row mb-5">
-        <div class="col-11 mx-auto">
-            <div class="detail-box">
-                <div class="detail-title mb-3">Panjang Tiap Jenis Permukaan</div>
                 <div class="row">
                     <div class="col-6">
-                        <div class="detail-inner-title">Aspal / Penetrasi / Macadam</div>
-                        <div class="detail-inner-text">24801 Kilometer</div>
-                    </div>
-                    <div class="col-6">
-                        <div class="detail-inner-title">Telford / Kerikil</div>
-                        <div class="detail-inner-text">1677 Kilometer</div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="detail-inner-title">Perkerasan Beton</div>
-                        <div class="detail-inner-text">0 Kilometer</div>
-                    </div>
-                    <div class="col-6">
-                        <div class="detail-inner-title">Tanah / Belum Tembus</div>
-                        <div class="detail-inner-text">0 Kilometer</div>
+                        <div class="detail-inner-title">Jumlah Bentang</div>
+                        <div class="detail-inner-text">1</div>
                     </div>
                 </div>
             </div>
@@ -227,55 +213,55 @@
     <div class="row mb-5">
         <div class="col-11 mx-auto">
             <div class="detail-box">
-                <div class="detail-title mb-3">Panjang Tiap Kondisi</div>
+                <div class="detail-title mb-4">Tipe/Kondisi</div>
                 <div class="row">
                     <div class="col-6">
-                        <div class="detail-inner-title">Baik (Km)</div>
-                        <div class="detail-inner-text">10326 Kilometer</div>
+                        <div class="detail-inner-title">Tipe Bangunan Atas</div>
+                        <div class="detail-inner-text">Rangka</div>
                     </div>
                     <div class="col-6">
-                        <div class="detail-inner-title">Baik (%)</div>
-                        <div class="detail-inner-text">39.00 %</div>
+                        <div class="detail-inner-title">Kondisi Bangunan Atas</div>
+                        <div class="detail-inner-text">Baik</div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-6">
-                        <div class="detail-inner-title">Sedang (Km)</div>
-                        <div class="detail-inner-text">959 Kilometer</div>
+                        <div class="detail-inner-title">Tipe Bangunan Bawah</div>
+                        <div class="detail-inner-text">Abutmen Beton</div>
                     </div>
                     <div class="col-6">
-                        <div class="detail-inner-title">Sedang (%)</div>
-                        <div class="detail-inner-text">3.62 %</div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="detail-inner-title">Rusak Ringan (Km)</div>
-                        <div class="detail-inner-text">15192 Kilometer</div>
-                    </div>
-                    <div class="col-6">
-                        <div class="detail-inner-title">Rusak Ringan (%)</div>
-                        <div class="detail-inner-text">57.38 %</div>
+                        <div class="detail-inner-title">Kondisi Bangunan Bawah</div>
+                        <div class="detail-inner-text">Baik</div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-6">
-                        <div class="detail-inner-title">Rusak Berat (Km)</div>
-                        <div class="detail-inner-text">0 Kilometer</div>
+                        <div class="detail-inner-title">Tipe Fondasi</div>
+                        <div class="detail-inner-text">-</div>
                     </div>
                     <div class="col-6">
-                        <div class="detail-inner-title">Rusak Berat (%)</div>
-                        <div class="detail-inner-text">0.00 %</div>
+                        <div class="detail-inner-title">Kondisi Fondasi</div>
+                        <div class="detail-inner-text">-</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="detail-inner-title">Tipe Lantai</div>
+                        <div class="detail-inner-text">Beton</div>
+                    </div>
+                    <div class="col-6">
+                        <div class="detail-inner-title">Kondisi Lantai</div>
+                        <div class="detail-inner-text">Baik</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     
-    <div class="row mb-5">
+    <div class="row mb-4">
         <div class="col-11 mx-auto">
             <div class="detail-box">
-                <div class="detail-title mb-3">Lainnya</div>
+                <div class="detail-title mb-5">Lainnya</div>
                 <div class="row">
                     <div class="col-12">
                         <div class="detail-inner-title">Informasi</div>
