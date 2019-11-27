@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Auth;
 use App\Sikalan;
 use App\Sikombatan;
+use App\SikalanImage;
+use App\SikombatanImage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -33,7 +35,9 @@ class DashboardController extends Controller
     {
         $sikalans = Sikalan::with('thumbnail')->orderBy('id', 'desc')->get();
         $sikombatans = Sikombatan::with('thumbnail')->orderBy('id', 'desc')->get();
-        return view('dashboard/index', compact('sikalans', 'sikombatans'));
+        $sikalanImages = SikalanImage::get();
+        $sikombatanImages = sikombatanImage::get();
+        return view('dashboard/index', compact('sikalans', 'sikombatans', 'sikalanImages', 'sikombatanImages'));
     }
 
     /**

@@ -23,7 +23,17 @@
                                 <tr>
                                     <td>
                                         <div class="img-box">
-                                            <img src="{{ asset('storage/jalan/'.$sikalan->thumbnail->filename) }}" alt="bromo" class="img-fluid">
+                                            @php
+                                                $it = 0;
+                                            @endphp
+                                            @foreach ($sikalanImages as $sikalanImage)
+                                                @if ( $it == 0 && $sikalanImage->sikalan_id = $sikalan->id)
+                                                    <img src="{{ asset('storage/jalan/'.$sikalanImage->filename) }}" alt="bromo" class="img-fluid">
+                                                @endif
+                                                @php
+                                                    $it++;
+                                                @endphp
+                                            @endforeach
                                         </div>
                                     </td>
                                     <td>{{ $sikalan->nama_ruas_jalan }}</td>
@@ -61,7 +71,17 @@
                                 <tr>
                                     <td>
                                         <div class="img-box">
-                                            <img src="{{ asset('storage/jembatan/'.$sikombatan->thumbnail->filename) }}" alt="bromo" class="img-fluid">
+                                            @php
+                                                $it = 0;
+                                            @endphp
+                                            @foreach ($sikombatanImages as $sikombatanImage)
+                                                @if ( $it == 0 && $sikombatanImage->sikombatan_id = $sikombatan->id)
+                                                    <img src="{{ asset('storage/jembatan/'.$sikombatanImage->filename) }}" alt="bromo" class="img-fluid">
+                                                @endif
+                                                @php
+                                                    $it++;
+                                                @endphp
+                                            @endforeach
                                         </div>
                                     </td>
                                     <td>{{ $sikombatan->nama_jembatan }}</td>
