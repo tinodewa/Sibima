@@ -104,11 +104,11 @@ class SikalanController extends Controller
         $request->gambar_peta->storeAs('peta', $peta);
 
         $status = null;
-        if(!Auth::user()->isAdmin2()){
-            $status = isset($request->diterima) ? true : false;
+        if(Auth::user()->isAdmin2()){
+            $status = false;
         }
         else {
-            $status = false;
+            $status = isset($request->diterima) ? true : false;
         }
 
         $sikalan = Sikalan::create([

@@ -19,7 +19,7 @@ class CreateSikombatanImagesTable extends Migration
             $table->string('filename');
             $table->timestamps();
 
-            $table->foreign('sikombatan_id')->references('id')->on('sikombatans');
+            $table->foreign('sikombatan_id')->references('id')->on('sikombatans')->onDelete('cascade');
         });
     }
 

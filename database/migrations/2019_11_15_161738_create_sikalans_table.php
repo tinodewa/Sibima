@@ -64,7 +64,7 @@ class CreateSikalansTable extends Migration
             $table->boolean('status_approve')->default(false);
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
