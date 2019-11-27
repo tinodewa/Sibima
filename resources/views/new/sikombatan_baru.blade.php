@@ -9,6 +9,29 @@
       <div class="left-head">
         <h1 class="">SIJANTAN</h1>
         <a class="closebtn" id="closebtn" href="javascript:void(0)" onclick="closeNav()"><i class="icon ion-md-close sidebar-left__icon"></i></a>
+        <div class="dropdown">
+        <a class="openmenu" id="openmenu" href="javascript:void(0)" onclick="openMenu()">Menu <i class="icon ion-md-arrow-dropdown sidebar-left__icon-dropdown"></i></a>
+        <a class="closemenu" id="closemenu" href="javascript:void(0)" onclick="closeMenu()">Menu <i class="icon ion-md-arrow-dropup sidebar-left__icon-dropdown"></i></a>
+        </div>
+        <div class="dropdown-content cl-effect-11" id="dropdown-content">
+            <ul class="link-menu">
+                <li class="link-menu__item">
+                    <a href="#" class="link-menu__link">Sikombatan</a>
+                </li>
+                <li class="link-menu__item">
+                    <a href="#" class="link-menu__link">Sikalan</a>
+                </li>
+                <li class="link-menu__item">
+                    <a href="#" class="link-menu__link">Artikel</a>
+                </li>
+                <li class="link-menu__item">
+                    <a href="#" class="link-menu__link">Galeri</a>
+                </li>
+                <li class="link-menu__item">
+                    <a href="#" class="link-menu__link">Profil</a>
+                </li>
+            </ul>
+        </div>
       </div>
 
     <div class="row">
@@ -65,9 +88,10 @@
     </div>
     </div>
     
-
-    <div class="footer text-center">
-    <p class="text-center">© SIJANTAN (Sistem Informasi Jalan Dan Jembatan) - 2019</p>
+    <div class="row">
+    <div class="footer col-12 text-center">
+    <p class="text-center">©SIJANTAN (Sistem Informasi Jalan Dan Jembatan) - 2019</p>
+    </div>
     </div>
 
 
@@ -299,6 +323,19 @@ function closeNav() {
   document.getElementById("openbtn").style.display = "block";
   document.getElementById("closebtn").style.display = "none";
 
+}
+
+function openMenu(){
+document.getElementById("dropdown-content").style.display = "block";
+document.getElementById("openmenu").style.display = "none";
+document.getElementById("closemenu").style.display = "block";
+}
+
+
+function closeMenu(){
+document.getElementById("dropdown-content").style.display = "none";
+document.getElementById("closemenu").style.display = "none";
+document.getElementById("openmenu").style.display = "block";
 }
 </script>
 @endsection
