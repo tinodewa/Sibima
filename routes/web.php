@@ -100,3 +100,13 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 });
 Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+//sikalan
+Route::get('/sikalan-baru', function () {
+    return view('new/sikalan_baru');
+});
+
+//SIJANTAN baru
+Route::get('/sikombatan-baru', function () {
+    return view('new/sikombatan_baru');
+});
