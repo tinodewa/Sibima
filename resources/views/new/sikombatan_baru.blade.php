@@ -83,7 +83,7 @@
           </select>
         </div>
         <div class="form-group mt-5 submit-group">
-            <button class="btn btn-primary button-submit">Submit</button>
+            <button class="btn btn-primary button-submit" id="submitBtn">Submit</button>
         </div>
     </div>
     </div>
@@ -99,11 +99,11 @@
 
   {{-- --  --  --  --  --  -- -- MAPS --  --  --  --  -- -- -- --}}
   <div class="maps-box"  id="mapsbox">
-  <h1>Maps</h1>
   
   <div class="menu">
-    <span class="openbtn" id="openbtn" onclick="openNav()"><i class="icon ion-md-menu sidebar-left__icon"></i></span>
+    <span class="openbtn" id="openbtn" onclick="openNav()"><i class="icon ion-md-menu openbtn__icon"></i></span>
   </div>
+  
 
   </div>
 
@@ -303,6 +303,31 @@
 
 
 @section('js')
+<script src="http://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+<script src="{{ asset('embedkml/layer/vector/KML.js') }}"></script>
+
+
+<script>
+
+    $('#submitBtn').click(function(){
+        var urlKml = "{{ asset('storage/peta/1573974644_Contoh_Ruas_Jalan.kml') }}";
+        console.log( urlKml);
+
+        var map = new L.Map('mapsbox', {center: new L.LatLng(58.4, 43.0), zoom: 50});
+        var osm = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+        var track = new L.KML(urlKml, {async: true});
+        console.log(track);
+        track.on("loaded", function(e) {
+            map.fitBounds(e.target.getBounds());
+        });
+        map.addLayer(track);
+        map.addLayer(osm);
+        map.addControl(new L.Control.Layers({}, {'Track':track}));
+    });
+</script>
+
+
+
 <script type="text/javascript">
 function openNav() {
   document.getElementById("mySidenav").style.transition = "all .4s ease";

@@ -48,6 +48,7 @@ body {
     overflow-y: auto;
     overflow-x: hidden;
     position: relative;
+    z-index:2;
     transition: all .1s ease;
     transform:translateX(0);
       
@@ -97,7 +98,6 @@ body {
             display: none;
             position: relative;
             transition:all .3s ease;
-            z-index: 1;
         }
 /////////////////////////////////////////////
 // Link Menu
@@ -241,6 +241,8 @@ body {
     height:100vh;
     background:#797d7e;
     position: relative;
+    overflow: hidden;
+    z-index: 1;
     transition: all .4s ease;
 
     // Medium devices (tablets, 768px and up)
@@ -249,27 +251,51 @@ body {
         width:100%;
         margin: 1rem 0 0;
         height: 100%;
-        background-color: #f1c40f;
         overflow: hidden;
     }
 
     .menu{
         position: relative;
-        padding: 1rem;
-        width: 5rem;
-        height: 6rem;
-        z-index: 10;
+        margin-top: 8rem;
+        width: min-content;
+        height: min-content;
+        z-index: 90000 !important;
     }
 
     .openbtn{
+        position: relative;
+        background: white;
+        color: black;
         cursor: pointer;
+        border:2px solid #bbb;
+        border-right: 1px solid rgba(0,0,0,0.2);
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 2px;
+        border-bottom-left-radius: 2px;
+        margin-left: 1rem;
         display: none;
+        transition: all .2s ease;
+        text-align: center;
+        width: 3.4rem;
 
         // Medium devices (tablets, 768px and up)
         @media only screen and (max-width: 991.98px) {
             display: none;
         }
+
+        &__icon{
+        
+        font-size: 2.4rem;
+        color: #232323;
+        }
+
+        &:hover{
+            background: #f4f4f4;
+        }
     }
+
 }
 
 .sidebar-right{
@@ -279,6 +305,8 @@ body {
     overflow-x: hidden;
     transition: all .4s ease;
     overflow-y: scroll;
+    position: relative;
+    z-index: 2;
 
     // Medium devices (tablets, 768px and up)
     @media only screen and (max-width: 991.98px) {
@@ -382,12 +410,12 @@ body {
 
         .span-card{
             padding:1rem;
-            border: #34495e 1px solid;
+            border: #34495e1f 1px solid;
             border-radius: 4px;
             text-align: center;
             margin:1.1rem auto;
 
-            box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.3);
+            box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.3);
         }
         .bold{
             font-weight: 700;

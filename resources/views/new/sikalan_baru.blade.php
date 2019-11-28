@@ -101,11 +101,10 @@
   {{-- --  --  --  --  --  -- -- MAPS --  --  --  --  -- -- -- --}}
   <div class="maps-box" id="mapsbox">
   
-  <div class="menu">
-    <span class="openbtn" id="openbtn" onclick="openNav()"><i class="icon ion-md-menu sidebar-left__icon"></i></span>
+  <div class="menu" id="menu">
+    <span class="openbtn" id="openbtn" onclick="openNav()"><i class="icon ion-md-menu openbtn__icon"></i></span>
   </div>
-
-  Maps
+  
 
   </div>
 
@@ -143,7 +142,7 @@
 
     {{-- -- Slider Image -- --}}
     <div class="row my-4">
-        <div class="col">
+        <div class="col-lg-12 col-md-7 col-sm-7 mx-auto mb-sm-5">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -320,6 +319,8 @@
 @section('js')
 <script src="http://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
 <script src="{{ asset('embedkml/layer/vector/KML.js') }}"></script>
+
+
 <script>
 
     $('#submitBtn').click(function(){
