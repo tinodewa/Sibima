@@ -25,8 +25,9 @@
      <title>@yield('title') &mdash; {{ config('app.name') }}</title>
      
      <!--     Fonts and icons     -->
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200"/>
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200,300"/>
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" />
      
      <!--     link    -->
      <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
@@ -36,6 +37,7 @@
      <link rel="stylesheet" href="{{asset('assets/superadmin/datatables/css/jquery.dataTables.min.css')}}">    
      <link rel="stylesheet" href="{{asset('assets/superadmin/css/custom.css')}}">
      <link rel="stylesheet" href="{{asset('assets/home/vendor/lightbox2-2.11.1/css/lightbox.min.css')}}">
+     <link rel="stylesheet" href="{{asset('assets/superadmin/css/style.css')}}">
      @yield('css')
  </head>
  
@@ -178,6 +180,10 @@
  <script src="{{asset('assets/superadmin/js/plugins/bootstrap-notify.js')}}"></script>
  <!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
  <script src="{{asset('assets/superadmin/js/light-bootstrap-dashboard.js?v=2.0.0')}}" type="text/javascript"></script>
+ <!-- Chartjs Plugin -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" type="text/javascript"></script>
+ 
+ 
  <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
  <script src="{{asset('assets/superadmin/js/demo.js')}}"></script>
  <script type="text/javascript">

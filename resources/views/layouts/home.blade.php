@@ -59,7 +59,7 @@
                         <li class="nav-item {{ Request::is('sibima/galeri') ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('sibima.galeri') }}">Galeri</a>
                         </li>
-                        <li class="nav-item {{ Request::is('sibima/bilik-laporan') ? 'active' : '' }}">
+                        <li class="nav-item d-none {{ Request::is('sibima/bilik-laporan') ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('sibima.bilik_laporan') }}">Bilik Laporan</a>
                         </li>
                         <li class="nav-item {{ Request::is('sibima/profil') ? 'active' : '' }}">
