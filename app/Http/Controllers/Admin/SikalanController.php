@@ -108,7 +108,7 @@ class SikalanController extends Controller
             $status = false;
         }
         else {
-            $status = isset($request->diterima) ? true : false;
+            $status = isset($request->status_approve) ? true : false;
         }
 
         $sikalan = Sikalan::create([

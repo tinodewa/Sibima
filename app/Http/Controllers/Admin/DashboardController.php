@@ -37,7 +37,39 @@ class DashboardController extends Controller
         $sikombatans = Sikombatan::with('thumbnail')->orderBy('id', 'desc')->get();
         $sikalanImages = SikalanImage::get();
         $sikombatanImages = sikombatanImage::get();
-        return view('dashboard/index', compact('sikalans', 'sikombatans', 'sikalanImages', 'sikombatanImages'));
+        $sikalanCount = $sikalans->count();
+        $sikalanLengthCount = Sikalan::where('status_approve', 1)->sum('panjang');;
+        $sikombatanCount = $sikombatans->count();
+        $sikalanMantap = Sikalan::where('status_approve', 1)->sum('mantap');
+        $sikalanTidakMantap = Sikalan::where('status_approve', 1)->sum('tidak_mantap');
+        $sikalanBaik = Sikalan::where('status_approve', 1)->sum('baik');
+        $sikalanSedang = Sikalan::where('status_approve', 1)->sum('sedang');
+        $sikalanRusakRingan = Sikalan::where('status_approve', 1)->sum('rusak_ringan');
+
+        $totalMantapTidakMantap = $sikalanMantap + $sikalanTidakMantap;
+        $totalMantap = ($sikalanMantap / $totalMantapTidakMantap) * 100;
+        $totalTidakMantap = ($sikalanTidakMantap / $totalMantapTidakMantap) * 100;
+
+        $totalKondisi = $sikalanBaik + $sikalanSedang + $sikalanRusakRingan;
+        $totalBaik = ($sikalanBaik / $totalKondisi) * 100; 
+        $totalSedang = ($sikalanSedang / $totalKondisi) * 100; 
+        $totalRusakRingan = ($sikalanRusakRingan / $totalKondisi) * 100; 
+        $sikalanStatistik = json_decode(json_encode(array(
+            'sikalan_count' => $sikalanCount,
+            'sikalan_length_count' => $sikalanLengthCount,
+            'sikombatan_count' => $sikombatanCount,
+            'sikalan_mantap' => $sikalanMantap,
+            'sikalan_tidak_mantap' => $sikalanTidakMantap,
+            'sikalan_baik' => $sikalanBaik,
+            'sikalan_sedang' => $sikalanSedang,
+            'sikalan_rusak_ringan' => $sikalanRusakRingan,
+            'total_mantap' => $totalMantap,
+            'total_tidak_mantap' => $totalTidakMantap,
+            'total_baik' => $totalBaik,
+            'total_sedang' => $totalSedang,
+            'total_rusak_ringan' => $totalRusakRingan
+        )));
+        return view('dashboard/index', compact('sikalans', 'sikombatans', 'sikalanImages', 'sikombatanImages', 'sikalanStatistik'));
     }
 
     /**

@@ -38,28 +38,22 @@
 
     <div class="row">
     <div class="form-box col-11 mx-auto">
-        <div class="form-group">
+        {{-- <div class="form-group">
             <p class="form-text">Pilih <span class="form-title">Provinsi</span></p>
-            <select data-placeholder="Pilih Provinsi..." class="chosen-select form-control chosen" tabindex="2">
-            <option value=""></option>
-            <option value="kalimantan timur">Kalimantan Timur</option>
-            <option value="kalimantan utara">Kalimantan Utara</option>
-            <option value="kalimantan barat">Kalimantan Barat</option>
-            <option value="kalimantan selatan">Kalimantan Selatan</option>
-            <option value="kalimantan tengah">Kalimantan Tengah</option>
-          </select>
+            <select id="selectProvinsi" data-placeholder="Pilih Provinsi..." class="chosen-select form-control chosen" tabindex="2">
+                <option default selected disabled value="">Pilih Provinsi</option>
+                
+                @foreach ($provinsis as $provinsi)
+                    <option value="{{$provinsi->id}}">{{$provinsi->nama}}</option>
+                @endforeach
+            </select>
         </div>
         <div class="form-group mt-5">
             <p class="form-text">Pilih <span class="form-title">Kabupaten/Kota</span></p>
-            <select data-placeholder="Pilih Kabupaten/Kota..." class="chosen-select form-control chosen" tabindex="2">
-            <option value=""></option>
-            <option value="Kabupaten Berau">Kabupaten Berau</option>
-            <option value="Kabupaten Kutai Barat">Kabupaten Kutai Barat</option>
-            <option value="Kabupaten Kutai Timur">Kabupaten Kutai Timur</option>
-            <option value="Kota Balikpapan">Kota Balikpapan</option>
-            <option value="Kota Samarinda">Kota Samarinda</option>
-            <option value="Kota Bontang">Kota Bontang</option>
-          </select>
+            <select id="selectKota" data-placeholder="Pilih Kabupaten/Kota..." class="form-control" tabindex="2">
+                <option default selected disabled value="">Pilih Kabupaten/Kota</option>
+                
+            </select>
         </div>
         <div class="form-group mt-5">
             <p class="form-text">Pilih <span class="form-title">Kecamatan</span></p>
@@ -72,21 +66,21 @@
             <option value="Sangatta Selatan">Sangatta Selatan</option>
             <option value="Sangatta Utara">Sangatta Utara</option>
           </select>
-        </div>
-        <div class="form-group mt-5">
-            <p class="form-text">Pilih <span class="form-title">Jalan</span></p>
-            <select data-placeholder="Pilih Jalan..." class="chosen-select form-control chosen" tabindex="2">
-            <option value=""></option>
-            <option value="Jl. Jbt Benu Muda Kiri - Jbt. Himba Lestari">Jl. Jbt Benu Muda Kiri - Jbt. Himba Lestari</option>
-            <option value="Jl. Jbt. Himba Lestari - Smp. 3 Beno Harapan">Jl. Jbt. Himba Lestari - Smp. 3 Beno Harapan</option>
-            <option value="Jl. Km. 8 - Simp. Kantor Camat Batu Ampar">Jl. Km. 8 - Simp. Kantor Camat Batu Ampar</option>
-            <option value="Jl. Simp. K.Camat B.Ampar - Simp. 3 Ds Mawai Indah">Jl. Simp. K.Camat B.Ampar - Simp. 3 Ds Mawai Indah</option>
-            <option value="Jl. Simp. Km. 3 - Batu Timbau">Jl. Simp. Km. 3 - Batu Timbau</option>
-          </select>
-        </div>
-        <div class="form-group mt-5 submit-group">
-            <button class="btn btn-primary button-submit" id="submitBtn">Submit</button>
-        </div>
+        </div> --}}
+        <form action="{{ route('sibima.sikalan')}}" method="GET">
+            <div class="form-group mt-5">
+                <p class="form-text">Pilih <span class="form-title">Jalan</span></p>
+                <select name="id" data-placeholder="Pilih Jalan..." class="chosen-select form-control chosen" tabindex="2">
+                    <option value="" selected default disabled></option>
+                    @foreach ($sikalans as $sikalan)
+                        <option value="{{$sikalan->id}}">{{$sikalan->nama_ruas_jalan}}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="form-group mt-5 submit-group">
+                <button class="btn btn-primary button-submit" id="submitBtn">Submit</button>
+            </div>
+        </form>
     </div>
     </div>
     
@@ -109,226 +103,252 @@
   </div>
 
   {{-- --  --  -- --   -- -- -- SIDEBAR RIGHT -- -- --  --  --  --  -- --}}
-  <div class="sidebar-right">
-      <div class="lokasi-box">
-          <div class="lokasi-head mx-auto mb-3">
-            <i class="icon ion-md-pin lokasi-head__icon"></i>
-            <p class="lokasi-title text-center">Jl. Jbt Benu Muda Kiri - Jbt. Himba Lestari</p>
-          </div>
-          <div class="lokasi-body">
-              <p class="lokasi-paragraf">Desa Himba Lestari | Jalan Non Tol</p>
-              <hr>
-              <div class="latitude-box">
-                <i class="icon ion-md-locate latitude-box__icon"></i>
-                <p class="">117,1335752991, 0,7048846718</p>
-              </div>
-          </div>
-          
-      </div>
-     
-      
-    <div class="lokasi-footer row mt-3">
-        
-    <div class="col-6">
-            <div class="span-card"> Provinsi <br><span class="bold">Kalimantan Timur</span></div    >
-        </div>
-        <div class="col-6">
-            <div class="span-card"> Kabupaten/Kota <br> <span class="bold">Kutai Timur</span></div>
-        </div>
-        <div class="col-12">
-            <div class="span-card"> Kecamatan <br> <span class="bold">Sanggatta Selatan</span></div>
-        </div>
-    </div>
-
-    {{-- -- Slider Image -- --}}
-    <div class="row my-4">
-        <div class="col-lg-12 col-md-7 col-sm-7 mx-auto mb-sm-5">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                <img src="{{ asset('storage/jalan/1574234172_sikalan 1.jpg') }}" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                <img src="{{ asset('storage/jalan/1574234172_sikalan 2.jpg') }}" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                <img src="{{ asset('storage/jalan/1574149091_jembatan-sei-benu-muda-kiri-3.png') }}" class="d-block w-100" alt="...">
+    <div class="sidebar-right">
+        <div class="lokasi-box">
+            <div class="lokasi-head mx-auto mb-3">
+                <i class="icon ion-md-pin lokasi-head__icon"></i>
+                @if ($jalan)
+                    <p class="lokasi-title text-center">{{$jalan->nama_ruas_jalan}}</p>    
+                @else
+                    <p class="lokasi-title text-center">Pilih Ruas Jalan</p>    
+                @endif
+            </div>
+            <div class="lokasi-body">
+                @if ($jalan)
+                    <p class="lokasi-paragraf">{{$jalan->kelurahan}} | {{$jalan->fungsi}}</p>      
+                @else
+                    <p class="lokasi-paragraf">- | -</p>   
+                @endif
+               
+                <hr>
+                <div class="latitude-box">
+                    <i class="icon ion-md-locate latitude-box__icon"></i>
+                    @if ($jalan)
+                        <p class="">{{$jalan->koordinat_x_awal_ruas}} , {{$jalan->koordinat_y_awal_ruas}}</p>       
+                    @else
+                        <p class="">- , -</p>  
+                    @endif
+                    
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
         </div>
-        </div>
-    </div>
-
-    <div class="row mb-5">
-        <div class="col-11 mx-auto">
-            <div class="detail-box">
-                <div class="detail-title mb-3">Data Umum</div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="detail-inner-title">Nomor Jalan</div>
-                        <div class="detail-inner-text">15.01.01</div>
+     
+      
+        <div class="lokasi-footer row mt-3">
+            
+            @if ($jalan)
+                <div class="col-6">
+                    @foreach ($provinsis as $provinsi)
+                        @if ($provinsi->id == $jalan->provinsi_id)
+                            <div class="span-card"> Provinsi <br><span class="bold">{{$provinsi->nama}}</span></div    >
+                        @endif
+                    @endforeach
                     </div>
                     <div class="col-6">
-                        <div class="detail-inner-title">Kecamatan</div>
-                        <div class="detail-inner-text">Sanggatta Selatan</div>
+                        @foreach ($kotas as $kota)
+                            @if ($kota->id == $jalan->kota_id)
+                                <div class="span-card"> Kabupaten/Kota <br> <span class="bold">{{$kota->nama}}</span></div>
+                            @endif
+                        @endforeach
+                    </div>
+                    <div class="col-12">
+                        <div class="span-card"> Kecamatan <br> <span class="bold">{{$jalan->kecamatan}}</span></div>
+                    </div>
+                </div>
+
+                {{-- -- Slider Image -- --}}
+                <div class="row my-4">
+                    <div class="col-lg-12 col-md-7 col-sm-7 mx-auto mb-sm-5">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            @foreach ($sikalanImages as $key => $sikalanImage)
+                                @if ($key == 0)
+                                    <div class="carousel-item active">
+                                        <img src="{{ asset('storage/jalan/'.$sikalanImage->filename) }}" class="d-block w-100" alt="...">
+                                    </div>
+                                @else
+                                    <div class="carousel-item">
+                                        <img src="{{ asset('storage/jalan/'.$sikalanImage->filename) }}" class="d-block w-100" alt="...">
+                                    </div>
+                                @endif
+                            @endforeach
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="row mb-5">
+                    <div class="col-11 mx-auto">
+                        <div class="detail-box">
+                            <div class="detail-title mb-3">Data Umum</div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="detail-inner-title">Nomor Jalan</div>
+                                    <div class="detail-inner-text">{{$jalan->no_ruas}}</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="detail-inner-title">Kecamatan</div>
+                                    <div class="detail-inner-text">S{{$jalan->kecamatan}}</div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="detail-inner-title">Akses ke Jalan</div>
+                                    <div class="detail-inner-text">-</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="detail-inner-title">Nama Jalan</div>
+                                    <div class="detail-inner-text">{{$jalan->nama_ruas_jalan}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="row mb-5">
+                    <div class="col-11 mx-auto">
+                        <div class="detail-box">
+                            <div class="detail-title mb-3">Dimensi</div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="detail-inner-title">Panjang Ruas</div>
+                                    <div class="detail-inner-text">{{ $jalan->panjang }} Kilometer</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="detail-inner-title">Lebar</div>
+                                    <div class="detail-inner-text">{{ $jalan->lebar }} Meter</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-5">
+                    <div class="col-11 mx-auto">
+                        <div class="detail-box">
+                            <div class="detail-title mb-3">Panjang Tiap Jenis Permukaan</div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="detail-inner-title">Aspal / Penetrasi / Macadam</div>
+                                    <div class="detail-inner-text">{{ $jalan->ashpalt }} Kilometer</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="detail-inner-title">Telford / Kerikil</div>
+                                    <div class="detail-inner-text">{{ $jalan->telford }} Kilometer</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="detail-inner-title">Perkerasan Beton</div>
+                                    <div class="detail-inner-text">{{ $jalan->rigid }} Kilometer</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="detail-inner-title">Tanah / Belum Tembus</div>
+                                    <div class="detail-inner-text">{{ $jalan->tanah }} Kilometer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-5">
+                    <div class="col-11 mx-auto">
+                        <div class="detail-box">
+                            <div class="detail-title mb-3">Panjang Tiap Kondisi</div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="detail-inner-title">Baik (Km)</div>
+                                    <div class="detail-inner-text">{{ $jalan->baik }} Kilometer</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="detail-inner-title">Baik (%)</div>
+                                    <div class="detail-inner-text">{{ $kondisi->baik }} %</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="detail-inner-title">Sedang (Km)</div>
+                                    <div class="detail-inner-text">{{ $jalan->sedang }} Kilometer</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="detail-inner-title">Sedang (%)</div>
+                                    <div class="detail-inner-text">{{ $kondisi->sedang }} %</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="detail-inner-title">Rusak Ringan (Km)</div>
+                                    <div class="detail-inner-text">{{ $jalan->rusak_ringan }} Kilometer</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="detail-inner-title">Rusak Ringan (%)</div>
+                                    <div class="detail-inner-text">{{ $kondisi->rusak_ringan }} %</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="detail-inner-title">Rusak Berat (Km)</div>
+                                    <div class="detail-inner-text">{{ $jalan->rusak_berat }} Kilometer</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="detail-inner-title">Rusak Berat (%)</div>
+                                    <div class="detail-inner-text">{{ $kondisi->rusak_berat }} %</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="row">
-                    <div class="col-6">
-                        <div class="detail-inner-title">Akses ke Jalan</div>
-                        <div class="detail-inner-text">Jalan entah apa</div>
-                    </div>
-                    <div class="col-6">
-                        <div class="detail-inner-title">Nama Jalan</div>
-                        <div class="detail-inner-text">Jl. Jbt Benu Muda Kiri - Jbt. Himba Lestari</div>
+                <div class="row mb-5">
+                    <div class="col-11 mx-auto">
+                        <div class="detail-box">
+                            <div class="detail-title mb-3">Lainnya</div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="detail-inner-title">Informasi</div>
+                                    <div class="detail-inner-text">{{ $jalan->informasi }}</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+                {{-- -- End of sidebar right -- --}}
+            @else
+                <p class="ml-3">Pilih ruas jalan</p>
+            @endif
+            
 
-    
-    <div class="row mb-5">
-        <div class="col-11 mx-auto">
-            <div class="detail-box">
-                <div class="detail-title mb-3">Dimensi</div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="detail-inner-title">Panjang Ruas</div>
-                        <div class="detail-inner-text">26478 Kilometer</div>
-                    </div>
-                    <div class="col-6">
-                        <div class="detail-inner-title">Lebar</div>
-                        <div class="detail-inner-text">6 Meter</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="row mb-5">
-        <div class="col-11 mx-auto">
-            <div class="detail-box">
-                <div class="detail-title mb-3">Panjang Tiap Jenis Permukaan</div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="detail-inner-title">Aspal / Penetrasi / Macadam</div>
-                        <div class="detail-inner-text">24801 Kilometer</div>
-                    </div>
-                    <div class="col-6">
-                        <div class="detail-inner-title">Telford / Kerikil</div>
-                        <div class="detail-inner-text">1677 Kilometer</div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="detail-inner-title">Perkerasan Beton</div>
-                        <div class="detail-inner-text">0 Kilometer</div>
-                    </div>
-                    <div class="col-6">
-                        <div class="detail-inner-title">Tanah / Belum Tembus</div>
-                        <div class="detail-inner-text">0 Kilometer</div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-
-    <div class="row mb-5">
-        <div class="col-11 mx-auto">
-            <div class="detail-box">
-                <div class="detail-title mb-3">Panjang Tiap Kondisi</div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="detail-inner-title">Baik (Km)</div>
-                        <div class="detail-inner-text">10326 Kilometer</div>
-                    </div>
-                    <div class="col-6">
-                        <div class="detail-inner-title">Baik (%)</div>
-                        <div class="detail-inner-text">39.00 %</div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="detail-inner-title">Sedang (Km)</div>
-                        <div class="detail-inner-text">959 Kilometer</div>
-                    </div>
-                    <div class="col-6">
-                        <div class="detail-inner-title">Sedang (%)</div>
-                        <div class="detail-inner-text">3.62 %</div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="detail-inner-title">Rusak Ringan (Km)</div>
-                        <div class="detail-inner-text">15192 Kilometer</div>
-                    </div>
-                    <div class="col-6">
-                        <div class="detail-inner-title">Rusak Ringan (%)</div>
-                        <div class="detail-inner-text">57.38 %</div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="detail-inner-title">Rusak Berat (Km)</div>
-                        <div class="detail-inner-text">0 Kilometer</div>
-                    </div>
-                    <div class="col-6">
-                        <div class="detail-inner-title">Rusak Berat (%)</div>
-                        <div class="detail-inner-text">0.00 %</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="row mb-5">
-        <div class="col-11 mx-auto">
-            <div class="detail-box">
-                <div class="detail-title mb-3">Lainnya</div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="detail-inner-title">Informasi</div>
-                        <div class="detail-inner-text">Test Informasi Yang Sangat Penting Lainnya</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    {{-- -- End of sidebar right -- --}}
-</div>
 </div>
 
 @endsection
 
 
 @section('js')
-<script src="http://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
 <script src="{{ asset('embedkml/layer/vector/KML.js') }}"></script>
 
 
 <script>
-
-    $('#submitBtn').click(function(){
-        var urlKml = "{{ asset('storage/peta/1573974644_Contoh_Ruas_Jalan.kml') }}";
-        console.log( urlKml);
-
+    @if ($jalan) 
+        var urlKml = "{{ asset('storage/peta/'.$jalan->gambar_peta) }}";
         var map = new L.Map('mapsbox', {center: new L.LatLng(58.4, 43.0), zoom: 50});
-        var osm = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+        var osm = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
         var track = new L.KML(urlKml, {async: true});
         console.log(track);
         track.on("loaded", function(e) {
@@ -337,7 +357,8 @@
         map.addLayer(track);
         map.addLayer(osm);
         map.addControl(new L.Control.Layers({}, {'Track':track}));
-    });
+    @endif
+
 </script>
 
 <script type="text/javascript">

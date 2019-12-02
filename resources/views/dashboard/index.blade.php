@@ -16,7 +16,7 @@
 
                         <div class="col-8">
                             <div class="detail-card mb-3">
-                                589 km
+                                {{ $sikalanStatistik->sikalan_length_count }} KM
                             </div>
                             <div class="keterangan-card">
                                 Total Panjang Ruas Jalan
@@ -39,7 +39,7 @@
 
                         <div class="col-8">
                             <div class="detail-card mb-3">
-                                237 km
+                                {{ $sikalanStatistik->sikalan_count }}
                             </div>
                             <div class="keterangan-card">
                                 Jumlah Ruas Jalan
@@ -62,7 +62,7 @@
 
                         <div class="col-8">
                             <div class="detail-card mb-3">
-                                65
+                                {{ $sikalanStatistik->sikombatan_count }}
                             </div>
                             <div class="keterangan-card">
                                 Jumlah Jembatan
@@ -94,13 +94,13 @@
                     <div class="col-md-6">
                         <div class="chart-foot-box bg-success">
                             <div class="chart-title">Ruas Jalan Mantap</div>
-                            <div class="chart-text d-block">7</div>
+                            <div class="chart-text d-block">{{ $sikalanStatistik->sikalan_mantap }} KM</div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="chart-foot-box bg-danger">
                             <div class="chart-title">Ruas Jalan Tidak Mantap</div>
-                            <div class="chart-text d-block">5</div>
+                            <div class="chart-text d-block">{{ $sikalanStatistik->sikalan_tidak_mantap }} KM</div>
                         </div>
                     </div>
                 </div>
@@ -123,19 +123,19 @@
                     <div class="col-md-4">
                         <div class="chart-foot-box-2 bg-success">
                             <div class="chart-title">Baik</div>
-                            <div class="chart-text d-block">7</div>
+                            <div class="chart-text d-block">{{ $sikalanStatistik->sikalan_baik }} KM</div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="chart-foot-box-2 bg-warning">
                             <div class="chart-title">Sedang</div>
-                            <div class="chart-text d-block">5</div>
+                            <div class="chart-text d-block">{{ $sikalanStatistik->sikalan_sedang }} KM</div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="chart-foot-box-2 bg-danger">
                             <div class="chart-title">Rusak Ringan</div>
-                            <div class="chart-text d-block">5</div>
+                            <div class="chart-text d-block">{{ $sikalanStatistik->sikalan_rusak_ringan }} KM</div>
                         </div>
                     </div>
                 </div>
@@ -156,29 +156,29 @@ var ctx = document.getElementById('myChartbar').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['2018','2019'],
-        datasets: [{
-            label: 'MANTAP',
-            data: [9, 7],
-            backgroundColor: [
-                '#28a745',
-                '#28a745'
-            ]
-        },{
-            label: 'TIDAK MANTAP',
-            data: [3, 5],
-            backgroundColor: [
-                '#dc3545',
-                '#dc3545'
-            ]
+        labels : [""],
+	    datasets : [
+		{
+		data : [{{$sikalanStatistik->total_mantap}},],
+		backgroundColor :'#28a745',
+		borderColor : 'rgba(136,136,136,0.5)',
+		label:"Mantap"},
 
-        }]
+		{
+		data : [{{$sikalanStatistik->total_tidak_mantap}},],
+		backgroundColor :'#dc3545',
+		borderColor : '#aaaaaa',
+		label:"Tidak Mantap"},
+
+]
     },
     options: {
         responsive:true,
         scales: {
             yAxes: [{
                 ticks: {
+                    max : 100,    
+                    min : 0,
                     beginAtZero: true
                 }
             }]
@@ -197,7 +197,7 @@ var myChart = new Chart(ctx, {
         labels: ['Baik', 'Sedang', 'Rusak Ringan'],
         datasets: [{
             label: '# of Votes',
-            data: [9, 7, 3],
+            data: [{{$sikalanStatistik->total_baik}}, {{$sikalanStatistik->total_sedang}}, {{$sikalanStatistik->total_rusak_ringan}}],
             backgroundColor: [
                 '#28a745',
                 '#ffc107',
@@ -210,6 +210,8 @@ var myChart = new Chart(ctx, {
         scales: {
             yAxes: [{
                 ticks: {
+                    max : 100,    
+                    min : 0,
                     beginAtZero: true
                 }
             }]

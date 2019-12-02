@@ -31,6 +31,9 @@ Route::prefix('sibima')->group(function () {
     Route::get('galeri', 'Home\HomeController@galeri')->name('sibima.galeri');
     Route::get('bilik-laporan', 'Home\HomeController@bilikLaporan')->name('sibima.bilik_laporan');
     Route::get('profil', 'Home\HomeController@profil')->name('sibima.profil');
+
+    //get Data
+    Route::get('fetch/kota', 'Home\HomeController@getKota')->name('sibima.get.kota');
 });
 
 // ROUTE ADMIN

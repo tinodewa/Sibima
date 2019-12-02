@@ -6,6 +6,8 @@ use App\Galeri;
 use App\User;
 use App\Article;
 use App\Profil;
+use App\Provinsi;
+use App\Kota;
 use App\Sikalan;
 use App\SikalanImage;
 use App\Sikombatan;
@@ -34,10 +36,18 @@ class HomeController extends Controller
     public function sikombatan()
     {
         //
-        $sikombatans = Sikombatan::with('sikalan')->where('status_approve', true)->get();
-        $sikombatans = $sikombatans->groupBy('sikalan.kecamatan');
+        $provinsis = Provinsi::get();
+        $kotas = Kota::get();
+        $sikombatans = Sikombatan::where('status_approve', true)->get();
+        $jembatan = null;
+        if (request()->id){
+            $jembatan = Sikombatan::with(['sikalan', 'images'])->find(request()->id);
+        }
+        else {
+            $jembatan = null;
+        }
         $sikombatanImages = SikombatanImage::get();
-        return view('home.sikombatan', compact('sikombatans', 'sikombatanImages'));
+        return view('new.sikombatan_baru', compact('sikombatans', 'sikombatanImages', 'jembatan', 'provinsis', 'kotas'));
     }
 
     /**
@@ -48,9 +58,19 @@ class HomeController extends Controller
     public function sikombatanDetail($id)
     {
         //
-        $sikombatan = Sikombatan::with('sikalan')->where('id', $id)->first();
-        $sikombatanImages = SikombatanImage::where('sikombatan_id', $id)->get();
-        return view('home.sikombatan_detail', compact('sikombatan', 'sikombatanImages'));
+        $provinsis = Provinsi::get();
+        $kotas = Kota::get();
+        $sikombatans = Sikalan::where('status_approve', true)->get();
+        $jembatan = null;
+        if (request()->id){
+            $jembatan = Sikalan::where('id', request()->id)->first();
+        }
+        else {
+            $jembatan = null;
+        }
+        
+        $sikalanImages = SikalanImage::get();
+        return view('new.sikalan_baru', compact('sikombatans', 'sikombatanImages', 'jembatan', 'provinsis', 'kotas'));
     }
 
     /**
@@ -60,10 +80,37 @@ class HomeController extends Controller
      */
     public function sikalan()
     {
+        $provinsis = Provinsi::get();
+        $kotas = Kota::get();
         $sikalans = Sikalan::where('status_approve', true)->get();
-        $sikalans = $sikalans->groupBy('kecamatan');
+        $jalan = null;
+        if (request()->id){
+            $jalan = Sikalan::where('id', request()->id)->first();
+            // get persentase
+            $totalKondisi = $jalan->baik + $jalan->sedang + $jalan->rusak_ringan + $jalan->rusak_berat;
+            $baik = $jalan->baik / $totalKondisi * 100; 
+            $sedang = $jalan->sedang / $totalKondisi * 100; 
+            $rusak_ringan = $jalan->rusak_ringan / $totalKondisi * 100; 
+            $rusak_berat = $jalan->rusak_berat / $totalKondisi * 100; 
+            $kondisi = json_decode(json_encode(array(
+                'baik' => number_format($baik, 2),
+                'sedang' => number_format($sedang, 2),
+                'rusak_ringan' => number_format($rusak_ringan, 2),
+                'rusak_berat' => number_format($rusak_berat, 2)
+            )));
+        }
+        else {
+            $jalan = null;
+            $kondisi = json_decode(json_encode(array(
+                'baik' => '-',
+                'sedang' => '-',
+                'rusak_ringan' => '-',
+                'rusak_berat' => '-'
+            )));
+        }
+        
         $sikalanImages = SikalanImage::get();
-        return view('home.sikalan', compact('sikalans', 'sikalanImages'));
+        return view('new.sikalan_baru', compact('sikalans', 'jalan', 'sikalanImages', 'provinsis', 'kotas', 'kondisi'));
     }
 
     /**
@@ -150,6 +197,13 @@ class HomeController extends Controller
         //
         $profil = Profil::first();
         return view('home.profil', compact('profil'));
+    }
+
+    public function getKota()
+    {
+        //
+        $kotas = Kota::where('provinsi_id', request()->provinsi_id)->get();
+        return response()->json($kotas, 201);
     }
 
 }
