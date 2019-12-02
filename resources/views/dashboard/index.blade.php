@@ -5,16 +5,16 @@
     {{-- -- Header Card -- --}}
     <div class="row">
         <div class="col-sm-6 col-md-4">
-            <div class="card card-stats bg-primary text-white card-round">
+            <div class="card card-stats card-primary text-white card-round">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-4">
+                        <div class="col-3">
                         <div class="icon-big text-center">
                             <i class="fa fa-road"></i>
                         </div>
                         </div>
 
-                        <div class="col-8">
+                        <div class="col-9">
                             <div class="detail-card mb-3">
                                 {{ $sikalanStatistik->sikalan_length_count }} KM
                             </div>
@@ -28,16 +28,16 @@
         </div>
 
         <div class="col-sm-6 col-md-4">
-            <div class="card card-stats bg-success text-white card-round">
+            <div class="card card-stats card-success text-white card-round">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-4">
+                        <div class="col-3">
                         <div class="icon-big text-center">
                             <i class="fa fa-road"></i>
                         </div>
                         </div>
 
-                        <div class="col-8">
+                        <div class="col-9">
                             <div class="detail-card mb-3">
                                 {{ $sikalanStatistik->sikalan_count }}
                             </div>
@@ -51,16 +51,16 @@
         </div>
 
         <div class="col-sm-6 col-md-4">
-            <div class="card card-stats bg-danger text-white card-round">
+            <div class="card card-stats card-danger text-white card-round">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-4">
+                        <div class="col-3">
                         <div class="icon-big text-center">
                             <i class="fa fa-eraser"></i>
                         </div>
                         </div>
 
-                        <div class="col-8">
+                        <div class="col-9">
                             <div class="detail-card mb-3">
                                 {{ $sikalanStatistik->sikombatan_count }}
                             </div>
@@ -92,13 +92,13 @@
 
                 <div class="card-footer row text-center">
                     <div class="col-md-6">
-                        <div class="chart-foot-box bg-success">
+                        <div class="chart-foot-box card-success">
                             <div class="chart-title">Ruas Jalan Mantap</div>
                             <div class="chart-text d-block">{{ $sikalanStatistik->sikalan_mantap }} KM</div>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="chart-foot-box bg-danger">
+                        <div class="chart-foot-box card-danger">
                             <div class="chart-title">Ruas Jalan Tidak Mantap</div>
                             <div class="chart-text d-block">{{ $sikalanStatistik->sikalan_tidak_mantap }} KM</div>
                         </div>
@@ -121,19 +121,19 @@
 
                 <div class="card-footer row text-center">
                     <div class="col-md-4">
-                        <div class="chart-foot-box-2 bg-success">
+                        <div class="chart-foot-box-2 card-success">
                             <div class="chart-title">Baik</div>
                             <div class="chart-text d-block">{{ $sikalanStatistik->sikalan_baik }} KM</div>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="chart-foot-box-2 bg-warning">
+                        <div class="chart-foot-box-2 card-warning">
                             <div class="chart-title">Sedang</div>
                             <div class="chart-text d-block">{{ $sikalanStatistik->sikalan_sedang }} KM</div>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="chart-foot-box-2 bg-danger">
+                        <div class="chart-foot-box-2 card-danger">
                             <div class="chart-title">Rusak Ringan</div>
                             <div class="chart-text d-block">{{ $sikalanStatistik->sikalan_rusak_ringan }} KM</div>
                         </div>
@@ -160,7 +160,7 @@ var myChart = new Chart(ctx, {
 	    datasets : [
 		{
 		data : [{{$sikalanStatistik->total_mantap}},],
-		backgroundColor :'#28a745',
+		backgroundColor :'#2ecc71',
 		borderColor : 'rgba(136,136,136,0.5)',
 		label:"Mantap"},
 
@@ -199,8 +199,8 @@ var myChart = new Chart(ctx, {
             label: '# of Votes',
             data: [{{$sikalanStatistik->total_baik}}, {{$sikalanStatistik->total_sedang}}, {{$sikalanStatistik->total_rusak_ringan}}],
             backgroundColor: [
-                '#28a745',
-                '#ffc107',
+                '#2ecc71',
+                '#f1c40f',
                 '#dc3545'
             ]
         }]

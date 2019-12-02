@@ -27,7 +27,7 @@
         <div class="header-title">
             <div class="container">
                 <div class="header-title-box">
-                    <h2>Sistem Informasi Bidang Bina Marga</h2>
+                    <h2>Sistem Informasi Jalan Dan Jembatan</h2>
                     <h4>Dinas Pekerjaan Umum</h4>
                     <h4>Kabupaten Kutai Timur</h4>
                 </div>
@@ -48,10 +48,10 @@
                             <a class="nav-link" href="{{ route('sibima.home') }}">Beranda<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item {{ Request::is('sibima/sikombatan') ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ route('sibima.sikombatan') }}">Sikombatan</a>
+                            <a class="nav-link" href="{{ route('sibima.sikombatan') }}">Jembatan</a>
                         </li>
                         <li class="nav-item {{ Request::is('sibima/sikalan') ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ route('sibima.sikalan') }}">Sikalan</a>
+                            <a class="nav-link" href="{{ route('sibima.sikalan') }}">Jalan</a>
                         </li>
                         <li class="nav-item {{ Request::is('sibima/artikel') ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('sibima.artikel') }}">Artikel</a>
@@ -78,7 +78,7 @@
         <div class="container">
             <div class="footer-inner">
                 <p>
-                    © SIBIMA (Sistem Informasi Bidang Bina Marga) - 2019
+                    © SIJANTAN (Sistem Informasi Jalan Dan Jembatan) - 2019
                 </p>
             </div>
         </div>

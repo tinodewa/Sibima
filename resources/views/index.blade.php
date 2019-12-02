@@ -16,8 +16,6 @@
 
 <body>
     <div class="homepage">
-        <div class="bg-1"></div>
-        <div class="bg-2"></div>
 
         <div class="homepage-wrapper">
             <div class="homepage-logo-box">
@@ -27,7 +25,7 @@
             <div class="homepage-text-box">
                 <h1>
                     Sistem Informasi <br> 
-                    Bidang Bina Marga <br> 
+                    Jalan Dan Jembatan <br> 
                     <small>Dinas Pekerjaan Umum  <br> 
                      Kabupaten Kutai Timur</small>
                 </h1>
@@ -39,7 +37,7 @@
                         <a class="homepage-menu-item big" href="{{ route('sibima.sikombatan') }}">
                             <div class="homepage-menu-item-text">
                                 <img class="homepage-menu-item-img" src="{{asset('assets/home/img/bridge.svg')}}">
-                                SIKOMBATAN
+                                Jembatan
                             </div>
                         </a>
                     </li>
@@ -47,14 +45,14 @@
                         <a class="homepage-menu-item big" href="{{ route('sibima.sikalan') }}">
                             <div class="homepage-menu-item-text">
                                 <img class="homepage-menu-item-img" src="{{asset('assets/home/img/road.svg')}}">
-                                SIKALAN
+                                Jalan
                             </div>
                         </a>
                     </li>
+                    <hr class="garis-batas"/>
                 </ul>
-                <div  class="garis-batas-1"><hr></div>   
-                <ul class="homepage-menu row justify-content-center">
-                    <li class="col-3">
+                <ul class="homepage-menu row justify-content-center mt-3">
+                    <li class="col-4">
                         <a class="homepage-menu-item" href="{{ route('sibima.profil') }}">
                             <div class="homepage-menu-item-text">
                             <img class="homepage-menu-item-img" src="{{asset('assets/home/img/resume.svg')}}">
@@ -62,7 +60,7 @@
                             </div>
                         </a>
                     </li>
-                    <li class="col-3">
+                    <li class="col-4">
                         <a class="homepage-menu-item" href="{{ route('sibima.artikel') }}">
                             <div class="homepage-menu-item-text">
                             <img class="homepage-menu-item-img" src="{{asset('assets/home/img/text-lines.svg')}}">
@@ -70,19 +68,11 @@
                             </div>
                         </a>
                     </li>
-                    <li class="col-3">
+                    <li class="col-4">
                         <a class="homepage-menu-item" href="{{ route('sibima.galeri') }}">
                             <div class="homepage-menu-item-text">
                             <img class="homepage-menu-item-img" src="{{asset('assets/home/img/gallery.svg')}}">
                             Galeri
-                            </div>
-                        </a>
-                    </li>
-                    <li class="col-3">
-                        <a class="homepage-menu-item" href="{{ route('sibima.bilik_laporan') }}">
-                            <div class="homepage-menu-item-text">
-                            <img class="homepage-menu-item-img" src="{{asset('assets/home/img/report.svg')}}">
-                            Lapor
                             </div>
                         </a>
                     </li>

@@ -25,7 +25,7 @@
      <title>@yield('title') &mdash; {{ config('app.name') }}</title>
      
      <!--     Fonts and icons     -->
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200,300"/>
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200,300,500"/>
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" />
      
@@ -73,13 +73,13 @@
                      <li class="nav-item {{ Request::is('admin/kondisi-jalan') || Request::is('admin/kondisi-jalan/*') ? 'active' : '' }}">
                          <a class="nav-link" href="{{ route('admin.sikalan') }}">
                              <i class="nc-icon nc-simple-delete"></i>
-                             <p>Sikalan</p>
+                             <p>Data Jalan</p>
                          </a>
                      </li>
                      <li class="nav-item {{ Request::is('admin/kondisi-jembatan') || Request::is('admin/kondisi-jembatan/*') ? 'active' : '' }}">
                          <a class="nav-link" href="{{ route('admin.sikombatan') }}">
                              <i class="nc-icon nc-vector"></i>
-                             <p>Sikombatan</p>
+                             <p>Data Jembatan</p>
                          </a>
                      </li>
                      <li class="nav-item  {{ Request::is('admin/artikel') || Request::is('admin/artikel/*') ? 'active' : '' }}">

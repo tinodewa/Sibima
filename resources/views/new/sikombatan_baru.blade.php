@@ -7,7 +7,7 @@
   {{-- --  --  --  --  --  -- -- SIDEBAR LEFT --  --  --  --  -- -- -- --}}
   <div class="sidebar-left" id="mySidenav">
       <div class="left-head">
-        <h1 class="">SIJANTAN</h1>
+        <a href="{{ route('sibima.home') }}" class="text-white main-link"><h1 class="">SIJANTAN</h1></a>
         <a class="closebtn" id="closebtn" href="javascript:void(0)" onclick="closeNav()"><i class="icon ion-md-close sidebar-left__icon"></i></a>
         <div class="dropdown">
         <a class="openmenu" id="openmenu" href="javascript:void(0)" onclick="openMenu()">Menu <i class="icon ion-md-arrow-dropdown sidebar-left__icon-dropdown"></i></a>
@@ -16,25 +16,26 @@
         <div class="dropdown-content cl-effect-11" id="dropdown-content">
             <ul class="link-menu">
                 <li class="link-menu__item">
-                    <a href="#" class="link-menu__link">Sikombatan</a>
+                    <a href="{{ route('sibima.sikombatan') }}" class="link-menu__link">Jembatan</a>
                 </li>
                 <li class="link-menu__item">
-                    <a href="#" class="link-menu__link">Sikalan</a>
+                    <a href="{{ route('sibima.sikalan') }}" class="link-menu__link">Jalan</a>
                 </li>
                 <li class="link-menu__item">
-                    <a href="#" class="link-menu__link">Artikel</a>
+                    <a href="{{ route('sibima.artikel') }}" class="link-menu__link">Artikel</a>
                 </li>
                 <li class="link-menu__item">
-                    <a href="#" class="link-menu__link">Galeri</a>
+                    <a href="{{ route('sibima.galeri') }}" class="link-menu__link">Galeri</a>
                 </li>
                 <li class="link-menu__item">
-                    <a href="#" class="link-menu__link">Profil</a>
+                    <a href="{{ route('sibima.profil') }}" class="link-menu__link">Profil</a>
                 </li>
             </ul>
         </div>
       </div>
 
     <div class="row">
+    <div class="icon-box col-11 mx-auto"></div>
     <div class="form-box col-11 mx-auto">
         <form action="{{ route('sibima.sikombatan')}}" method="GET">
             <div class="form-group mt-5">
@@ -75,7 +76,7 @@
   {{-- --  --  -- --   -- -- -- SIDEBAR RIGHT -- -- --  --  --  --  -- --}}
   <div class="sidebar-right">
       <div class="lokasi-box row">
-          <div class="lokasi-head col-11 mx-auto mb-3">
+          <div class="lokasi-head col-11 mx-auto">
             <i class="icon ion-md-pin lokasi-head__icon"></i>
             @if ($jembatan)
                 <p class="lokasi-title text-center">{{$jembatan->nama_jembatan}}</p>    
@@ -302,6 +303,8 @@
 
 
 @section('js')
+<script src="http://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+
 <script src="{{ asset('embedkml/layer/vector/KML.js') }}"></script>
 
 
