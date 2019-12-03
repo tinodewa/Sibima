@@ -25,7 +25,7 @@
                                     <div class="col-md-4 pr-1">
                                         <div class="form-group">
                                             <label>Nomor Ruas</label>
-                                            <select class="form-control" name="nomor_ruas" id="tipe">
+                                            <select class="form-control" name="nomor_ruas" id="tipe" required>
                                                 <option disabled selected hidden>Choose</option>
                                                 @foreach ($sikalans as $item)
                                                     <option value="{{ $item->id }}"
@@ -40,7 +40,7 @@
                                     <div class="col-md-4 pr-1">
                                         <div class="form-group">
                                             <label>Nama Ruas</label>
-                                            <input type="text" id="nama-ruas" name="nama_ruas" class="form-control" disabled>
+                                            <input type="text" id="nama-ruas" name="nama_ruas" class="form-control" disabled >
                                         </div>
                                     </div>
                                 </div>
@@ -48,7 +48,7 @@
                                     <div class="col-md-4 pr-1">
                                         <div class="form-group">
                                             <label>Gambar Peta</label>
-                                            <input type="file" name="gambar_peta" class="form-control">
+                                            <input type="file" name="gambar_peta" class="form-control" required>
                                         </div>
                                     </div>
                                 </div>
@@ -56,7 +56,7 @@
                                     <div class="col-md-4 pr-1">
                                         <div class="form-group">
                                             <label>Foto Jembatan</label>
-                                            <input type="file" name="foto_jembatan[]" class="form-control" multiple>
+                                            <input type="file" name="foto_jembatan[]" class="form-control" multiple required>
                                         </div>
                                     </div>
                                 </div>
@@ -64,7 +64,7 @@
                                     <div class="col-md-4 pr-1">
                                         <div class="form-group">
                                             <label>Nama Jembatan</label>
-                                            <input type="text" name="nama_jembatan" class="form-control" placeholder="" value="{{ old('nama_jembatan') }}">
+                                            <input type="text" name="nama_jembatan" class="form-control" placeholder="" value="{{ old('nama_jembatan') }}" required>
                                         </div>
                                     </div>
                                 </div>
@@ -72,7 +72,7 @@
                                     <div class="col-md-4 pr-1">
                                         <div class="form-group">
                                             <label>No Jembatan</label>
-                                            <input type="text" class="form-control" name="no_jembatan" placeholder="" value="{{ old('no_jembatan') }}">
+                                            <input type="text" class="form-control" name="no_jembatan" placeholder="" value="{{ old('no_jembatan') }}" >
                                         </div>
                                     </div>
                                 </div>

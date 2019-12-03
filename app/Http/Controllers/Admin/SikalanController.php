@@ -54,19 +54,19 @@ class SikalanController extends Controller
             'data_dasar' => 'required',
             'nama_ruas' => 'required',
             'tahun_data' => 'required',
-            'status' => 'required',
-            'fungsi' => 'required',
+            'status' => 'nullable',
+            'fungsi' => 'nullable',
             'mendukung' => 'nullable',
             'uraian_dukungan' => 'nullable',
-            'kode_bidang_pekerjaan_umum' => 'required',
-            'kode_data_dasar_jenis_infrastruktur' => 'required',
-            'kode_infrastruktur' => 'required',
-            'provinsi' => 'required',
-            'kota' => 'required',
-            'kecamatan' => 'required',
-            'kelurahan_desa' => 'required',
-            'titik_pengenal_ruas_awal' => 'required',
-            'titik_pengenal_ruas_akhir' => 'required',
+            'kode_bidang_pekerjaan_umum' => 'nullable',
+            'kode_data_dasar_jenis_infrastruktur' => 'nullable',
+            'kode_infrastruktur' => 'nullable',
+            'provinsi' => 'nullable',
+            'kota' => 'nullable',
+            'kecamatan' => 'nullable',
+            'kelurahan_desa' => 'nullable',
+            'titik_pengenal_ruas_awal' => 'nullable',
+            'titik_pengenal_ruas_akhir' => 'nullable',
             'kode_patok' => 'integer|nullable',
             'km_ruas_awal' => 'nullable',
             'km_ruas_akhir' => 'required',
@@ -102,13 +102,13 @@ class SikalanController extends Controller
         // upload peta
         $peta = time().'_'.$request->gambar_peta->getClientOriginalName();
         $request->gambar_peta->storeAs('peta', $peta);
-
-        $status = null;
+        
+        $status = false;
         if(Auth::user()->isAdmin2()){
             $status = false;
         }
         else {
-            $status = isset($request->status_approve) ? true : false;
+            $status = isset($request->diterima) ? true : false;
         }
 
         $sikalan = Sikalan::create([
@@ -161,6 +161,7 @@ class SikalanController extends Controller
             'status_approve' => $status
         ]);
 
+
         foreach ($request->foto_jalan as $item) {
             $filename = time().'_'.$item->getClientOriginalName();
             $item->storeAs('jalan', $filename);
@@ -211,19 +212,19 @@ class SikalanController extends Controller
             'data_dasar' => 'required',
             'nama_ruas' => 'required',
             'tahun_data' => 'required',
-            'status' => 'required',
-            'fungsi' => 'required',
+            'status' => 'nullable',
+            'fungsi' => 'nullable',
             'mendukung' => 'nullable',
             'uraian_dukungan' => 'nullable',
-            'kode_bidang_pekerjaan_umum' => 'required',
-            'kode_data_dasar_jenis_infrastruktur' => 'required',
-            'kode_infrastruktur' => 'required',
-            'provinsi' => 'required',
-            'kota' => 'required',
-            'kecamatan' => 'required',
-            'kelurahan_desa' => 'required',
-            'titik_pengenal_ruas_awal' => 'required',
-            'titik_pengenal_ruas_akhir' => 'required',
+            'kode_bidang_pekerjaan_umum' => 'nullable',
+            'kode_data_dasar_jenis_infrastruktur' => 'nullable',
+            'kode_infrastruktur' => 'nullable',
+            'provinsi' => 'nullable',
+            'kota' => 'nullable',
+            'kecamatan' => 'nullable',
+            'kelurahan_desa' => 'nullable',
+            'titik_pengenal_ruas_awal' => 'nullable',
+            'titik_pengenal_ruas_akhir' => 'nullable',
             'kode_patok' => 'nullable',
             'km_ruas_awal' => 'nullable',
             'km_ruas_akhir' => 'required',
