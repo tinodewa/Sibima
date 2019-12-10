@@ -54,6 +54,13 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::put('kabupaten-kota/edit/{id}', 'Admin\KabkotaController@update')->name('admin.kabkota.update');
     Route::delete('kabupaten-kota/delete/{id}', 'Admin\KabkotaController@destroy')->name('admin.kabkota.destroy');
 
+    Route::get('kecamatan', 'Admin\KecamatanController@index')->name('admin.kecamatan');
+    Route::get('kecamatan/buat', 'Admin\KecamatanController@create')->name('admin.kecamatan.create');
+    Route::post('kecamatan/store', 'Admin\KecamatanController@store')->name('admin.kecamatan.store');
+    Route::get('kecamatan/edit/{id}', 'Admin\KecamatanController@edit')->name('admin.kecamatan.edit');
+    Route::put('kecamatan/edit/{id}', 'Admin\KecamatanController@update')->name('admin.kecamatan.update');
+    Route::delete('kecamatan/delete/{id}', 'Admin\KecamatanController@destroy')->name('admin.kecamatan.destroy');
+
     Route::get('kondisi-jalan', 'Admin\SikalanController@index')->name('admin.sikalan');
     Route::get('kondisi-jalan/buat', 'Admin\SikalanController@create')->name('admin.sikalan.create');
     Route::get('kondisi-jalan/{id}', 'Admin\SikalanController@show')->name('admin.sikalan.show');

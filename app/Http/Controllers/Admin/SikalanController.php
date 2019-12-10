@@ -7,6 +7,7 @@ use Storage;
 use App\Kota;
 use App\Sikalan;
 use App\Provinsi;
+use App\Kecamatan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -38,7 +39,8 @@ class SikalanController extends Controller
     {
         $provinsi = Provinsi::get();
         $kota = Kota::get();
-        return view('dashboard/sikalan/create', compact('provinsi', 'kota'));
+        $kecamatan = Kecamatan::get();
+        return view('dashboard/sikalan/create', compact('provinsi', 'kota', 'kecamatan'));
     }
 
     /**
@@ -83,7 +85,7 @@ class SikalanController extends Controller
             'lebar_perkerasan_jalan' => 'required',
             'lalulintas_harian_jalan' => 'nullable',
             'volume_capacity_jalan' => 'nullable',
-            'tipe_jalan' => 'required',
+            'tipe_jalan' => 'nullable',
             'kapasitas_mst_jalan' => 'nullable',
             'tanah_kerikil' => 'nullable',
             'telford' => 'nullable',
@@ -194,8 +196,9 @@ class SikalanController extends Controller
     {
         $provinsi = Provinsi::get();
         $kota = Kota::get();
+        $kecamatan = Kecamatan::get();
         $sikalan = Sikalan::with(['provinsi', 'kota', 'images'])->find($id);
-        return view('dashboard/sikalan/edit', compact('provinsi', 'kota', 'sikalan'));
+        return view('dashboard/sikalan/edit', compact('provinsi', 'kota', 'sikalan', 'kecamatan'));
     }
 
     /**
@@ -241,7 +244,7 @@ class SikalanController extends Controller
             'lebar_perkerasan_jalan' => 'required',
             'lalulintas_harian_jalan' => 'nullable',
             'volume_capacity_jalan' => 'nullable',
-            'tipe_jalan' => 'required',
+            'tipe_jalan' => 'nullable',
             'kapasitas_mst_jalan' => 'nullable',
             'tanah_kerikil' => 'nullable',
             'telford' => 'nullable',

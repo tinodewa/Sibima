@@ -70,6 +70,12 @@
                              <p>Kabupaten/Kota</p>
                          </a>
                      </li>
+                     <li class="nav-item {{ Request::is('admin/kecamatan') || Request::is('admin/kecamatan/*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.kecamatan') }}">
+                            <i class="nc-icon nc-pin-3"></i>
+                            <p>Kecamatan</p>
+                        </a>
+                    </li>
                      <li class="nav-item {{ Request::is('admin/kondisi-jalan') || Request::is('admin/kondisi-jalan/*') ? 'active' : '' }}">
                          <a class="nav-link" href="{{ route('admin.sikalan') }}">
                              <i class="nc-icon nc-simple-delete"></i>

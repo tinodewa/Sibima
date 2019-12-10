@@ -13,6 +13,11 @@ class Sikombatan extends Model
         return $this->belongsTo(Sikalan::class);
     }
 
+    public function kecamatan()
+    {
+        return $this->belongsTo(Kecamatan::class);
+    }
+
     public function thumbnail()
     {
         return $this->hasOne(SikombatanImage::class);

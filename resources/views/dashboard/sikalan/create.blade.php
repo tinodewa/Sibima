@@ -177,7 +177,12 @@
                                                     <div class="col-md-4 pr-1">
                                                         <div class="form-group">
                                                             <label>Kecamatan</label>
-                                                            <input type="text" name="kecamatan" class="form-control" placeholder="" value="{{ old('kecamatan') }}">
+                                                            {{-- <input type="text" name="kecamatan" class="form-control" placeholder="" value="{{ old('kecamatan') }}"> --}}
+                                                            <select name="kecamatan" class="form-control" id="tipe">
+                                                                @foreach ($kecamatan as $item)
+                                                                    <option value="{{ $item->id }}" {{ old('kecamatan') == $item->id ? 'selected' : '' }}>{{ $item->nama }}</option>
+                                                                @endforeach
+                                                            </select>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -359,14 +364,15 @@
                                                     <div class="col-md-4 pr-1">
                                                         <div class="form-group">
                                                             <label>Tipe Jalan</label>
-                                                            <select name="tipe_jalan" class="form-control" id="tipe">
+                                                            {{-- <select name="tipe_jalan" class="form-control" id="tipe">
                                                                 <option disabled selected hidden>Choose</option>
                                                                 <option value="1" {{ old('tipe_jalan') == '1' ? 'selected' : '' }}>1</option>
                                                                 <option value="2" {{ old('tipe_jalan') == '2' ? 'selected' : '' }}>2</option>
                                                                 <option value="3" {{ old('tipe_jalan') == '3' ? 'selected' : '' }}>3</option>
                                                                 <option value="4" {{ old('tipe_jalan') == '4' ? 'selected' : '' }}>4</option>
                                                                 <option value="5" {{ old('tipe_jalan') == '5' ? 'selected' : '' }}>5</option>
-                                                            </select>
+                                                            </select> --}}
+                                                            <input type="text" name="tipe_jalan" class="form-control">
                                                         </div>
                                                     </div>
                                                 </div>

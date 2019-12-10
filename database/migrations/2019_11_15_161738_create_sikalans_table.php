@@ -27,10 +27,10 @@ class CreateSikalansTable extends Migration
             $table->string('kode_bidang_pekerjaan_umum', 5)->nullable();
             $table->string('kode_data_dasar_jenis_infrastruktur', 5)->nullable();
             $table->string('kode_infrastruktur', 5)->nullable();
-            $table->unsignedInteger('provinsi_id');
-            $table->unsignedInteger('kota_id');
-            $table->string('kecamatan')->nullable()->nullable();
-            $table->string('kelurahan')->nullable()->nullable();
+            $table->unsignedInteger('provinsi_id')->nullable();
+            $table->unsignedInteger('kota_id')->nullable();
+            $table->string('kecamatan')->nullable();
+            $table->string('kelurahan')->nullable();
             $table->string('titik_pengenal_ruas_awal')->nullable();
             $table->string('titik_pengenal_ruas_akhir')->nullable();
             $table->unsignedInteger('kode_patok')->nullable();
@@ -48,7 +48,7 @@ class CreateSikalansTable extends Migration
             $table->unsignedInteger('lebar');
             $table->unsignedInteger('lalulintas_harian')->default(0);
             $table->unsignedInteger('volume_capacity')->default(0);
-            $table->unsignedInteger('tipe_jalan');
+            $table->unsignedInteger('tipe_jalan')->nullable();
             $table->unsignedInteger('kapasitas_mst')->default(0);
             $table->unsignedInteger('tanah')->default(0);
             $table->unsignedInteger('telford')->default(0);
