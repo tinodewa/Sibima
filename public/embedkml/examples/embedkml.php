@@ -12,7 +12,6 @@
 		var map = new L.Map('map', {center: new L.LatLng(58.4, 43.0), zoom: 11});
 		var osm = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
 		var track = new L.KML("Contoh_Ruas_Jalan.kml", {async: true});
-		console.log(track);
 		track.on("loaded", function(e) {
 			map.fitBounds(e.target.getBounds());
 		});

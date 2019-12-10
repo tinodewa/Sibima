@@ -356,11 +356,9 @@ $(document).ready(function(){
     @if ($jalan) 
         var urlKml = "{{ asset('storage/peta/'.$jalan->gambar_peta) }}";
         var mapBox = document.getElementById('mapsbox');
-        console.log(mapBox);
         var map = new L.Map('mapsbox', {center: new L.LatLng(58.4, 43.0), zoom: 50});
         var osm = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
         var track = new L.KML(urlKml, {async: true});
-        console.log(track);
         track.on("loaded", function(e) {
             map.fitBounds(e.target.getBounds());
         });
@@ -379,7 +377,6 @@ $(document).ready(function(){
             {       
                 if(res)
                 {   
-                    console.log(res);
                     $("#selectJalan").empty();
                     $("#selectJalan").append('<option value="0" default selected disabled>Pilih Jalan...</option>');
                     $.each(res,function(key,value){

@@ -328,7 +328,6 @@ $(document).ready(function(){
         var map = new L.Map(mapBox, {center: new L.LatLng(58.4, 43.0), zoom: 50});
         var osm = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
         var track = new L.KML(urlKml, {async: true});
-        console.log(track);
         track.on("loaded", function(e) {
             map.fitBounds(e.target.getBounds());
         });
@@ -346,11 +345,12 @@ $(document).ready(function(){
             {       
                 if(res)
                 {   
-                    console.log(res);
                     $("#selectJembatan").empty();
                     $("#selectJembatan").append('<option value="0" default selected disabled>Pilih Jembatan...</option>');
                     $.each(res,function(key,value){
-                        $("#selectJembatan").append('<option value="'+value.id+'">'+value.no_jembatan+' - '+value.nama_jembatan+'</option>');
+                        if(value.sikalan.kecamatan == id){
+                            $("#selectJembatan").append('<option value="'+value.id+'">'+value.no_jembatan+' - '+value.nama_jembatan+'</option>');
+                        }
                     });
 
                     // $("#selectJembatan_chosen .chosen-results").empty();

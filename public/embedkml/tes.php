@@ -17,7 +17,6 @@
             fetch('Contoh_Ruas_Jalan.kml', {mode: 'cors'})
                 .then(res => res.text())
                 .then(kmltext => {
-                	console.log(kmltext);
                     // Create new kml overlay
                     const parser = new DOMParser();
                     const kml = parser.parseFromString(kmltext, 'text/xml');
