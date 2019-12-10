@@ -8,6 +8,7 @@ use App\Article;
 use App\Profil;
 use App\Provinsi;
 use App\Kota;
+use App\Kecamatan;
 use App\Sikalan;
 use App\SikalanImage;
 use App\Sikombatan;
@@ -38,6 +39,7 @@ class HomeController extends Controller
         //
         $provinsis = Provinsi::get();
         $kotas = Kota::get();
+        $kecamatan = Kecamatan::get();
         $sikombatans = Sikombatan::where('status_approve', true)->get();
         $jembatan = null;
         if (request()->id){
@@ -47,7 +49,7 @@ class HomeController extends Controller
             $jembatan = null;
         }
         $sikombatanImages = SikombatanImage::get();
-        return view('new.sikombatan_baru', compact('sikombatans', 'sikombatanImages', 'jembatan', 'provinsis', 'kotas'));
+        return view('new.sikombatan_baru', compact('sikombatans', 'kecamatan', 'sikombatanImages', 'jembatan', 'provinsis', 'kotas'));
     }
 
     /**
@@ -82,6 +84,7 @@ class HomeController extends Controller
     {
         $provinsis = Provinsi::get();
         $kotas = Kota::get();
+        $kecamatan = Kecamatan::get();
         $sikalans = Sikalan::where('status_approve', true)->get();
         $jalan = null;
         if (request()->id){
@@ -110,7 +113,7 @@ class HomeController extends Controller
         }
         
         $sikalanImages = SikalanImage::get();
-        return view('new.sikalan_baru', compact('sikalans', 'jalan', 'sikalanImages', 'provinsis', 'kotas', 'kondisi'));
+        return view('new.sikalan_baru', compact('sikalans', 'kecamatan', 'jalan', 'sikalanImages', 'provinsis', 'kotas', 'kondisi'));
     }
 
     /**
@@ -199,11 +202,15 @@ class HomeController extends Controller
         return view('home.profil', compact('profil'));
     }
 
-    public function getKota()
-    {
-        //
-        $kotas = Kota::where('provinsi_id', request()->provinsi_id)->get();
-        return response()->json($kotas, 201);
+    public function getJalan($id){
+        $jalan = Sikalan::where("kecamatan",$id)->orderBy('no_ruas', 'ASC')->get();
+        return response()->json($jalan);    
+    }
+
+    public function getJembatan($id){
+        $jembatan = Sikombatan::with(['sikalan', 'images'])->get();
+        
+        return response()->json($jembatan);    
     }
 
 }

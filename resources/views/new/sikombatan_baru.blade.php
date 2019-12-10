@@ -37,14 +37,21 @@
     <div class="row">
     <div class="icon-box col-11 mx-auto"></div>
     <div class="form-box col-11 mx-auto">
+        <div class="form-group mt-5">
+            <p class="form-text">Pilih <span class="form-title">Kecamatan</span></p>
+            <select  id="selectKecamatan"  data-placeholder="Pilih Kecamatan..." class="chosen-select form-control chosen" tabindex="2">
+            <option value=""></option>
+                @foreach ($kecamatan as $item)
+                    <option value="{{$item->id}}">{{$item->nama}}</option>
+                @endforeach
+            </select>
+            </select>
+        </div> 
         <form action="{{ route('sibima.sikombatan')}}" method="GET">
             <div class="form-group mt-5">
                 <p class="form-text">Pilih <span class="form-title">Jembatan</span></p>
-                <select name="id" data-placeholder="Pilih Jembatan..." class="chosen-select form-control chosen" tabindex="2">
-                    <option value="" selected default disabled></option>
-                    @foreach ($sikombatans as $sikombatan)
-                        <option value="{{$sikombatan->id}}">{{$sikombatan->nama_jembatan}}</option>
-                    @endforeach
+                <select name="id" id="selectJalan" data-placeholder="Pilih Jembatan..." class="form-control" tabindex="2">
+                    <option value="" selected default disabled>Pilih Jembatan...</option>
                 </select>
             </div>
             <div class="form-group mt-5 submit-group">
@@ -309,9 +316,11 @@
 
 
 <script>
+$(document).ready(function(){
     @if ($jembatan) 
         var urlKml = "{{ asset('storage/peta_jembatan/'.$jembatan->gambar_peta) }}";
-        var map = new L.Map('mapsbox', {center: new L.LatLng(58.4, 43.0), zoom: 50});
+        var mapBox = document.getElementById('mapsbox');
+        var map = new L.Map(mapBox, {center: new L.LatLng(58.4, 43.0), zoom: 50});
         var osm = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
         var track = new L.KML(urlKml, {async: true});
         console.log(track);
@@ -322,6 +331,35 @@
         map.addLayer(osm);
         map.addControl(new L.Control.Layers({}, {'Track':track}));
     @endif
+    $('#selectKecamatan').on('change', function() {
+        var id = this.value;
+        if(id){
+            $.ajax({
+            type:"get",
+            url:"{{url('/getJembatan')}}/"+id,
+            success:function(res)
+            {       
+                if(res)
+                {   
+                    console.log(res);
+                    $("#selectJalan").empty();
+                    $("#selectJalan").append('<option value="0" default selected disabled>Pilih Jalan...</option>');
+                    $.each(res,function(key,value){
+                        $("#selectJalan").append('<option value="'+value.id+'">'+value.no_jembatan+' - '+value.nama_jembatan+'</option>');
+                    });
+
+                    // $("#selectJalan_chosen .chosen-results").empty();
+                    // $.each(res,function(key,value){
+                    //     $("#selectJalan_chosen .chosen-results").append('<option value="'+value.id+'" class="active-result" data-option-array-index="'+value.id+'">'+value.nama_ruas_jalan+'</option>');
+                    // });
+                }
+            }
+
+            });
+        }
+    });
+
+});
 </script>
 
 

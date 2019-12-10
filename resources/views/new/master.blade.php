@@ -24,9 +24,6 @@
 
 @yield('content')
 
-
-</body>
-
     <script src="{{asset('assets/new/js/jquery-3.4.1.min.js')}}"></script>
     <script src="{{asset('assets/new/js/chosen.jquery.min.js')}}"></script>
     <script src="{{asset('assets/new/js/init.js')}}"></script>
@@ -34,5 +31,8 @@
     <script src="{{ asset('assets/new/vendor/lightbox2-2.11.1/js/lightbox.min.js') }}"></script>
 
     @yield('js')
+</body>
+
+    
 </html>
 

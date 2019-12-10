@@ -1,4 +1,4 @@
-@extends('new/master')
+@extends('new.master')
 @section('title','Sikalan Baru')
 
 @section('content')
@@ -56,26 +56,22 @@
                 
             </select>
         </div>
+        --}}
         <div class="form-group mt-5">
             <p class="form-text">Pilih <span class="form-title">Kecamatan</span></p>
-            <select data-placeholder="Pilih Kecamatan..." class="chosen-select form-control chosen" tabindex="2">
+            <select  id="selectKecamatan"  data-placeholder="Pilih Kecamatan..." class="chosen-select form-control chosen" tabindex="2">
             <option value=""></option>
-            <option value="Batu Ampar">Batu Ampar</option>
-            <option value="Bengalon">Bengalon</option>
-            <option value="Busang">Busang</option>
-            <option value="Karangan">Karangan</option>
-            <option value="Sangatta Selatan">Sangatta Selatan</option>
-            <option value="Sangatta Utara">Sangatta Utara</option>
+                @foreach ($kecamatan as $item)
+                    <option value="{{$item->id}}">{{$item->nama}}</option>
+                @endforeach
+            </select>
           </select>
-        </div> --}}
+        </div> 
         <form action="{{ route('sibima.sikalan')}}" method="GET">
             <div class="form-group mt-5">
                 <p class="form-text">Pilih <span class="form-title">Jalan</span></p>
-                <select name="id" data-placeholder="Pilih Jalan..." class="chosen-select form-control chosen" tabindex="2">
-                    <option value="" selected default disabled></option>
-                    @foreach ($sikalans as $sikalan)
-                        <option value="{{$sikalan->id}}">{{$sikalan->nama_ruas_jalan}}</option>
-                    @endforeach
+                <select name="id" id="selectJalan" data-placeholder="Pilih Jalan..." class="form-control" tabindex="2">
+                    <option value="" selected default disabled>Pilih Jalan...</option>
                 </select>
             </div>
             <div class="form-group mt-5 submit-group">
@@ -95,11 +91,10 @@
 
   {{-- --  --  --  --  --  -- -- MAPS --  --  --  --  -- -- -- --}}
   <div class="maps-box" id="mapsbox">
-  
-  <div class="menu" id="menu">
-    <span class="openbtn" id="openbtn" onclick="openNav()"><i class="icon ion-md-menu openbtn__icon"></i></span>
-  </div>
-  
+    
+        <div class="menu" id="menu">
+            <span class="openbtn" id="openbtn" onclick="openNav()"><i class="icon ion-md-menu openbtn__icon"></i></span>
+        </div>
 
   </div>
 
@@ -348,8 +343,12 @@
 
 
 <script>
+
+$(document).ready(function(){
     @if ($jalan) 
         var urlKml = "{{ asset('storage/peta/'.$jalan->gambar_peta) }}";
+        var mapBox = document.getElementById('mapsbox');
+        console.log(mapBox);
         var map = new L.Map('mapsbox', {center: new L.LatLng(58.4, 43.0), zoom: 50});
         var osm = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
         var track = new L.KML(urlKml, {async: true});
@@ -362,9 +361,37 @@
         map.addControl(new L.Control.Layers({}, {'Track':track}));
     @endif
 
-</script>
+    $('#selectKecamatan').on('change', function() {
+        var id = this.value;
+        if(id){
+            $.ajax({
+            type:"get",
+            url:"{{url('/getJalan')}}/"+id,
+            success:function(res)
+            {       
+                if(res)
+                {   
+                    console.log(res);
+                    $("#selectJalan").empty();
+                    $("#selectJalan").append('<option value="0" default selected disabled>Pilih Jalan...</option>');
+                    $.each(res,function(key,value){
+                        $("#selectJalan").append('<option value="'+value.id+'">'+value.no_ruas+' - '+value.nama_ruas_jalan+'</option>');
+                    });
 
-<script type="text/javascript">
+                    // $("#selectJalan_chosen .chosen-results").empty();
+                    // $.each(res,function(key,value){
+                    //     $("#selectJalan_chosen .chosen-results").append('<option value="'+value.id+'" class="active-result" data-option-array-index="'+value.id+'">'+value.nama_ruas_jalan+'</option>');
+                    // });
+                }
+            }
+
+            });
+        }
+    });
+
+
+});
+
 function openNav() {
   document.getElementById("mySidenav").style.transition = "all .4s ease";
   document.getElementById("mapsbox").style.transition = "all .4s ease";

@@ -120,3 +120,6 @@ Route::get('/sikalan-baru', function () {
 Route::get('/sikombatan-baru', function () {
     return view('new/sikombatan_baru');
 });
+
+Route::get('/getJalan/{id}','Home\HomeController@getJalan');
+Route::get('/getJembatan/{id}','Home\HomeController@getJembatan');
