@@ -73,7 +73,7 @@
                                     <div class="col-md-4 pr-1">
                                         <div class="form-group">
                                             <label>No Jembatan</label>
-                                            <input type="text" class="form-control" name="no_jembatan" placeholder="" value="{{ old('no_jembatan', $sikombatan->no_jembatan) }}">
+                                            <input type="number" class="form-control" name="no_jembatan" placeholder="" value="{{ old('no_jembatan', $sikombatan->no_jembatan) }}">
                                         </div>
                                     </div>
                                 </div>

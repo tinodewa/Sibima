@@ -51,7 +51,6 @@ a:hover{
     overflow-y: auto;
     overflow-x: hidden;
     position: relative;
-    z-index:2;
     transition: all .1s ease;
     transform:translateX(0);
       
@@ -74,9 +73,22 @@ a:hover{
     grid-template-rows: max-content min-content;
     background: #34495e;
     padding: 1rem;
+
+    
         .main-link{
             color:white;
             transition: all .1s ease;
+
+            
+            @media only screen and (max-width: 991.98px) {
+                margin-left: 1rem;
+            }
+
+            h1{
+                @media only screen and (max-width: 991.98px) {
+                    font-size: 25px;
+                }
+            }
         }    
 
         .main-link:hover{
@@ -94,6 +106,7 @@ a:hover{
             // Medium devices (tablets, 768px and up)
             @media only screen and (max-width: 991.98px) {
                 margin-top: 2.5rem;
+                margin-left: 1rem;
             }
 
             .openmenu,.closemenu{
@@ -102,6 +115,11 @@ a:hover{
                 position: relative;
                 color:white;
                 text-decoration: none;
+
+                
+                @media only screen and (max-width: 991.98px) {
+                    font-size: 15px;
+                }
             }
         }
         
@@ -117,6 +135,11 @@ a:hover{
     font-size: 1.35rem;
     font-weight: 300;
     list-style: none;
+
+    
+    @media only screen and (max-width: 991.98px) {
+        font-size: 1.5rem;
+    }
 
     &__item{
         position: relative;
@@ -255,6 +278,30 @@ a:hover{
         .chosen{
             padding:15px;
         }
+
+        .selectipt{
+            position: relative;
+            display: block;
+            overflow: hidden;
+            padding: 0 0 0 8px;
+            height: 38px;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+            background-color: #fff;
+            font-size: 14px;
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #fff), color-stop(50%, #f6f6f6), color-stop(52%, #eee), to(#f4f4f4));
+            background: linear-gradient(#fff 20%, #f6f6f6 50%, #eee 52%, #f4f4f4 100%);
+            /* background-clip: padding-box; */
+            -webkit-box-shadow: 0 0 3px #fff inset, 0 1px 1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 3px #fff inset, 0 1px 1px rgba(0, 0, 0, 0.1);
+            color: #444;
+            text-decoration: none;
+            white-space: normal;
+            word-break: break-all;
+            line-height: 33px;
+            overflow: hidden;
+
+        }
         
 
         .button-submit{
@@ -368,7 +415,11 @@ a:hover{
         width:100%;
         overflow-x: unset;
         overflow-y: unset;
-        margin: 1rem 0 0;
+        margin-top: 2rem;
+
+        .row{
+            margin:0;
+        }
     }
 
     .lokasi-box{
@@ -397,6 +448,7 @@ a:hover{
                 // Medium devices (tablets, 768px and up)
                 @media only screen and (max-width: 991.98px) {
                     margin-top:5px;
+                    font-size: 1.9rem;
                 }
             }
             &__icon{
@@ -405,6 +457,11 @@ a:hover{
 
                 @media only screen and (max-width: $bp-large){
                     font-size: 1.5rem;
+                }
+                
+                // Medium devices (tablets, 768px and up)
+                @media only screen and (max-width: 991.98px) {
+                    margin-top:5px;
                 }
             }
         }
@@ -415,6 +472,12 @@ a:hover{
             font-size: 1.4rem;
             @media only screen and (max-width: $bp-large){
                 font-size: 1.35rem;
+            }
+
+            
+            // Medium devices (tablets, 768px and up)
+            @media only screen and (max-width: 991.98px) {
+                font-size: 1.6rem;
             }
 
 
@@ -461,6 +524,11 @@ a:hover{
             font-size: 1.35rem;
         }
 
+        
+        @media only screen and (max-width: 991.98px){
+            font-size: 1.55rem;
+        }
+
         .span-card{
             padding:1rem;
             border: #34495e1f 1px solid;
@@ -478,22 +546,38 @@ a:hover{
     .detail-box{
         box-shadow: -1px 10px 10px 0px rgba(0,0,0,0.2);
         padding:1.6rem;
+        overflow: hidden;
 
         .detail-title{
             position: relative;
             font-size: 1.6rem;
             font-weight: 500;
+
+            
+            @media only screen and (max-width: 991.98px){
+                font-size: 1.75rem;
+            }
         }
         
 
         .detail-inner-title{
             color: #888;
             font-size: 1.35rem;
+
+            
+            @media only screen and (max-width: 991.98px){
+                font-size: 1.45rem;
+            }
         }
         .detail-inner-text{
             font-size: 1.45rem;
             color: #343434;
             padding: 3px 0 10px;
+
+            
+            @media only screen and (max-width: 991.98px){
+                font-size: 1.6rem;
+            }
         }
     }
 

@@ -70,7 +70,7 @@
         <form action="{{ route('sibima.sikalan')}}" method="GET">
             <div class="form-group mt-5">
                 <p class="form-text">Pilih <span class="form-title">Jalan</span></p>
-                <select name="id" id="selectJalan" data-placeholder="Pilih Jalan..." class="form-control" tabindex="2">
+                <select name="id" id="selectJalan" data-placeholder="Pilih Jalan..." class="form-control selectipt" tabindex="2">
                     <option value="" selected default disabled>Pilih Jalan...</option>
                 </select>
             </div>
@@ -157,9 +157,16 @@
                     <div class="col-lg-12 col-md-7 col-sm-7 mx-auto mb-sm-5">
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+
+                            @php $i=0; @endphp
+                            @foreach ($sikalanImages as $key => $sikalanImage)
+                                @if ($key == 0)
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="{{ $i++ }}"></li>
+                                @else
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="{{ $i++ }}"></li>
+                                @endif
+                            @endforeach
+
                         </ol>
                         <div class="carousel-inner">
                             @foreach ($sikalanImages as $key => $sikalanImage)
@@ -340,6 +347,7 @@
 <script src="http://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
 
 <script src="{{ asset('embedkml/layer/vector/KML.js') }}"></script>
+<script src="{{ asset('assets/new/js/jquery.mobile-1.4.5.min.js') }}"></script>
 
 
 <script>
@@ -387,6 +395,19 @@ $(document).ready(function(){
 
             });
         }
+    });
+
+
+    //////////////////////////////////////////////////////////////////////////
+    ////
+    //jquery mobile touch swipe carousel
+    ///
+    
+    $("#carouselExampleIndicators").swiperight(function() {
+        $(this).carousel('prev');
+    });
+    $("#carouselExampleIndicators").swipeleft(function() {
+        $(this).carousel('next');
     });
 
 

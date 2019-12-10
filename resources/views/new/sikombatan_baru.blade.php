@@ -50,7 +50,7 @@
         <form action="{{ route('sibima.sikombatan')}}" method="GET">
             <div class="form-group mt-5">
                 <p class="form-text">Pilih <span class="form-title">Jembatan</span></p>
-                <select name="id" id="selectJalan" data-placeholder="Pilih Jembatan..." class="form-control" tabindex="2">
+                <select name="id" id="selectJembatan" data-placeholder="Pilih Jembatan..." class="form-control selectipt" tabindex="2">
                     <option value="" selected default disabled>Pilih Jembatan...</option>
                 </select>
             </div>
@@ -140,10 +140,14 @@
                 <div class="col">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                            @php $i=0; @endphp
+                            @foreach ($sikombatanImages as $key => $sikombatanImage)
+                                @if ($key == 0)
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="{{ $i++ }}"></li>
+                                @else
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="{{ $i++ }}"></li>
+                                @endif
+                            @endforeach
                     </ol>
                     <div class="carousel-inner">
                         @php
@@ -313,6 +317,7 @@
 <script src="http://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
 
 <script src="{{ asset('embedkml/layer/vector/KML.js') }}"></script>
+<script src="{{ asset('assets/new/js/jquery.mobile-1.4.5.min.js') }}"></script>
 
 
 <script>
@@ -342,15 +347,15 @@ $(document).ready(function(){
                 if(res)
                 {   
                     console.log(res);
-                    $("#selectJalan").empty();
-                    $("#selectJalan").append('<option value="0" default selected disabled>Pilih Jalan...</option>');
+                    $("#selectJembatan").empty();
+                    $("#selectJembatan").append('<option value="0" default selected disabled>Pilih Jembatan...</option>');
                     $.each(res,function(key,value){
-                        $("#selectJalan").append('<option value="'+value.id+'">'+value.no_jembatan+' - '+value.nama_jembatan+'</option>');
+                        $("#selectJembatan").append('<option value="'+value.id+'">'+value.no_jembatan+' - '+value.nama_jembatan+'</option>');
                     });
 
-                    // $("#selectJalan_chosen .chosen-results").empty();
+                    // $("#selectJembatan_chosen .chosen-results").empty();
                     // $.each(res,function(key,value){
-                    //     $("#selectJalan_chosen .chosen-results").append('<option value="'+value.id+'" class="active-result" data-option-array-index="'+value.id+'">'+value.nama_ruas_jalan+'</option>');
+                    //     $("#selectJembatan_chosen .chosen-results").append('<option value="'+value.id+'" class="active-result" data-option-array-index="'+value.id+'">'+value.nama_ruas_jalan+'</option>');
                     // });
                 }
             }
@@ -358,6 +363,21 @@ $(document).ready(function(){
             });
         }
     });
+
+
+    //////////////////////////////////////////////////////////////////////////
+    ////
+    //jquery mobile touch swipe carousel
+    ///
+
+    $("#carouselExampleIndicators").swiperight(function() {
+        $(this).carousel('prev');
+    });
+    $("#carouselExampleIndicators").swipeleft(function() {
+        $(this).carousel('next');
+    });
+
+
 
 });
 </script>
