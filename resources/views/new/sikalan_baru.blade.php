@@ -344,7 +344,8 @@
 
 
 @section('js')
-<script src="http://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+<script src="{{ asset('js/leaflet.js') }}"></script>
+
 
 <script src="{{ asset('embedkml/layer/vector/KML.js') }}"></script>
 <script src="{{ asset('assets/new/js/jquery.mobile-1.4.5.min.js') }}"></script>
