@@ -345,7 +345,8 @@
 
 @section('js')
 <script src="{{ asset('js/leaflet.js') }}"></script>
-
+<!-- -- -- Gesture handling untuk mobile -- -- -->
+<script src="{{ asset('assets/new/js/leaflet-gesture-handling.min.js') }}"></script>
 
 <script src="{{ asset('embedkml/layer/vector/KML.js') }}"></script>
 <script src="{{ asset('assets/new/js/jquery.mobile-1.4.5.min.js') }}"></script>
@@ -357,7 +358,9 @@ $(document).ready(function(){
     @if ($jalan) 
         var urlKml = "{{ asset('storage/peta/'.$jalan->gambar_peta) }}";
         var mapBox = document.getElementById('mapsbox');
-        var map = new L.Map('mapsbox', {center: new L.LatLng(58.4, 43.0), zoom: 50});
+        /////////////////////////////////
+        //Gesture handling untuk mobile
+        var map = new L.Map('mapsbox', {center: new L.LatLng(58.4, 43.0), zoom: 50, gestureHandling: true});
         var osm = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
         var track = new L.KML(urlKml, {async: true});
         track.on("loaded", function(e) {
