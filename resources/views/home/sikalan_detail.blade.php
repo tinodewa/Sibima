@@ -3,7 +3,7 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/home/css/lightbox.min.css')}}">
-    <link rel="stylesheet" href="http://unpkg.com/leaflet@1.3.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="{{ asset('css/leaflet.css') }}" />
 @endsection
 @section('content')
 {{-- content --}}
@@ -376,7 +376,7 @@
 @endsection
 
 @section('js')
-	<script src="http://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+	<script src="{{ asset('js/leaflet.js') }}"></script>
     <script src="{{ asset('embedkml/layer/vector/KML.js') }}"></script>
     <script>
         var urlKml = "{{ asset('storage/peta/'.$sikalan->gambar_peta) }}";
