@@ -5,9 +5,9 @@
 <div class="container-box">
 
   {{-- --  --  --  --  --  -- -- SIDEBAR LEFT --  --  --  --  -- -- -- --}}
-  <div class="sidebar-left" id="mySidenav">
+  <div class="bg-sikalan sidebar-left" id="mySidenav">
       <div class="left-head">
-        <a href="{{ route('sibima.home') }}" class="text-white main-link"><h1 class="">SIJANTAN</h1></a>
+        <a href="{{ route('sibima.home') }}" class="main-link"><h1 class="">SIJANTAN</h1></a>
         <a class="closebtn" id="closebtn" href="javascript:void(0)" onclick="closeNav()"><i class="icon ion-md-close sidebar-left__icon"></i></a>
       
             <div class="dropdown">
@@ -415,21 +415,19 @@ $(document).ready(function(){
 });
 
 function openNav() {
-  document.getElementById("mySidenav").style.transition = "all .4s ease";
-  document.getElementById("mapsbox").style.transition = "all .4s ease";
-  document.getElementById("mySidenav").style.position = "relative";
-  document.getElementById("mySidenav").style.left = "0";
-  document.getElementById("mapsbox").style.width = "50%";
+  document.getElementById("mySidenav").style.transition = "all .6s ease";
+  document.getElementById("mapsbox").style.transition = "all .6s ease";
+  document.getElementById("mySidenav").style.position = "absolute";
+  document.getElementById("mySidenav").style.left = "5px";
   document.getElementById("openbtn").style.display = "none";
   document.getElementById("closebtn").style.display = "block";
 }
 
 function closeNav() {  
-  document.getElementById("mySidenav").style.transition = "all .4s ease";
-  document.getElementById("mapsbox").style.transition = "all .4s ease";
+  document.getElementById("mySidenav").style.transition = "all .6s ease";
+  document.getElementById("mapsbox").style.transition = "all .6s ease";
   document.getElementById("mySidenav").style.position = "absolute";
-  document.getElementById("mySidenav").style.left = "-22%";
-  document.getElementById("mapsbox").style.width = "72%";
+  document.getElementById("mySidenav").style.left = "-50%";
   document.getElementById("openbtn").style.display = "block";
   document.getElementById("closebtn").style.display = "none";
 
@@ -438,14 +436,14 @@ function closeNav() {
 function openMenu(){
 document.getElementById("dropdown-content").style.display = "block";
 document.getElementById("openmenu").style.display = "none";
-document.getElementById("closemenu").style.display = "block";
+document.getElementById("closemenu").style.display = "flex";
 }
 
 
 function closeMenu(){
 document.getElementById("dropdown-content").style.display = "none";
 document.getElementById("closemenu").style.display = "none";
-document.getElementById("openmenu").style.display = "block";
+document.getElementById("openmenu").style.display = "flex";
 }
 </script>
 @endsection

@@ -1,0 +1,20 @@
+.bg-sikalan {
+  background: rgba(52, 73, 94, 0.85); }
+  .bg-sikalan .left-head .main-link {
+    color: white; }
+  .bg-sikalan .left-head .dropdown .openmenu, .bg-sikalan .left-head .dropdown .closemenu {
+    color: white; }
+  .bg-sikalan .left-head .link-menu__link:link, .bg-sikalan .left-head .link-menu__link:visited {
+    color: #fff; }
+  .bg-sikalan .left-head .sidebar-left__icon {
+    color: white; }
+    .bg-sikalan .left-head .sidebar-left__icon:hover {
+      color: #e74c3c; }
+    .bg-sikalan .left-head .sidebar-left__icon-dropdown {
+      color: white; }
+  .bg-sikalan .form-box {
+    color: #eee !important; }
+    .bg-sikalan .form-box .chosen-single span {
+      color: #222; }
+  .bg-sikalan .footer p {
+    color: #bcbcbc; }

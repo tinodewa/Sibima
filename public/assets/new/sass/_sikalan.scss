@@ -1,0 +1,60 @@
+
+//background untuk jalan / sikalan
+.bg-sikalan{
+    background: rgba(52, 73, 94, .85);
+
+    .left-head{
+
+        .main-link{
+            color:white;
+        }
+
+
+        .dropdown{
+            border:1px solid white;
+            
+            .openmenu , .closemenu {
+                color:white;
+            }
+        }
+
+        .link-menu{
+            
+            &__link:link,
+            &__link:visited{
+                color: #fff;
+            }
+
+        }
+
+
+
+
+        .sidebar-left__icon{
+            color:white;
+
+            &:hover{
+                color:#e74c3c;
+            }
+
+            &-dropdown{
+                color:white;
+            }
+        }
+
+    }
+    
+    .form-box{
+        color:#eee !important;
+
+        .chosen-single span{
+            color:#222;
+        }
+    }
+
+    .footer{
+        p{
+            color:#bcbcbc;
+        }
+    }
+}

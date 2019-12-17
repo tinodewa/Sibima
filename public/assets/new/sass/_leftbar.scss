@@ -1,0 +1,408 @@
+
+.sidebar-left{
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all .1s ease;
+    transform:translateX(0);
+      
+    color:white;
+    //background: #bdc3c7;
+    background: rgba(255,255,255,.85);
+    box-shadow: 4px 4px 6px 0 rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+
+    position: absolute;
+    width:22%;
+    left:11px;
+    top:1%;
+    height:97%;
+
+    z-index: 1111;
+
+    
+    // Medium devices (tablets, 768px and up)
+    @media only screen and (max-width: 991.98px) {
+        left:0;
+        top:0;
+        border-radius: 0;
+        background: #34495e;
+
+        position: relative;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        grid-row: 1/2;
+        height: 100%;
+        width:100%;
+            
+        border-bottom-left-radius: 30px;
+    }
+
+
+
+
+    .left-head{
+    display:grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: max-content min-content;
+    //background: #34495e;
+
+    padding: 1rem;
+
+    
+        .main-link{
+            color:black;
+            transition: all .1s ease;
+
+            
+            @media only screen and (max-width: 991.98px) {
+                color:white;
+                margin-left: 1rem;
+                grid-column: 1/-1;
+                text-align: center;
+                margin-right: 1rem;
+
+                &::before{           
+                    content: "";
+                    z-index: 1000;
+                    width: 45px;
+                    background: url(../img/logo.png);
+                    position: absolute;
+                    left:30%;
+                    top: 15px;
+                    height: 45px;
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+
+                    @media only screen and (max-width: 699.8px){
+                        left:20%;
+                    }
+                    
+                    @media only screen and (max-width: 424.8px){
+                        left:10%;
+                    }
+                }
+
+                &::after{
+                    content: "";
+                    z-index: 1000;
+                    width: 50px;
+                    background: url(../img/logo-kab.png);
+                    position: absolute;
+                    right: 30%;
+                    top: 10px;
+                    height: 65px;
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+
+                    
+                    @media only screen and (max-width: 699.8px){
+                        right:20%;
+                    }
+
+                    @media only screen and (max-width: 424.8px){
+                        right:10%;
+                    }
+                }
+            }
+
+            h1{
+                @media only screen and (max-width: 991.98px) {
+                    font-size: 25px;
+                }
+            }
+        }    
+
+        .main-link:hover{
+            transform: scale(1.1) translateX(5px);
+
+            
+            @media only screen and (max-width: 991.98px) {
+                transform: unset;
+            }
+        }
+
+    
+        .dropdown{
+            width: 97%;
+            padding: 1rem;
+            border-radius: 4px;
+            border:1px solid #000;
+            height: auto;
+            grid-column: 1/-1;
+            position: relative;
+            margin-bottom: 2rem;
+            // Medium devices (tablets, 768px and up)
+            @media only screen and (max-width: 991.98px) {
+                color:white;
+                border-color: white;
+                margin-top: 5rem;
+                margin-left: 1rem;
+
+            }
+
+            .openmenu,.closemenu{
+                font-size: 1.5rem;
+                font-weight: 300;
+                position: relative;
+                color:black;
+                text-decoration: none;
+                display: flex;
+                justify-content: space-between;
+
+                
+                @media only screen and (max-width: 991.98px) {
+                    color:white;
+                    font-size: 14px;
+                }
+            }
+        }
+        
+        .dropdown-content {
+            grid-column: 1/-1;
+            display: none;
+            position: relative;
+            transition:all .3s ease;
+        }
+/////////////////////////////////////////////
+// Link Menu
+.link-menu{
+    font-size: 1.35rem;
+    font-weight: 300;
+    list-style: none;
+
+    
+    @media only screen and (max-width: 991.98px) {
+        font-size: 1.5rem;
+    }
+
+    &__item{
+        position: relative;
+    }
+
+    &__item::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 3px;
+        background-color:rgba(220,220,220,.90);
+        transform: scaleY(0);
+        transition: transform .2s,
+                    width .4s cubic-bezier(1,0,0,1) .2s,
+                    background-color .1s;
+    }
+
+    &__item:hover::before,
+    &__item--active::before{
+        transform: scaleY(1);
+        width: 100%;
+    }
+
+    &__item:active::before {
+        background-color:rgba(210,210,210,.90);
+    }
+
+    &__link:link,
+    &__link:visited{
+        color: black;
+        text-decoration: none;
+        text-transform: uppercase;
+        display: block;
+        padding: 1.5rem 3rem;
+
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 10;
+        transition: color .5s;
+
+        
+        @media only screen and (max-width: 991.98px) {
+            color:white;
+
+            &:hover{
+                color:black;
+            }
+        }
+    }
+}
+
+        #closemenu{
+            display:none;transition:all .3s ease;
+        }
+        
+    }
+
+    h1{
+        margin-top:1.2rem;
+    }
+
+    &__icon{
+        font-size: 3.7rem;
+        color:black;
+        margin-right: 1rem;
+        transition: all .1s ease;
+        
+        &:hover{
+            color:#e74c3c;
+        }
+    }
+
+    &__icon-dropdown{
+        position: relative;
+        font-size: 1.5rem;
+        color:black;
+
+        
+        // Medium devices (tablets, 768px and up)
+        @media only screen and (max-width: 991.98px) {
+            color:white;
+        }
+
+        &:hover{
+            color: #555;
+        }
+    }
+
+    .closebtn{
+        grid-column: 2/3;
+        justify-self: end;
+        cursor: pointer;
+
+        // Medium devices (tablets, 768px and up)
+        @media only screen and (max-width: 991.98px) {
+            display: none;
+        }
+    }
+    .icon-box{  
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 80px;
+        margin-top:-25px;
+
+        
+        // Medium devices (tablets, 768px and up)
+        @media only screen and (max-width: 991.98px) {
+            display: none;
+        }
+
+        &::before{
+            content: "";
+            z-index: 1000;
+            width: 55px;
+            background: url(../img/logo.png);
+            position: absolute;
+            left: 20%;
+            margin-right:5%;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 50px;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        &::after{
+            content: "";
+            z-index: 1000;
+            width: 60px;
+            background: url(../img/logo-kab.png);
+            position: absolute;
+            right: 20%;
+            margin-left:5%;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 75%;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+    }
+
+    .form-box{
+        margin-top: -3rem;
+        height: auto;
+        padding: 0 1rem;
+        font-size: 1.5rem;
+        color:#222;
+
+        margin-bottom:10rem;
+
+        
+        // Medium devices (tablets, 768px and up)
+        @media only screen and (max-width: 991.98px) {
+            color:#eee;
+            margin-top: -2rem;
+            margin-bottom: 1.5rem;
+            font-size: 14px;
+
+        }
+    
+        .form-title{
+            font-weight: 600;
+        }
+
+        .chosen{
+            padding:15px;
+        }
+
+        .selectipt{
+            position: relative;
+            display: block;
+            overflow: hidden;
+            padding: 0 0 0 8px;
+            height: 38px;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+            background-color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #fff), color-stop(50%, #f6f6f6), color-stop(52%, #eee), to(#f4f4f4));
+            background: linear-gradient(#fff 20%, #f6f6f6 50%, #eee 52%, #f4f4f4 100%);
+            /* background-clip: padding-box; */
+            -webkit-box-shadow: 0 0 3px #fff inset, 0 1px 1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 3px #fff inset, 0 1px 1px rgba(0, 0, 0, 0.1);
+            color: #444;
+            text-decoration: none;
+            white-space: normal;
+            word-break: break-all;
+            line-height: 33px;
+            overflow: hidden;
+
+        }
+        
+
+        .button-submit{
+            padding: 6px 10px;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            width:10rem;
+            border-radius: 4px;
+        }
+    }
+
+    .submit-group{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer{
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        margin: 2px auto;
+
+        // Medium devices (tablets, 768px and up)
+        @media only screen and (max-width: 991.98px) {
+            display:none;
+        }
+
+        p{
+            color:#2c3e50;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+
