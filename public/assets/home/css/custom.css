@@ -695,6 +695,12 @@ body {
   margin: 0;
 }
 
+/*SLIDEBOX*/
+.slide-item{
+  margin-right: auto;
+}
+
+
 @media only screen and (max-width: 1200px) {
   .homepage-text-box {
     height: 35vh;
@@ -783,6 +789,10 @@ body {
 }
 
 @media only screen and (max-width: 575px) {
+  .garis-batas{
+    top:3rem;
+    height:.9px;
+  }
   /* home */
   .homepage-menu {
     width: 320px;
@@ -835,6 +845,8 @@ body {
     width: 100%;
   }
 }
+
+
 
 @media only screen and (max-width: 375px) {
   /* home */
@@ -926,6 +938,12 @@ body {
   }
   .break-md{
     display: none;
+  }
+}
+@media only screen and (min-width:801px){
+  .slide-item{
+    margin-left: 1rem;
+    margin-right: auto;
   }
 }
 @media only screen and (min-width:1003.8px){
